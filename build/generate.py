@@ -644,6 +644,86 @@ def areas_section():
   %s</div></section>
 """%link_chips(AREA_CHIPS)
 
+# ============================================================ editorial-flow helpers
+def accent(h):
+    """Wrap the trailing part of a heading in a red accent span."""
+    if ',' in h:
+        a,b = h.rsplit(',',1); return '%s, <span class="g2">%s</span>'%(a.strip(), b.strip())
+    w = h.split()
+    if len(w) > 2: return ' '.join(w[:-2]) + ' <span class="g2">' + ' '.join(w[-2:]) + '</span>'
+    return '<span class="g2">%s</span>'%h
+
+def esplit(eyebrow, h2_html, paras, img_tuple, bullets=None, reverse=False, bg="bg-navy", cta=None, subhead=None):
+    u,a = img_tuple
+    body = ''
+    if subhead: body += '<p style="font-weight:700;color:var(--heading);font-family:\'Poppins\',sans-serif;margin-bottom:.4em">%s</p>'%subhead
+    for i,p in enumerate(paras):
+        body += '<p%s>%s</p>'%(' class="area-lead"' if i==0 and not subhead else '', p)
+    if bullets:
+        body += '<ul class="included-grid">%s</ul>'%''.join('<li>%s</li>'%b for b in bullets)
+    if cta:
+        label,href = cta
+        ds = ' data-scroll="cta-form"' if href == '#cta-form' else ''
+        body += '<p style="margin-top:22px"><a class="btn btn-green btn-arrow" href="%s"%s>%s</a></p>'%(href, ds, label)
+    eyeb = '<span class="eyebrow">%s</span>'%eyebrow if eyebrow else ''
+    return """<section class="section {bg}"><div class="wrap"><div class="area-split{rc}">
+    <div class="area-text">{eyeb}<h2>{h2}</h2>{body}</div>
+    <div class="area-fig"><img src="{u}" alt="{a}" loading="lazy" decoding="async"></div>
+  </div></div></section>
+""".format(bg=bg, rc=(' reverse' if reverse else ''), eyeb=eyeb, h2=h2_html, body=body, u=u, a=esc(a) if a else "Cupboard Centre cabinetry")
+
+def bigstats(items, bg="bg-navy-slate"):
+    cells = ''
+    for n,l in items:
+        base = n.rstrip('+%'); suf = n[len(base):]
+        cells += '<div class="stat"><span class="n">%s<sup>%s</sup></span><span class="l">%s</span></div>'%(base, suf, l)
+    return '<section class="section %s"><div class="wrap"><div class="bigstats">%s</div></div></section>\n'%(bg, cells)
+
+def statement(html, bg="bg-navy-slate"):
+    return '<section class="section %s"><div class="wrap"><div class="statement"><h2>%s</h2></div></div></section>\n'%(bg, html)
+
+def faq_section(eyebrow, h2, items, bg="bg-navy-slate"):
+    return '<section class="section %s"><div class="wrap"><div class="section-center"><span class="eyebrow">%s</span><h2>%s</h2></div><div style="margin-top:34px">%s</div></div></section>\n'%(bg, eyebrow, h2, accordion(items))
+
+SVC_CARDS = [
+ ("Complete Installation","Full supply and fitting of kitchens, wardrobes and cabinetry across the Lowveld.","cupboard-installation.html", img(INSTALL,2)),
+ ("DIY Kitchen Units","Pre-cut, ready-to-assemble kitchen units, delivered to your door.","kitchen-units.html", img(KITCHEN,3)),
+ ("Bedroom &amp; Bathroom Cabinetry","Built-in wardrobes and bathroom vanities, made to measure.","bedroom-bathroom-cabinetry.html", img(BEDROOM,4)),
+ ("Melamine Doors &amp; Quartz Countertops","Hard-wearing doors and premium Eazi Quartz tops.","melamine-doors-quartz-countertops.html", img(MELAMINE,0)),
+ ("Custom Cabinetry &amp; Shopfitting","Bespoke cabinetry for homes, offices and shops.","custom-cabinetry.html", img(CUSTOM,1)),
+ ("DIY Units &amp; Flat-Packs","Flat-pack units for every room, delivered nationwide.","diy-units.html", img(DIY,0)),
+]
+def services_carousel(current, eyebrow="Explore", h2=None, intro=None, bg="bg-navy"):
+    h2 = h2 or accent("More of What We Do")
+    cards = [c for c in SVC_CARDS if c[2] != current]
+    cc = ''
+    for t,d,href,imt in cards:
+        u,a = imt
+        cc += ('<a class="hscroll-card" href="%s"><div class="hs-img"><img src="%s" alt="%s" loading="lazy" decoding="async"></div>'
+               '<div class="hs-body"><h3>%s</h3><p>%s</p><span class="hs-more">Learn more &rarr;</span></div></a>'
+               )%(href, u, esc(a) if a else t, t, d)
+    introp = '<p style="max-width:46em;margin:6px auto 0;color:var(--muted)">%s</p>'%intro if intro else ''
+    return """<section class="section {bg}"><div class="wrap">
+  <div class="section-center"><span class="eyebrow">{eyebrow}</span><h2>{h2}</h2>{introp}</div>
+  <div class="hscroll-wrap">
+    <div class="hscroll">{cc}</div>
+    <div class="hscroll-nav"><button data-hs-prev aria-label="Scroll left">&lsaquo;</button><button data-hs-next aria-label="Scroll right">&rsaquo;</button></div>
+  </div>
+</div></section>
+""".format(bg=bg, eyebrow=eyebrow, h2=h2, introp=introp, cc=cc)
+
+def service_faq(short):
+    return [
+     ("Do you supply %s on their own, or fully installed?"%short.lower(),
+      "Both. You can order supply-only, including DIY flat-packs to assemble yourself, or let our team measure, build and install everything for you."),
+     ("Can you make it to my exact sizes?",
+      "Yes, custom sizes are our speciality. Send us your measurements or visit the showroom and we will build to fit your space precisely."),
+     ("Do you deliver outside Nelspruit?",
+      "Our installation teams cover Nelspruit, Mbombela and the wider Lowveld, and our pre-cut DIY units are delivered nationwide, flat-packed and protected."),
+     ("How do I get a price?",
+      "Call 084 683 7467, WhatsApp us, or use the quote form below and we will come back to you with a clear, written quote within one business hour."),
+    ]
+
 SERVICE_PAGES = {
  "cupboard-installation.html": dict(
    eyebrow="Our Services", h1="Complete Cupboard Installation",
@@ -732,18 +812,24 @@ SERVICE_PAGES = {
 }
 
 def build_service(fname, d):
-    og,_=img(d['img_cat'], d['img_i'])
+    cat=d['img_cat']; i=d['img_i']
+    og,_=img(cat,i)
     title = "%s | Cupboard Centre" % d['h1'].replace('&amp;','&')
     h = head(title, d['subtitle'].replace('&amp;','&'), "https://www.cupboardcentre.co.za/%s"%fname, og)
-    h += header()
-    h += page_hero(d['h1'], d['eyebrow'], d['h1'], d['subtitle'], trail=[("Services","services.html")], bg_img=img(d['img_cat'],d['img_i'])[0])
-    h += area_split_txt("Overview", d['intro_h'], d['intro'], img(d['img_cat'],d['img_i']), included=d['included'], reverse=False, bg="bg-navy")
-    h += pill_section(d['offer_eyebrow'], d['offer_h'], d['offer_sub'], d['offer_tags'], bg="bg-navy-slate")
-    h += feature_section("Why Cupboard Centre", "Built to a Higher Standard", d['feats'], bg="bg-navy")
-    h += process_section(bg="bg-navy-slate")
-    h += reviews_section("bg-navy")
-    h += related_section(fname)
-    h += areas_section()
+    h += header(cart=True)
+    h += page_hero(d['h1'], d['eyebrow'], d['h1'], d['subtitle'], trail=[("Services","services.html")], bg_img=img(cat,i)[0])
+    # 1 — intro: image left, text right
+    h += esplit("Overview", accent(d['intro_h']), d['intro'], img(cat,i),
+                reverse=True, bg="bg-navy", cta=("Get a Free Quote","#cta-form"))
+    # 2 — quality + two-column checklist: text left, image right
+    h += esplit(d['offer_eyebrow'], accent(d['offer_h']), [d['offer_sub']], img(cat,i+1),
+                bullets=d['included'], reverse=False, bg="bg-navy-slate")
+    # 3 — horizontal carousel of the other services
+    h += services_carousel(fname, eyebrow="Explore",
+                           intro="One team for every cupboard. Browse the rest of what we do.", bg="bg-navy")
+    # 4 — FAQ accordion (white cards on the grey section)
+    h += faq_section("Questions", accent(d['h1'] + ", Answered"),
+                     service_faq(d['h1'].replace('&amp;','&')), bg="bg-navy-slate")
     h += cta_form()
     h += marquee()
     h += footer()
@@ -787,41 +873,31 @@ def build_about():
     h=head("About Cupboard Centre | 25+ Years of DIY &amp; Custom Cupboards",
            "For over 25 years Cupboard Centre has supplied and installed DIY &amp; custom cupboards across Mpumalanga, 1028+ projects, 50+ corporate clients, 100% satisfaction.",
            "https://www.cupboardcentre.co.za/about.html", og)
-    h+=header()
+    h+=header(cart=True)
     h+=page_hero("About Us","Our Story","Your Trusted DIY &amp; Custom Cupboard Experts",
-                 "Over 25 years of designing, building and installing cupboards for homes and businesses across Mpumalanga.", bg_img=img(KITCHEN,4)[0])
-    # about-card light
-    au,_=img(KITCHEN,6)
-    h+="""<section class="section bg-navy-slate"><div class="wrap"><div class="about-card light">
-    <div class="about-img" style="background-image:url(%s)"></div>
-    <div class="about-panel"><span class="about-eyebrow">A Local Team. A Lasting Standard.</span>
-      <h2 class="about-heading">We Are <span class="g2">Cupboard Centre</span></h2>
-      <p>For over 25 years, Cupboard Centre has been Nelspruit’s one-stop shop for cupboard solutions. We specialise in DIY cupboard kits you can design, build and install yourself, as well as fully custom, professionally fitted cabinetry, kitchens, bedrooms, bathrooms, doors and countertops. Come to us with an idea and we’ll bring a complete solution to life, with efficient turnaround times and craftsmanship you can trust.</p>
-      <div class="stat-pills"><div class="stat-pill"><span class="n">25+</span><span class="l">Years</span></div><div class="stat-pill"><span class="n">1028+</span><span class="l">Projects</span></div><div class="stat-pill"><span class="n">50+</span><span class="l">Corporates</span></div><div class="stat-pill"><span class="n">100%%</span><span class="l">Satisfaction</span></div></div>
-      <p style="margin-top:10px;margin-bottom:0"><a class="btn btn-green btn-arrow" href="contact.html">Talk To Our Team</a></p>
-    </div></div></div></section>
-"""%au
-    # mission vision values
-    h+=feature_section("What Drives Us","Our Mission, Vision &amp; Values",[
-      ("target","Our Mission","To give every home and business in Mpumalanga beautiful, hard-wearing cupboards, custom or DIY, at a fair price, delivered and installed to a standard we’re proud of."),
-      ("eye","Our Vision","To remain Nelspruit’s most trusted name in cupboards, the first place people think of for kitchens, wardrobes, doors and countertops."),
-      ("check","Our Values","<strong>Quality</strong> in every cut and finish. <strong>Value</strong> that respects your budget. <strong>Service</strong> that’s honest and on time. <strong>Craft</strong> built on 25+ years of experience."),
-    ],bg="bg-navy")
-    # difference
-    h+="""<section class="section bg-navy-slate"><div class="wrap"><div class="commit-panel">
-    <div class="commit-left"><span class="eyebrow">Why Clients Pick Us</span><h2>The Cupboard Centre <span class="g2">Difference</span></h2>
-      <div class="commit-acc">%s</div></div>
-    <div class="commit-right"><div class="commit-img" style="background-image:url(%s)"></div>
-      </div>
-  </div></div></section>
-"""%("".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), img(INSTALL,0)[0])
-    h+=reviews_section("bg-navy")
-    h+=process_section("How It Works","Our Simple Process","bg-navy-slate")
-    # services link chips
-    h+="""<section class="section bg-navy"><div class="wrap section-center"><span class="eyebrow">What We Do</span><h2>Everything For Your Cupboards</h2>
-  <div class="link-chips" style="margin-top:24px">%s</div></div></section>
-"""%("".join('<a href="%s">%s</a>'%(hh,t) for t,hh in RELATED))
-    h+=areas_section()
+                 "Over 25 years designing, building and installing cupboards for homes and businesses across Mpumalanga.", bg_img=img(KITCHEN,4)[0])
+    # A — craftsmanship (image left, text right)
+    h+=esplit("Our Story", accent("Built on Craftsmanship, Driven by Detail"),
+        ["Cupboard Centre began with a simple idea: give Mpumalanga homeowners and builders beautifully made cupboards without the premium-showroom mark-up. What started as a passion for quality cabinetry has grown into a trusted Nelspruit name for custom and DIY cupboards.",
+         "Over more than 25 years we have grown through word of mouth, referrals and repeat customers rather than trends and shortcuts. Kitchens, bedrooms, bathrooms, doors and countertops, all built to last."],
+        img(KITCHEN,0), reverse=True, bg="bg-navy")
+    # stats row
+    h+=bigstats([("25+","Years of Experience"),("1028+","Projects Completed"),("50+","Corporate Clients"),("100%","Customer Satisfaction")], bg="bg-navy-slate")
+    # B — experience / detail + bullets (text left, image right)
+    h+=esplit("Why We're Different", accent("Experience You Can See in Every Detail"),
+        ["Cupboard Centre is proudly local and owner-run. We combine traditional cabinetmaking values with modern materials and machinery, so every unit is finished to a standard we are happy to put our name on."],
+        img(INSTALL,2),
+        bullets=["Quality materials &amp; hardware","Custom &amp; DIY under one roof","Soft-close as standard","Expert local installation","Nationwide flat-pack delivery","Honest, written quotes"],
+        reverse=False, bg="bg-navy", subhead="This is what sets us apart:")
+    # statement
+    h+=statement('Locally made cupboards, <span class="muted">built to last a lifetime.</span>', bg="bg-navy-slate")
+    # C — designed around real living + bullets (image left, text right)
+    h+=esplit("Our Approach", accent("Designed Around Real Living"),
+        ["A cupboard should work as hard as it looks good. We plan every layout around how you actually live and store, then build it to fit your space exactly, with the finishes and hardware you choose."],
+        img(BEDROOM,4),
+        bullets=["Layouts that fit your space","Practical, everyday storage","Finishes chosen by you","Hard-wearing, easy-clean materials"],
+        reverse=True, bg="bg-navy", subhead="Where function meets finish.")
+    h+=reviews_section("bg-navy-slate")
     h+=cta_form(); h+=marquee(); h+=footer()
     return h
 print("about.html", write("about.html", build_about()), "bytes")

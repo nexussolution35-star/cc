@@ -338,9 +338,25 @@
     });
   }
 
+  /* ---------- horizontal "more services" carousel ---------- */
+  function initHScroll() {
+    $$('.hscroll-wrap').forEach(function (wrap) {
+      var track = $('.hscroll', wrap);
+      var prev = $('[data-hs-prev]', wrap), next = $('[data-hs-next]', wrap);
+      if (!track) return;
+      function step() {
+        var card = $('.hscroll-card', track);
+        return card ? card.offsetWidth + 22 : 340;
+      }
+      on(prev, 'click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      on(next, 'click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    });
+  }
+
   /* ---------- init all ---------- */
   function init() {
     cartBadge();
+    initHScroll();
     initAddToCart();
     initProduct();
     initCart();
