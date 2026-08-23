@@ -1,0 +1,5 @@
+# Source site captures & working scratch (not part of the deliverable)
+_extract/
+scratchpad/
+*.log
+.DS_Store
