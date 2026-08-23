@@ -918,13 +918,14 @@ a:hover{color:var(--green)}
   --cc-red:#e81e2c;
   --cc-red-deep:#c00b17;
   --cc-red-darker:#9e111a;
+  --cc-red-topbar:#7a0c12;   /* darker red for the top contact strip */
   --cc-red-grad:linear-gradient(120deg,#e81e2c 0%,#cf121f 58%,#a5101a 100%);
 }
 /* keep CTA hovers in the red family (no black on hover) */
 .btn-green:hover,.btn-green:focus{background:var(--cc-red-deep);border-color:var(--cc-red-deep);color:#fff !important}
 
 /* --- header: WHITE nav bar, black links, red CTA button --- */
-.topbar{background:var(--cc-red-deep)}
+.topbar{background:var(--cc-red-topbar)}
 .topbar .ti-avail{color:#fff}
 .topbar .ti-dot{background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.7)}
 @keyframes tiPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
@@ -939,9 +940,10 @@ a:hover{color:var(--green)}
 .subnav{background:#ffffff;border-top-color:var(--cc-red);box-shadow:0 10px 26px rgba(0,0,0,.12)}
 .subnav a{color:#211a1b}
 .subnav a:hover{color:var(--cc-red);background:rgba(232,30,44,.06)}
-.nav-cta a{background:var(--cc-red);color:#fff !important;box-shadow:0 4px 10px rgba(232,30,44,.28)}
+/* nav CTA button — taller, matching the standard .btn ("See More Images") height */
+.nav-cta a{background:var(--cc-red);color:#fff !important;box-shadow:0 4px 10px rgba(232,30,44,.28);padding:15px 26px;font-size:13px;line-height:1}
 .nav-cta a:hover{background:#211a1b;color:#fff !important}
-.hdr-call{background:var(--cc-red);color:#fff !important}
+.hdr-call{background:var(--cc-red);color:#fff !important;padding-top:13px;padding-bottom:13px}
 .hamburger{color:#211a1b}
 .hamburger[aria-expanded="true"]{color:var(--cc-red)}
 .mobile-menu{background:#ffffff;border-top:1px solid rgba(0,0,0,.08)}
@@ -963,18 +965,23 @@ a:hover{color:var(--green)}
 /* --- contained panels --- */
 /* sub-page hero: neutral wash fallback (per-page inline adds the photo) */
 .page-hero{background:#211a1b}
-/* "The Cupboard Centre Difference": de-red -> light card, image right (rounded), keep dropdowns */
-.commit-panel{background:#ffffff;box-shadow:var(--shadow-panel)}
+/* "The Cupboard Centre Difference": no card, no badge — blends into the section;
+   dropdowns kept on the left, image on the right (rounded) */
+.commit-panel{background:transparent;box-shadow:none;padding:0;max-width:none;gap:48px;align-items:center}
+.commit-left{padding:0}
+.commit-right{padding:0}
 .commit-left .eyebrow{color:var(--cc-red)}
 .commit-left h2{color:var(--heading)}
 .commit-left h2 .g2{color:#9a9298}
-.commit-acc .faq-item{background:#f4f5f7;box-shadow:none}
+.commit-acc .faq-item{background:#fff;border:1px solid #ececec;box-shadow:none}
 .commit-acc .faq-q{color:var(--heading)}
 .commit-acc .faq-q::after{color:#fff;background:var(--green)}
 .commit-acc .faq-a p{color:var(--body)}
-.commit-img{border-radius:var(--r-card)}
-/* last call-to-action (form) band -> dark red */
+.commit-img{border-radius:var(--r-card);height:520px}
+/* last call-to-action (form) band -> dark red, with a soft-black submit button */
 .cta-panel{background:linear-gradient(120deg,#a5101a 0%,#82101a 55%,#5f0c12 100%)}
+.cta-panel .lead-form button[type="submit"]{background:#211a1b !important;border-color:#211a1b !important}
+.cta-panel .lead-form button[type="submit"]:hover{background:#0d0a0b !important;border-color:#0d0a0b !important}
 .panel-dark{background:var(--cc-red-grad)}
 .about-panel{background:var(--cc-red)}
 .contact-info{background:var(--cc-red-deep)}

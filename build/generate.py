@@ -312,13 +312,6 @@ def footer():
       </ul>
     </div>
   </div>
-  <div class="footer-membership">
-    <h2 class="h4">Why Homeowners &amp; Builders Choose Us</h2>
-    <div class="pill-tags" style="justify-content:flex-start;margin-top:6px">
-      <span>25+ Years Experience</span><span>1028+ Projects Completed</span><span>50+ Corporate Clients</span>
-      <span>Custom &amp; DIY Solutions</span><span>Nationwide Delivery</span><span>Expert Installation</span>
-    </div>
-  </div>
   <div class="footer-bottom">© 2026 Cupboard Centre. All Rights Reserved. | Nelspruit &amp; Mbombela’s DIY &amp; custom cupboard specialists. | <a href="privacy-policy.html">Privacy Policy</a> · <a href="sitemap.html">Sitemap</a></div>
 </div></footer>
 <script src="assets/js/app.js" defer></script>
@@ -333,7 +326,7 @@ def page_hero(current, eyebrow, h1, subtitle="", cta=True, trail=None, bg_img=No
         cr += '<span class="sep">›</span><a href="%s%s">%s</a>' % (prefix, href, label)
     cr += '<span class="sep">›</span><span class="cur">%s</span>' % current
     sub = '<p style="max-width:46em;margin:0 auto">%s</p>' % subtitle if subtitle else ''
-    ctab = ('<p style="margin-top:18px"><a class="btn btn-ghost btn-arrow" href="#cta-form" data-scroll="cta-form">Get My Free Quote</a></p>') if cta else ''
+    ctab = ''  # sub-page heroes carry no button (removed per request)
     # every sub-page hero carries a photo behind a red overlay (like cupboardcentre.co.za)
     if bg_img is None:
         bg_img = img(GENERAL, 0)[0]
@@ -467,7 +460,7 @@ print("blog + home helpers loaded")
 def build_home():
     hero_u,_ = img(GENERAL,0)
     about_u,_ = img(KITCHEN,4)
-    commit_u,_ = img(INSTALL,5)
+    commit_u,_ = img(INSTALL,0)
     h  = head("Cupboard Centre | Nelspruit's Best DIY &amp; Custom Cupboard Solutions",
               "DIY &amp; custom cupboards in Nelspruit &amp; Mbombela — kitchens, bedroom &amp; bathroom cabinetry, melamine doors and quartz countertops. Supply, delivery &amp; installation. Free quote.",
               "https://www.cupboardcentre.co.za/", hero_u)
@@ -519,8 +512,7 @@ def build_home():
     </div>
     <div class="commit-right"><!--commit-right-->
       <div class="commit-img" style="background-image:url({commit_u})"></div>
-      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%;background:#e81e2c;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span>
-    </div>
+      </div>
   </div>
 </div></section>
 """.format(acc="".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), commit_u=commit_u)
@@ -767,9 +759,9 @@ def build_services_hub():
     <div class="commit-left"><span class="eyebrow">Why Clients Pick Us</span><h2>The Cupboard Centre <span class="g2">Difference</span></h2>
       <div class="commit-acc">%s</div></div>
     <div class="commit-right"><div class="commit-img" style="background-image:url(%s)"></div>
-      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:#e81e2c;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
+      </div>
   </div></div></section>
-"""%("".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), img(INSTALL,5)[0])
+"""%("".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), img(INSTALL,0)[0])
     h+=process_section("How It Works","Our Simple Process","bg-navy")
     h+=reviews_section("bg-navy-slate")
     h+=areas_section()
@@ -808,9 +800,9 @@ def build_about():
     <div class="commit-left"><span class="eyebrow">Why Clients Pick Us</span><h2>The Cupboard Centre <span class="g2">Difference</span></h2>
       <div class="commit-acc">%s</div></div>
     <div class="commit-right"><div class="commit-img" style="background-image:url(%s)"></div>
-      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:#e81e2c;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
+      </div>
   </div></div></section>
-"""%("".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), img(CUSTOM,3)[0])
+"""%("".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), img(INSTALL,0)[0])
     h+=reviews_section("bg-navy")
     h+=process_section("How It Works","Our Simple Process","bg-navy-slate")
     # services link chips
