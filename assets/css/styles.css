@@ -11,7 +11,7 @@
   --navy-footer:#1a1213;     /* footer / dark panel bg */
   --navy-panel:#211a1b;      /* dark contained panel */
   --heading:#211a1b;         /* heading text */
-  --blue:#111111;            /* secondary accent = crisp black (icon circles, stats) */
+  --blue:#211a1b;            /* secondary accent = soft black (icon circles, stats) */
   --blue-deep:#000000;
   --green:#e81e2c;           /* PRIMARY brand red (CTAs, accents) */
   --green-hover:#c00b17;     /* red button hover */
@@ -923,39 +923,58 @@ a:hover{color:var(--green)}
 /* keep CTA hovers in the red family (no black on hover) */
 .btn-green:hover,.btn-green:focus{background:var(--cc-red-deep);border-color:var(--cc-red-deep);color:#fff !important}
 
-/* --- header / utility bar --- */
+/* --- header: WHITE nav bar, black links, red CTA button --- */
 .topbar{background:var(--cc-red-deep)}
 .topbar .ti-avail{color:#fff}
 .topbar .ti-dot{background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.7)}
 @keyframes tiPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 .topbar a:hover{color:#ffd3d5}
-.mainheader{background:var(--cc-red)}
-.nav > li > a:hover,.nav-phone:hover{color:#fff !important}
-.nav .has-sub:hover .subnav a:hover{color:#fff}
-.subnav{background:var(--cc-red-deep);border-top-color:#fff}
-.subnav a{color:rgba(255,255,255,.9)}
-.subnav a:hover{color:#fff;background:rgba(255,255,255,.10)}
-.nav-cta a{background:#ffffff;color:var(--cc-red) !important;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.mainheader{background:#ffffff;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.mainheader .brand-logo .bl-1{color:#211a1b}
+.mainheader .brand-logo .bl-2{color:var(--cc-red)}
+.nav > li > a{color:#211a1b}
+.nav > li > a:hover{color:var(--cc-red) !important}
+.nav-phone{color:#211a1b}
+.nav-phone:hover{color:var(--cc-red) !important}
+.subnav{background:#ffffff;border-top-color:var(--cc-red);box-shadow:0 10px 26px rgba(0,0,0,.12)}
+.subnav a{color:#211a1b}
+.subnav a:hover{color:var(--cc-red);background:rgba(232,30,44,.06)}
+.nav-cta a{background:var(--cc-red);color:#fff !important;box-shadow:0 4px 10px rgba(232,30,44,.28)}
 .nav-cta a:hover{background:#211a1b;color:#fff !important}
-.hdr-call{background:#ffffff;color:var(--cc-red) !important}
-.hamburger{color:#fff}
-.hamburger[aria-expanded="true"]{color:#fff}
-.mobile-menu{background:var(--cc-red-deep)}
+.hdr-call{background:var(--cc-red);color:#fff !important}
+.hamburger{color:#211a1b}
+.hamburger[aria-expanded="true"]{color:var(--cc-red)}
+.mobile-menu{background:#ffffff;border-top:1px solid rgba(0,0,0,.08)}
+.mobile-menu a{color:#211a1b;border-bottom-color:rgba(0,0,0,.06)}
+.m-has-sub .m-sub-toggle{color:#211a1b;border-bottom-color:rgba(0,0,0,.06)}
+.m-has-sub .m-caret{color:var(--cc-red)}
+.m-subnav{background:#faf6f6}
+.m-subnav a{color:#5a5052}
 
-/* --- hero (home): red overlay over the photo --- */
+/* --- hero (home): keep the photo's real colours, neutral dark wash only --- */
 .hero-panel{
-  background-image:linear-gradient(115deg,rgba(232,30,44,.92) 0%,rgba(198,12,23,.74) 48%,rgba(150,12,20,.42) 100%),url("../images/photos/66f6cc2b52153310a558a6b1.jpg");
+  background-image:linear-gradient(115deg,rgba(22,16,17,.74) 0%,rgba(22,16,17,.44) 46%,rgba(22,16,17,.12) 100%),url("../images/photos/66f6cc2b52153310a558a6b1.jpg");
 }
 @media(max-width:980px){
-  .hero-panel{background-image:linear-gradient(115deg,rgba(232,30,44,.94),rgba(198,12,23,.82) 60%,rgba(150,12,20,.6)),url("../images/photos/66f6cc2b52153310a558a6b1.jpg")}
+  .hero-panel{background-image:linear-gradient(115deg,rgba(22,16,17,.82),rgba(22,16,17,.6) 60%,rgba(22,16,17,.4)),url("../images/photos/66f6cc2b52153310a558a6b1.jpg")}
 }
-/* home hero trailing words readable on red */
-.hero h1 .sub{color:#ffd3d5}
+.hero h1 .sub{color:#d9d4d5}
 
-/* --- contained dark panels become red --- */
-.page-hero{background:var(--cc-red-grad)}          /* fallback; per-page inline adds the photo */
-.commit-panel{background:var(--cc-red-grad)}
-.cta-panel{background:var(--cc-red-grad)}
+/* --- contained panels --- */
+/* sub-page hero: neutral wash fallback (per-page inline adds the photo) */
+.page-hero{background:#211a1b}
+/* "The Cupboard Centre Difference": de-red -> light card, image right (rounded), keep dropdowns */
+.commit-panel{background:#ffffff;box-shadow:var(--shadow-panel)}
+.commit-left .eyebrow{color:var(--cc-red)}
+.commit-left h2{color:var(--heading)}
+.commit-left h2 .g2{color:#9a9298}
+.commit-acc .faq-item{background:#f4f5f7;box-shadow:none}
+.commit-acc .faq-q{color:var(--heading)}
+.commit-acc .faq-q::after{color:#fff;background:var(--green)}
+.commit-acc .faq-a p{color:var(--body)}
+.commit-img{border-radius:var(--r-card)}
+/* last call-to-action (form) band -> dark red */
+.cta-panel{background:linear-gradient(120deg,#a5101a 0%,#82101a 55%,#5f0c12 100%)}
 .panel-dark{background:var(--cc-red-grad)}
 .about-panel{background:var(--cc-red)}
 .contact-info{background:var(--cc-red-deep)}
@@ -966,6 +985,8 @@ a:hover{color:var(--green)}
 
 /* --- footer red --- */
 .footer{background:var(--cc-red-deep)}
+.footer .brand-logo .bl-1{color:#fff}
+.footer .brand-logo .bl-2{color:#ffd3d5}
 .footer h4,.footer .h4{color:#fff}
 .footer ul li a::before{color:#ffd3d5}
 .footer p,.footer ul li a{color:rgba(255,255,255,.85)}

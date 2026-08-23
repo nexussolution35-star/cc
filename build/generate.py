@@ -337,7 +337,7 @@ def page_hero(current, eyebrow, h1, subtitle="", cta=True, trail=None, bg_img=No
     # every sub-page hero carries a photo behind a red overlay (like cupboardcentre.co.za)
     if bg_img is None:
         bg_img = img(GENERAL, 0)[0]
-    overlay = "linear-gradient(115deg,rgba(232,30,44,.93) 0%,rgba(198,12,23,.82) 52%,rgba(150,12,20,.66) 100%)"
+    overlay = "linear-gradient(rgba(22,16,17,.62),rgba(22,16,17,.62))"
     style = ('padding:76px 0;background:%s,url(%s);background-size:cover;background-position:center' % (overlay, bg_img))
     return """<section class="page-hero" style="{style}"><div class="wrap section-center text-white">
   <nav class="crumbs" aria-label="Breadcrumb">{cr}</nav>
@@ -519,7 +519,7 @@ def build_home():
     </div>
     <div class="commit-right"><!--commit-right-->
       <div class="commit-img" style="background-image:url({commit_u})"></div>
-      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%;background:#fff;color:#e81e2c;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span>
+      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%;background:#e81e2c;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span>
     </div>
   </div>
 </div></section>
@@ -767,7 +767,7 @@ def build_services_hub():
     <div class="commit-left"><span class="eyebrow">Why Clients Pick Us</span><h2>The Cupboard Centre <span class="g2">Difference</span></h2>
       <div class="commit-acc">%s</div></div>
     <div class="commit-right"><div class="commit-img" style="background-image:url(%s)"></div>
-      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:#fff;color:#e81e2c;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
+      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:#e81e2c;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
   </div></div></section>
 """%("".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), img(INSTALL,5)[0])
     h+=process_section("How It Works","Our Simple Process","bg-navy")
@@ -808,7 +808,7 @@ def build_about():
     <div class="commit-left"><span class="eyebrow">Why Clients Pick Us</span><h2>The Cupboard Centre <span class="g2">Difference</span></h2>
       <div class="commit-acc">%s</div></div>
     <div class="commit-right"><div class="commit-img" style="background-image:url(%s)"></div>
-      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:#fff;color:#e81e2c;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
+      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:#e81e2c;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
   </div></div></section>
 """%("".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), img(CUSTOM,3)[0])
     h+=reviews_section("bg-navy")
