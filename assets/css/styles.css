@@ -918,6 +918,7 @@ a:hover{color:var(--green)}
   --cc-red:#e81e2c;
   --cc-red-deep:#c00b17;
   --cc-red-darker:#9e111a;
+  --cc-red-dark:#a10c11;     /* the dark red used on cupboardcentre.co.za */
   --cc-red-topbar:#7a0c12;   /* darker red for the top contact strip */
   --cc-red-grad:linear-gradient(120deg,#e81e2c 0%,#cf121f 58%,#a5101a 100%);
 }
@@ -940,8 +941,8 @@ a:hover{color:var(--green)}
 .subnav{background:#ffffff;border-top-color:var(--cc-red);box-shadow:0 10px 26px rgba(0,0,0,.12)}
 .subnav a{color:#211a1b}
 .subnav a:hover{color:var(--cc-red);background:rgba(232,30,44,.06)}
-/* nav CTA button — taller, matching the standard .btn ("See More Images") height */
-.nav-cta a{background:var(--cc-red);color:#fff !important;box-shadow:0 4px 10px rgba(232,30,44,.28);padding:15px 26px;font-size:13px;line-height:1}
+/* nav CTA button — taller, flat (no 3D shadow), matching the standard .btn height */
+.nav-cta a{background:var(--cc-red);color:#fff !important;box-shadow:none;padding:15px 26px;font-size:13px;line-height:1}
 .nav-cta a:hover{background:#211a1b;color:#fff !important}
 .hdr-call{background:var(--cc-red);color:#fff !important;padding-top:13px;padding-bottom:13px}
 .hamburger{color:#211a1b}
@@ -967,21 +968,22 @@ a:hover{color:var(--green)}
 .page-hero{background:#211a1b}
 /* "The Cupboard Centre Difference": no card, no badge — blends into the section;
    dropdowns kept on the left, image on the right (rounded) */
-.commit-panel{background:transparent;box-shadow:none;padding:0;max-width:none;gap:48px;align-items:center}
+/* no rounded-corner clip (panel is transparent now, so the radius was cutting content) */
+.commit-panel{background:transparent;box-shadow:none;padding:0;max-width:none;gap:48px;align-items:center;border-radius:0;overflow:visible}
 .commit-left{padding:0}
 .commit-right{padding:0}
 .commit-left .eyebrow{color:var(--cc-red)}
 .commit-left h2{color:var(--heading)}
-.commit-left h2 .g2{color:#9a9298}
-.commit-acc .faq-item{background:#fff;border:1px solid #ececec;box-shadow:none}
+/* dropdowns match the FAQ styling (grey) */
+.commit-acc .faq-item{background:#f4f5f7;border:0;box-shadow:none}
 .commit-acc .faq-q{color:var(--heading)}
 .commit-acc .faq-q::after{color:#fff;background:var(--green)}
 .commit-acc .faq-a p{color:var(--body)}
 .commit-img{border-radius:var(--r-card);height:520px}
-/* last call-to-action (form) band -> dark red, with a soft-black submit button */
-.cta-panel{background:linear-gradient(120deg,#a5101a 0%,#82101a 55%,#5f0c12 100%)}
-.cta-panel .lead-form button[type="submit"]{background:#211a1b !important;border-color:#211a1b !important}
-.cta-panel .lead-form button[type="submit"]:hover{background:#0d0a0b !important;border-color:#0d0a0b !important}
+/* last call-to-action (form) band -> soft black, with a RED submit button */
+.cta-panel{background:linear-gradient(120deg,#211a1b 0%,#17100f 100%)}
+.cta-panel .lead-form button[type="submit"]{background:var(--cc-red) !important;border-color:var(--cc-red) !important}
+.cta-panel .lead-form button[type="submit"]:hover{background:var(--cc-red-deep) !important;border-color:var(--cc-red-deep) !important}
 .panel-dark{background:var(--cc-red-grad)}
 .about-panel{background:var(--cc-red)}
 .contact-info{background:var(--cc-red-deep)}
@@ -990,8 +992,8 @@ a:hover{color:var(--green)}
 .marquee-dark .mq-c{color:#ffd3d5}
 .marquee-dark .mq-s{color:#fff}
 
-/* --- footer red --- */
-.footer{background:var(--cc-red-deep)}
+/* --- footer: dark red --- */
+.footer{background:var(--cc-red-dark)}
 .footer .brand-logo .bl-1{color:#fff}
 .footer .brand-logo .bl-2{color:#ffd3d5}
 .footer h4,.footer .h4{color:#fff}
@@ -1007,3 +1009,16 @@ a:hover{color:var(--green)}
 /* page-hero: give the photo a home + comfortable height */
 .page-hero{background-size:cover;background-position:center;min-height:300px;display:flex;align-items:center}
 .page-hero .wrap{width:100%}
+
+/* ============================================================
+   Stylised grey heading-accent words -> CC dark red (#a10c11)
+   Exception: the accent inside the red "We Are Cupboard Centre"
+   panel stays white; the hero's trailing words stay light.
+   ============================================================ */
+.section-center > h2 .g2,
+.about-banner-title .g2,
+.commit-left h2 .g2,
+.about-card.light .about-heading .g2,
+.reviews-score .g2{color:var(--cc-red-dark)}
+.about-card:not(.light) .about-heading .g2{color:#ffffff}
+.hero h1 .sub{color:#d9d4d5}

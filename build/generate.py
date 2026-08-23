@@ -147,8 +147,8 @@ def header(active=""):
   <div class="ti-left">
     <span class="ti-avail"><span class="ti-dot"></span>Open &amp; ready to help with your project</span>
     <a href="tel:{tel}"><strong>Call {phone}</strong></a>
-    <a href="https://wa.me/{wa}" target="_blank" rel="noopener"><strong>WhatsApp Us</strong></a>
     <ul class="ti-social">
+      <li><a href="https://wa.me/{wa}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">{s_wa}</a></li>
       <li><a href="{fb}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">{s_fb}</a></li>
       <li><a href="{ig}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">{s_ig}</a></li>
     </ul>
@@ -185,16 +185,17 @@ def header(active=""):
   <li><a href="https://wa.me/{wa}" target="_blank" rel="noopener">WhatsApp Us</a></li>
 </ul></div>
 </header><main id="main">
-""".format(tel=TEL, phone=PHONE, wa=WA, fb=FB, ig=IG, s_fb=SVG_FB, s_ig=SVG_IG,
+""".format(tel=TEL, phone=PHONE, wa=WA, fb=FB, ig=IG, s_fb=SVG_FB, s_ig=SVG_IG, s_wa=SVG_WA,
            s_ph=SVG_PHONE, logo=logo(), subnav=subnav, m_subnav=m_subnav)
 
 # ---- lead form (used in hero, cta band, quote page) ----
-def lead_form(title="Request Your Free Quote", note="We call you back within one business hour.", btn="Get My Free Quote"):
+def lead_form(title="Request Your Free Quote", note="We call you back within one business hour.", btn="Get My Free Quote", project=True):
     opts = ["Get a Free Quote","DIY Cupboards &amp; Flat-Packs","Kitchen Units","Bedroom Cupboards",
             "Bathroom Cabinetry","Melamine Doors","Quartz Countertops","Custom Cabinetry &amp; Shopfitting",
             "Installation","Other"]
     o = "".join("<option>%s</option>" % x for x in opts)
-    proj = "".join("<option>%s</option>" % x for x in ["New build","Renovation / replacement","DIY (self-assemble)","Full supply &amp; install"])
+    projopts = "".join("<option>%s</option>" % x for x in ["New build","Renovation / replacement","DIY (self-assemble)","Full supply &amp; install"])
+    proj = ('<select class="field full" aria-label="Project Type" data-role="project" required><option value="">Project Type</option>%s</select>' % projopts) if project else ''
     return """<form class="lead-form" data-lead>
       <h2 class="lf-title">{title}</h2>
       <span class="form-note">{note}</span>
@@ -203,7 +204,7 @@ def lead_form(title="Request Your Free Quote", note="We call you back within one
         <input class="field" type="tel" placeholder="Phone Number" required aria-label="Phone Number" data-role="phone" inputmode="tel" pattern="^(\\+?27|0)[\\s\\-().]*\\d(?:[\\s\\-().]*\\d){{8}}$" title="Enter a 10-digit SA number (e.g. 082 123 4567) or +27 followed by 9 digits.">
         <input class="field full" type="email" placeholder="Email Address" required aria-label="Email Address" data-role="email">
         <select class="field full" aria-label="How Can We Help?" data-role="service" required><option value="">How Can We Help?</option>{o}</select><input type="text" class="field full" placeholder="Please specify" data-role="service_other" style="display:none">
-        <select class="field full" aria-label="Project Type" data-role="project" required><option value="">Project Type</option>{proj}</select><input class="field full" placeholder="Suburb / Area" aria-label="Suburb / Area" data-role="suburb" required><textarea class="field full" placeholder="Tell us what you need (optional)" aria-label="Brief message (optional)" data-role="message"></textarea>
+        {proj}<input class="field full" placeholder="Suburb / Area" aria-label="Suburb / Area" data-role="suburb" required><textarea class="field full" placeholder="Tell us what you need (optional)" aria-label="Brief message (optional)" data-role="message"></textarea>
       </div>
       <label class="lead-consent" style="display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:.85rem;line-height:1.4;cursor:pointer;text-align:left"><input type="checkbox" data-role="consent" checked style="margin-top:3px;flex:0 0 auto;width:16px;height:16px;cursor:pointer"><span>I agree to be contacted by Cupboard Centre about my enquiry. See our <a href="privacy-policy.html" style="text-decoration:underline">Privacy Policy</a>.</span></label>
       <p style="margin:14px 0 0"><button type="submit" class="btn btn-green btn-arrow" style="width:100%">{btn}</button></p>
@@ -276,7 +277,7 @@ def cta_form():
   </div>
   {form}
 </div></section>
-""".format(tel=TEL, phone=PHONE, wa=WA, form=lead_form())
+""".format(tel=TEL, phone=PHONE, wa=WA, form=lead_form(project=False))
 
 def footer():
     svc = "".join('<li><a href="%s">%s</a></li>' % (h, t) for t, h in SERVICES[:6])
