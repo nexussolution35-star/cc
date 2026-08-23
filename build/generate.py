@@ -4,7 +4,7 @@ Replicates the Website B conversion framework (section sequence, forms, trust
 components) with Cupboard Centre brand, content and photography."""
 import json, os, re
 
-OUT = os.path.join(os.path.dirname(__file__), '..', 'site')
+OUT = os.path.join(os.path.dirname(__file__), '..')   # repo root
 POOL = json.load(open(os.path.join(os.path.dirname(__file__), '..', '_extract', 'images_pool.json')))
 IMG_MAP = json.load(open(os.path.join(os.path.dirname(__file__), '..', '_extract', 'img_map.json')))
 
@@ -327,18 +327,23 @@ def footer():
                   s_ph=SVG_PHONE, s_wa=SVG_WA, s_ml=SVG_MAIL, s_pin=SVG_PIN,
                   fb=FB, ig=IG, yt=YT, s_fb=SVG_FB, s_ig=SVG_IG, s_yt=SVG_YT)
 
-def page_hero(current, eyebrow, h1, subtitle="", cta=True, trail=None):
-    cr = '<a href="index.html">Home</a>'
+def page_hero(current, eyebrow, h1, subtitle="", cta=True, trail=None, bg_img=None, prefix=""):
+    cr = '<a href="%sindex.html">Home</a>' % prefix
     for label, href in (trail or []):
-        cr += '<span class="sep">›</span><a href="%s">%s</a>' % (href, label)
+        cr += '<span class="sep">›</span><a href="%s%s">%s</a>' % (prefix, href, label)
     cr += '<span class="sep">›</span><span class="cur">%s</span>' % current
     sub = '<p style="max-width:46em;margin:0 auto">%s</p>' % subtitle if subtitle else ''
-    ctab = ('<p style="margin-top:18px"><a class="btn btn-green btn-arrow" href="#cta-form" data-scroll="cta-form">Get My Free Quote</a></p>') if cta else ''
-    return """<section class="page-hero" style="padding:60px 0"><div class="wrap section-center text-white">
+    ctab = ('<p style="margin-top:18px"><a class="btn btn-ghost btn-arrow" href="#cta-form" data-scroll="cta-form">Get My Free Quote</a></p>') if cta else ''
+    # every sub-page hero carries a photo behind a red overlay (like cupboardcentre.co.za)
+    if bg_img is None:
+        bg_img = img(GENERAL, 0)[0]
+    overlay = "linear-gradient(115deg,rgba(232,30,44,.93) 0%,rgba(198,12,23,.82) 52%,rgba(150,12,20,.66) 100%)"
+    style = ('padding:76px 0;background:%s,url(%s);background-size:cover;background-position:center' % (overlay, bg_img))
+    return """<section class="page-hero" style="{style}"><div class="wrap section-center text-white">
   <nav class="crumbs" aria-label="Breadcrumb">{cr}</nav>
   <span class="eyebrow">{eyebrow}</span><h1 style="color:#fff">{h1}</h1>{sub}{ctab}
 </div></section>
-""".format(cr=cr, eyebrow=eyebrow, h1=h1, sub=sub, ctab=ctab)
+""".format(style=style, cr=cr, eyebrow=eyebrow, h1=h1, sub=sub, ctab=ctab)
 
 def write(name, html):
     path = os.path.join(OUT, name)
@@ -514,7 +519,7 @@ def build_home():
     </div>
     <div class="commit-right"><!--commit-right-->
       <div class="commit-img" style="background-image:url({commit_u})"></div>
-      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.4);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span>
+      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%;background:#fff;color:#e81e2c;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span>
     </div>
   </div>
 </div></section>
@@ -727,7 +732,7 @@ def build_service(fname, d):
     title = "%s | Cupboard Centre" % d['h1'].replace('&amp;','&')
     h = head(title, d['subtitle'].replace('&amp;','&'), "https://www.cupboardcentre.co.za/%s"%fname, og)
     h += header()
-    h += page_hero(d['h1'], d['eyebrow'], d['h1'], d['subtitle'], trail=[("Services","services.html")])
+    h += page_hero(d['h1'], d['eyebrow'], d['h1'], d['subtitle'], trail=[("Services","services.html")], bg_img=img(d['img_cat'],d['img_i'])[0])
     h += area_split_txt("Overview", d['intro_h'], d['intro'], img(d['img_cat'],d['img_i']), included=d['included'], reverse=False, bg="bg-navy")
     h += pill_section(d['offer_eyebrow'], d['offer_h'], d['offer_sub'], d['offer_tags'], bg="bg-navy-slate")
     h += feature_section("Why Cupboard Centre", "Built to a Higher Standard", d['feats'], bg="bg-navy")
@@ -751,7 +756,7 @@ def build_services_hub():
            "https://www.cupboardcentre.co.za/services.html", og)
     h+=header()
     h+=page_hero("Services","What We Do","Cupboards For Every Room &amp; Budget",
-                 "From fully installed custom kitchens to DIY flat-packs delivered to your door — one team for every cupboard.")
+                 "From fully installed custom kitchens to DIY flat-packs delivered to your door — one team for every cupboard.", bg_img=img(KITCHEN,0)[0])
     cards="".join(svc_card(t,h2,ic,im) for t,h2,ic,im in HOME_SVCS)
     h+="""<section class="section bg-navy"><div class="wrap section-center"><span class="eyebrow">Our Services</span><h2>One Team For Every Cupboard</h2>
   <p style="max-width:50em;margin:0 auto 34px">Whatever the room and whatever the budget, we supply, deliver and install cupboards built to last.</p>
@@ -762,7 +767,7 @@ def build_services_hub():
     <div class="commit-left"><span class="eyebrow">Why Clients Pick Us</span><h2>The Cupboard Centre <span class="g2">Difference</span></h2>
       <div class="commit-acc">%s</div></div>
     <div class="commit-right"><div class="commit-img" style="background-image:url(%s)"></div>
-      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.4);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
+      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:#fff;color:#e81e2c;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
   </div></div></section>
 """%("".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), img(INSTALL,5)[0])
     h+=process_section("How It Works","Our Simple Process","bg-navy")
@@ -780,7 +785,7 @@ def build_about():
            "https://www.cupboardcentre.co.za/about.html", og)
     h+=header()
     h+=page_hero("About Us","Our Story","Your Trusted DIY &amp; Custom Cupboard Experts",
-                 "Over 25 years of designing, building and installing cupboards for homes and businesses across Mpumalanga.")
+                 "Over 25 years of designing, building and installing cupboards for homes and businesses across Mpumalanga.", bg_img=img(KITCHEN,4)[0])
     # about-card light
     au,_=img(KITCHEN,6)
     h+="""<section class="section bg-navy-slate"><div class="wrap"><div class="about-card light">
@@ -803,7 +808,7 @@ def build_about():
     <div class="commit-left"><span class="eyebrow">Why Clients Pick Us</span><h2>The Cupboard Centre <span class="g2">Difference</span></h2>
       <div class="commit-acc">%s</div></div>
     <div class="commit-right"><div class="commit-img" style="background-image:url(%s)"></div>
-      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.4);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
+      <span class="commit-badge"><span style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:128px;height:128px;border-radius:50%%;background:#fff;color:#e81e2c;box-shadow:0 6px 16px rgba(0,0,0,.25);text-align:center;font-family:'Poppins',sans-serif"><b style="font-size:34px;line-height:1">25+</b><span style="font-size:11px;letter-spacing:1px;text-transform:uppercase">Years</span></span></span></div>
   </div></div></section>
 """%("".join('<div class="faq-item"><h2 class="faq-q h4">%s</h2><div class="faq-a"><p>%s</p></div></div>'%(q,a) for q,a in WHY_ITEMS), img(CUSTOM,3)[0])
     h+=reviews_section("bg-navy")
@@ -839,7 +844,7 @@ def build_contact():
            "Contact Cupboard Centre in Mbombela (Nelspruit). Call 084 683 7467, WhatsApp us or visit our showroom. Free quotes on DIY &amp; custom cupboards.",
            "https://www.cupboardcentre.co.za/contact.html", og)
     h+=header()
-    h+=page_hero("Contact Us","Get In Touch","Contact Us", cta=False)
+    h+=page_hero("Contact Us","Get In Touch","Contact Us", cta=False, bg_img=img(GENERAL,1)[0])
     h+="""<section class="section bg-navy"><div class="wrap"><div class="contact-grid">
     %s
     <div class="contact-info">
@@ -877,7 +882,7 @@ def build_gallery():
            "https://www.cupboardcentre.co.za/gallery.html", og)
     h+=header()
     h+=page_hero("Gallery","Our Work","Spaces We Have Transformed",
-                 "A selection of custom and DIY cupboard projects we’ve designed, built and installed.")
+                 "A selection of custom and DIY cupboard projects we’ve designed, built and installed.", bg_img=img(KITCHEN,0)[0])
     cats=[("all","All"),("kitchen","Kitchens"),("bedroom","Bedrooms"),("bathroom","Bathrooms"),("custom","Custom &amp; Shopfitting"),("diy","DIY Units")]
     filt="".join('<button data-filter="%s"%s>%s</button>'%(c,(' class="active"' if c=="all" else ''),l) for c,l in cats)
     # build items
@@ -907,7 +912,7 @@ def build_service_areas():
            "https://www.cupboardcentre.co.za/service-areas.html", og)
     h+=header()
     h+=page_hero("Service Areas","Where We Work","Serving Nelspruit, Mbombela &amp; Beyond",
-                 "Installation across the Lowveld from our Mbombela showroom, and DIY flat-pack delivery nationwide.")
+                 "Installation across the Lowveld from our Mbombela showroom, and DIY flat-pack delivery nationwide.", bg_img=img(GENERAL,2)[0])
     towns=["Nelspruit","Mbombela","White River","Hazyview","Barberton","Sabie","Malelane","Kaapmuiden","Kanyamazane","Nsikazi","Karino","Rocky's Drift"]
     tp="".join("<span>%s</span>"%t for t in towns)
     h+="""<section class="section bg-navy"><div class="wrap"><div class="area-split">
@@ -950,7 +955,7 @@ def build_faq():
            "https://www.cupboardcentre.co.za/faq.html", og)
     h+=header()
     h+=page_hero("FAQ","Questions?","Frequently Asked Questions",
-                 "Everything you need to know about ordering, delivery and installation.")
+                 "Everything you need to know about ordering, delivery and installation.", bg_img=img(GENERAL,3)[0])
     h+="""<section class="section bg-navy"><div class="wrap">%s</div></section>
 """%accordion(FAQ_FULL)
     h+=cta_form(); h+=marquee(); h+=footer()
@@ -965,7 +970,7 @@ def build_blog():
            "https://www.cupboardcentre.co.za/blog.html", og)
     h+=header()
     h+=page_hero("Blog","Insights","Cupboard &amp; Kitchen Tips",
-                 "Guides and advice to help you plan, choose and get the most from your cupboards.")
+                 "Guides and advice to help you plan, choose and get the most from your cupboards.", bg_img=img(KITCHEN,1)[0])
     pc="".join(post_card(p) for p in BLOG)
     h+="""<section class="section bg-navy"><div class="wrap"><div class="blog-grid">%s</div></div></section>
 """%pc
@@ -983,8 +988,7 @@ def build_post(p):
     h=h.replace('href="assets/css/styles.css"','href="../assets/css/styles.css"')
     h+=hd
     # page hero with blog trail (fix links for subdir)
-    ph=page_hero(title,"Insights",title,cta=False,trail=[("Blog","blog.html")])
-    ph=ph.replace('href="index.html"','href="../index.html"').replace('href="blog.html"','href="../blog.html"')
+    ph=page_hero(title,"Insights",title,cta=False,trail=[("Blog","blog.html")],bg_img='../'+img(imgs,1)[0],prefix="../")
     h+=ph
     hero_u,_=img(imgs,1)
     hero_u='../'+hero_u
@@ -1020,7 +1024,7 @@ def build_quote():
            "Get a free, no-obligation quote from Cupboard Centre on DIY or custom cupboards, kitchens, wardrobes, doors and countertops. We reply within one business hour.",
            "https://www.cupboardcentre.co.za/get-a-quote.html", og)
     h+=header()
-    h+=page_hero("Get a Free Quote","Free &amp; No-Obligation","Get Your Free Cupboard Quote", cta=False)
+    h+=page_hero("Get a Free Quote","Free &amp; No-Obligation","Get Your Free Cupboard Quote", cta=False, bg_img=img(KITCHEN,7)[0])
     benefits=[("wallet","Best Value, Guaranteed","Factory-direct pricing on DIY and custom cupboards — quality that beats the big retailers."),
               ("ruler","Free Measure &amp; Advice","We help you plan the right units and finishes, with a clear written quote and no pressure."),
               ("truck","Delivery &amp; Installation","Nationwide DIY delivery, or full supply-and-install across the Lowveld."),
@@ -1061,7 +1065,7 @@ def build_shop():
            "https://www.cupboardcentre.co.za/shop.html", og)
     h+=header()
     h+=page_hero("Shop","Online Shop","Shop DIY Cupboards &amp; Cabinetry",
-                 "Order DIY flat-pack units and pre-built cabinetry online — delivered to your door, nationwide.")
+                 "Order DIY flat-pack units and pre-built cabinetry online — delivered to your door, nationwide.", bg_img=img(KITCHEN,3)[0])
     cards=""
     for t,d,price,was,lst,i in PRODUCTS:
         u,a=img(lst,i,t)
@@ -1094,7 +1098,7 @@ def build_privacy():
     h=head("Privacy Policy | Cupboard Centre","How Cupboard Centre collects, uses and protects your personal information.",
            "https://www.cupboardcentre.co.za/privacy-policy.html", img(GENERAL,0)[0])
     h+=header()
-    h+=page_hero("Privacy Policy","Legal","Privacy Policy", cta=False)
+    h+=page_hero("Privacy Policy","Legal","Privacy Policy", cta=False, bg_img=img(GENERAL,0)[0])
     secs=[("Who We Are","Cupboard Centre (“we”, “us”, “our”) supplies and installs DIY and custom cupboards from our showroom at Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd, Mbombela, 1200. You can reach us on 084 683 7467 or at info@cupboardcentre.co.za."),
       ("Information We Collect","When you submit an enquiry or quote request, we collect the details you provide — such as your name, phone number, email address, suburb/area and information about your project. We may also collect basic, anonymous usage data through our website."),
       ("How We Use Your Information","We use your information to respond to your enquiry, prepare quotes, arrange delivery or installation, and keep you updated about your project. With your consent, we may occasionally send you relevant offers or news. We do not sell your personal information."),
@@ -1115,7 +1119,7 @@ def build_sitemap():
     h=head("Sitemap | Cupboard Centre","Full list of pages on the Cupboard Centre website.",
            "https://www.cupboardcentre.co.za/sitemap.html", img(GENERAL,0)[0])
     h+=header()
-    h+=page_hero("Sitemap","Sitemap","Sitemap", cta=False)
+    h+=page_hero("Sitemap","Sitemap","Sitemap", cta=False, bg_img=img(GENERAL,0)[0])
     groups=[("Main",[("Home","index.html"),("About Us","about.html"),("Contact","contact.html"),("Get a Free Quote","get-a-quote.html"),("Online Shop","shop.html"),("Gallery","gallery.html"),("FAQ","faq.html"),("Service Areas","service-areas.html")]),
             ("Services",[("All Services","services.html")]+[(t.replace('&amp;','&'),hh) for t,hh in SERVICES[:-1]]),
             ("Blog",[("Blog","blog.html")]+[(p[1],"blog/%s.html"%p[0]) for p in BLOG]),

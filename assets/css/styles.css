@@ -23,13 +23,14 @@
   --muted-2:#8c8c8c;         /* footer info */
   --line:#dddddd;
   --white:#ffffff;
-  /* Radii */
-  --r-section:50px;
-  --r-card:30px;
+  /* Radii — matched to the Cupboard Centre website (tighter corners) */
+  --r-section:25px;
+  --r-card:16px;
   --r-counter:35px;
-  --r-cta-row:25px;
+  --r-cta-row:20px;
   --r-pill:72px;
   --r-pill-full:102px;
+  --r-btn:10px;              /* boxier CTA buttons, like cupboardcentre.co.za */
   /* Shadows */
   --shadow-card:0 2px 5px rgba(0,0,0,.1);
   --shadow-panel:0px 2px 18px 0px rgba(0,0,0,0.3);
@@ -39,8 +40,8 @@
   --t-btn:background-color 300ms ease 0ms, border 300ms ease 0ms;
   /* Layout */
   --maxw:1920px;
-  --content:90%;
-  --content-max:1200px;
+  --content:92%;
+  --content-max:1240px;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -93,7 +94,7 @@ ul{margin:0;padding:0}
   cursor:pointer;border:2px solid transparent;box-sizing:border-box;
   font-family:'Poppins',Helvetica,Arial,Lucida,sans-serif;
   font-weight:600;font-size:13px;letter-spacing:.3px;text-transform:uppercase;
-  border-radius:var(--r-pill);line-height:1;text-decoration:none;
+  border-radius:var(--r-btn);line-height:1;text-decoration:none;
   padding:13px 28px;transition:var(--t-btn);text-align:center;white-space:nowrap;
 }
 .btn:hover,.btn:focus{text-decoration:none}
@@ -172,7 +173,7 @@ ul{margin:0;padding:0}
 .subnav a{color:rgba(255,255,255,.85);font-size:13px;padding:8px 18px;display:block}
 .subnav a:hover{color:var(--green-bright);background:rgba(255,255,255,.04)}
 .nav-cta a{
-  display:inline-block;background:var(--green-nav);color:#fff !important;padding:11px 20px;border-radius:50px;
+  display:inline-block;background:var(--green-nav);color:#fff !important;padding:11px 20px;border-radius:var(--r-btn);
   font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;
   line-height:1;box-shadow:0 4px 10px rgba(232,30,44,.30);transition:all .3s ease-in-out;white-space:nowrap;
 }
@@ -183,7 +184,7 @@ ul{margin:0;padding:0}
 /* compact "Call Now" button — shown next to the hamburger on mobile/tablet */
 .hdr-call{display:none;align-items:center;gap:7px;background:var(--green-nav);color:#fff !important;
   font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.3px;
-  padding:9px 15px;border-radius:50px;white-space:nowrap;line-height:1}
+  padding:9px 15px;border-radius:var(--r-btn);white-space:nowrap;line-height:1}
 .hdr-call svg{width:15px;height:15px;display:block}
 .hamburger{display:none;background:none;border:0;color:#fff;font-size:26px;line-height:1;width:34px;height:34px;cursor:pointer;transition:transform .25s ease,color .25s ease}
 .hamburger[aria-expanded="true"]{transform:rotate(90deg);color:var(--green-bright)}
@@ -530,7 +531,7 @@ textarea.field{min-height:90px;resize:vertical}
 /* Service cards — head-office DiviPlus image-card style: photo on top,
    green circular pin badge overlapping the image, left-aligned navy title */
 /* contained row + 4-up grid (head-office sizes) */
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:920px;margin:0 auto}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:none;margin:0 auto}
 .svc-card{display:block;background:#fff;border-radius:25px;overflow:hidden;
   box-shadow:var(--shadow-panel);color:var(--body);transition:transform 300ms ease 0ms}
 .svc-card:hover{transform:scale(1.05)}
@@ -906,3 +907,75 @@ a:hover{color:var(--green)}
 .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(max-width:1000px){.product-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.product-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   CUPBOARD CENTRE — "just red" theme
+   Dark panels/surfaces become brand red (was charcoal-black).
+   Kept intentionally: process-step numbers, the offer parallax
+   panel, and dark heading/body text on light sections.
+   ============================================================ */
+:root{
+  --cc-red:#e81e2c;
+  --cc-red-deep:#c00b17;
+  --cc-red-darker:#9e111a;
+  --cc-red-grad:linear-gradient(120deg,#e81e2c 0%,#cf121f 58%,#a5101a 100%);
+}
+/* keep CTA hovers in the red family (no black on hover) */
+.btn-green:hover,.btn-green:focus{background:var(--cc-red-deep);border-color:var(--cc-red-deep);color:#fff !important}
+
+/* --- header / utility bar --- */
+.topbar{background:var(--cc-red-deep)}
+.topbar .ti-avail{color:#fff}
+.topbar .ti-dot{background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.7)}
+@keyframes tiPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.topbar a:hover{color:#ffd3d5}
+.mainheader{background:var(--cc-red)}
+.nav > li > a:hover,.nav-phone:hover{color:#fff !important}
+.nav .has-sub:hover .subnav a:hover{color:#fff}
+.subnav{background:var(--cc-red-deep);border-top-color:#fff}
+.subnav a{color:rgba(255,255,255,.9)}
+.subnav a:hover{color:#fff;background:rgba(255,255,255,.10)}
+.nav-cta a{background:#ffffff;color:var(--cc-red) !important;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.nav-cta a:hover{background:#211a1b;color:#fff !important}
+.hdr-call{background:#ffffff;color:var(--cc-red) !important}
+.hamburger{color:#fff}
+.hamburger[aria-expanded="true"]{color:#fff}
+.mobile-menu{background:var(--cc-red-deep)}
+
+/* --- hero (home): red overlay over the photo --- */
+.hero-panel{
+  background-image:linear-gradient(115deg,rgba(232,30,44,.92) 0%,rgba(198,12,23,.74) 48%,rgba(150,12,20,.42) 100%),url("../images/photos/66f6cc2b52153310a558a6b1.jpg");
+}
+@media(max-width:980px){
+  .hero-panel{background-image:linear-gradient(115deg,rgba(232,30,44,.94),rgba(198,12,23,.82) 60%,rgba(150,12,20,.6)),url("../images/photos/66f6cc2b52153310a558a6b1.jpg")}
+}
+/* home hero trailing words readable on red */
+.hero h1 .sub{color:#ffd3d5}
+
+/* --- contained dark panels become red --- */
+.page-hero{background:var(--cc-red-grad)}          /* fallback; per-page inline adds the photo */
+.commit-panel{background:var(--cc-red-grad)}
+.cta-panel{background:var(--cc-red-grad)}
+.panel-dark{background:var(--cc-red-grad)}
+.about-panel{background:var(--cc-red)}
+.contact-info{background:var(--cc-red-deep)}
+.contact-info a{color:#fff;text-decoration:underline}
+.marquee-dark{background:var(--cc-red-darker)}
+.marquee-dark .mq-c{color:#ffd3d5}
+.marquee-dark .mq-s{color:#fff}
+
+/* --- footer red --- */
+.footer{background:var(--cc-red-deep)}
+.footer h4,.footer .h4{color:#fff}
+.footer ul li a::before{color:#ffd3d5}
+.footer p,.footer ul li a{color:rgba(255,255,255,.85)}
+.footer ul li a:hover{color:#fff}
+.footer .fcontact li a{color:#fff}
+.footer .fcontact li a:hover{color:#ffd3d5}
+.fsocial a{background:rgba(255,255,255,.16)}
+.fsocial a:hover{background:#fff;color:var(--cc-red)}
+.footer-bottom{color:rgba(255,255,255,.8);border-top-color:rgba(255,255,255,.2)}
+
+/* page-hero: give the photo a home + comfortable height */
+.page-hero{background-size:cover;background-position:center;min-height:300px;display:flex;align-items:center}
+.page-hero .wrap{width:100%}
