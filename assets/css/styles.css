@@ -780,7 +780,7 @@ textarea.field{min-height:90px;resize:vertical}
 .prose-block h2{color:var(--heading)}
 .included-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .included-grid li{list-style:none;display:flex;gap:10px;align-items:flex-start;color:inherit}
-.included-grid li::before{content:"\2714";color:var(--green);font-weight:700}
+.included-grid li::before{content:"";flex:0 0 auto;width:19px;height:19px;margin-top:2px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e81e2c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='3' width='14' height='18' rx='2'/><path d='M12 3v18'/><circle cx='9.3' cy='12' r='.9' fill='%23e81e2c' stroke='none'/><circle cx='14.7' cy='12' r='.9' fill='%23e81e2c' stroke='none'/></svg>") center/contain no-repeat}
 
 /* About story card — white (light) variant + premium framing */
 .about-card{box-shadow:var(--shadow-panel)}
@@ -956,12 +956,12 @@ a:hover{color:var(--green)}
 
 /* --- hero (home): keep the photo's real colours, neutral dark wash only --- */
 .hero-panel{
-  background-image:linear-gradient(115deg,rgba(22,16,17,.74) 0%,rgba(22,16,17,.44) 46%,rgba(22,16,17,.12) 100%),url("../images/photos/66f6cc2b52153310a558a6b1.jpg");
+  background-image:linear-gradient(115deg,rgba(28,20,21,.60) 0%,rgba(28,20,21,.34) 48%,rgba(28,20,21,.10) 100%),url("../images/photos/66f6cc2b52153310a558a6b1.jpg");
 }
 @media(max-width:980px){
   .hero-panel{background-image:linear-gradient(115deg,rgba(22,16,17,.82),rgba(22,16,17,.6) 60%,rgba(22,16,17,.4)),url("../images/photos/66f6cc2b52153310a558a6b1.jpg")}
 }
-.hero h1 .sub{color:#ff4d4d}
+.hero h1 .sub{color:#a10c11}
 
 /* --- contained panels --- */
 /* sub-page hero: neutral wash fallback (per-page inline adds the photo) */
@@ -1021,7 +1021,7 @@ a:hover{color:var(--green)}
 .about-card.light .about-heading .g2,
 .reviews-score .g2{color:var(--cc-red-dark)}
 .about-card:not(.light) .about-heading .g2{color:#ffffff}
-.hero h1 .sub{color:#ff4d4d}
+.hero h1 .sub{color:#a10c11}
 
 /* ============================================================
    Shop: nav cart icon, product detail, cart page
@@ -1067,3 +1067,6 @@ a:hover{color:var(--green)}
 .cart-total-row{display:flex;justify-content:space-between;align-items:baseline;font-family:'Poppins',sans-serif;color:var(--heading);font-size:16px;margin-bottom:2px}
 .cart-total-row strong{font-size:26px;color:var(--cc-red)}
 @media(max-width:600px){.cart-item{grid-template-columns:64px 1fr;grid-auto-flow:row}.cart-item img{width:64px;height:64px}.cart-item .ci-line{grid-column:2}}
+
+/* sub-page hero: photo shows through a light wash; text keeps a soft shadow */
+.page-hero .wrap h1,.page-hero .wrap .eyebrow,.page-hero .crumbs{text-shadow:0 2px 14px rgba(0,0,0,.55)}
