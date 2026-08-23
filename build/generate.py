@@ -15,7 +15,7 @@ TEL    = "0846837467"
 WA     = "27846837467"           # WhatsApp
 EMAIL  = "info@cupboardcentre.co.za"
 ADDR   = "Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd, Mbombela, 1200"
-ADDR_Q = "Point+S+Building+Old+Pretoria+Road+Mbombela"
+ADDR_Q = "Cupboard+Centre,+Old+Pretoria+Rd,+Mbombela,+1200"
 FB     = "https://www.facebook.com/profile.php?id=61565764388558"
 IG     = "https://www.instagram.com/cupboardcentre_diy"
 YT     = "https://youtube.com/"
@@ -58,20 +58,26 @@ SVG_WA    = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><pa
 SVG_SHIELD= '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 6.5 4.7v6.8c0 4.6 3.4 8.6 5.5 9.8 2.1-1.2 5.5-5.2 5.5-9.8V4.7L12 2.5z" fill="none" stroke="#ff5d5d" stroke-width="2.6"></path><path d="M12 2.5 6.5 4.7v6.8c0 4.6 3.4 8.6 5.5 9.8V2.5z" fill="#ff5d5d"></path></svg>'
 # generic service icons
 IC = {
- 'install':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l4 4"/><path d="M3 21l3-1 11-11-2-2L4 18z"/><path d="M15 5l2-2 4 4-2 2"/></svg>',
- 'kitchen':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 12h16"/><path d="M9 7v2M9 15v2"/></svg>',
- 'bed':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5"/><path d="M3 14h18"/><path d="M4 17v2M20 17v2"/><path d="M7 10V8h4v2"/></svg>',
- 'bath':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V6a2 2 0 0 1 4 0"/><path d="M3 12h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M7 19l-1 2M18 19l1 2"/></svg>',
- 'door':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><circle cx="15" cy="12" r="1" fill="currentColor"/></svg>',
- 'quartz':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-2 3H5z"/><path d="M5 12v7M19 12v7M5 19h14"/></svg>',
- 'custom':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/><path d="M18 14l.9 2.1L21 17l-2.1.9L18 20l-.9-2.1L15 17l2.1-.9z"/></svg>',
- 'diy':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>',
- 'truck':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>',
- 'check':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4-3 7-7 8-4-1-7-4-7-8V6z"/><path d="M9 12l2 2 4-4"/></svg>',
- 'ruler':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16L16 4l4 4L8 20z"/><path d="M8 8l2 2M11 5l2 2M5 11l2 2"/></svg>',
- 'wallet':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 12h2"/><path d="M3 9h13a2 2 0 0 1 0 4H3"/></svg>',
- 'target':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>',
- 'eye':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+ 'install':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.6-3.6a6 6 0 0 1-7.9 7.9l-6.3 6.3a2.1 2.1 0 0 1-3-3l6.3-6.3a6 6 0 0 1 7.9-7.9z"/></svg>',
+ 'kitchen':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M9 8.5h.01M15 8.5h.01"/><path d="M4 13h16"/></svg>',
+ 'bed':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M9.5 8v4M14.5 8v4"/></svg>',
+ 'bath':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M8 12V7a2 2 0 0 1 2-2h2"/><path d="M11 5h4"/></svg>',
+ 'door':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1.5"/><circle cx="15.2" cy="12" r="1" fill="currentColor" stroke="none"/></svg>',
+ 'quartz':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5h18l-2 3H5z"/><path d="M5 11.5V19M19 11.5V19M5 19h14"/></svg>',
+ 'custom':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
+ 'diy':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8v8a1.8 1.8 0 0 1-1 1.6l-7 3.9a1.8 1.8 0 0 1-1.8 0l-7-3.9A1.8 1.8 0 0 1 3 16V8a1.8 1.8 0 0 1 1-1.6l7-3.9a1.8 1.8 0 0 1 1.8 0l7 3.9A1.8 1.8 0 0 1 21 8z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>',
+ 'truck':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 17V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1"/><path d="M14 9h4l4 4v4a1 1 0 0 1-1 1h-1"/><path d="M10 18h4"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>',
+ 'check':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.2 13.6 7 22l5-3 5 3-1.2-8.4"/></svg>',
+ 'ruler':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="7" width="19" height="10" rx="2"/><path d="M6.5 7v3M10 7v4M13.5 7v3M17 7v4"/></svg>',
+ 'wallet':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.3" cy="7.3" r="1.4" fill="currentColor" stroke="none"/></svg>',
+ 'target':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg>',
+ 'eye':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>',
+ 'hinge':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="16" rx="1.2"/><rect x="13" y="4" width="7" height="16" rx="1.2"/><circle cx="12" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/></svg>',
+ 'calendar':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M16 2.5v4M8 2.5v4M3 9.5h18"/><path d="m9 15 2 2 4-4"/></svg>',
+ 'drop':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 5 12 2.5C11.5 5 10 7.9 8 9.5 6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>',
+ 'layout':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.2"/><rect x="14" y="3" width="7" height="5" rx="1.2"/><rect x="14" y="12" width="7" height="9" rx="1.2"/><rect x="3" y="16" width="7" height="5" rx="1.2"/></svg>',
+ 'gem':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l3.5 5.5L12 21 2.5 8.5z"/><path d="M2.5 8.5h19M9 3 7 8.5l5 12.5 5-12.5-2-5.5"/></svg>',
+ 'pin':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>',
 }
 
 print("gen.py config loaded. Category counts:",
@@ -138,11 +144,14 @@ def logo(href="index.html"):
             '</span><span class="bl-text"><span class="bl-1">Cupboard Centre</span>'
             '<span class="bl-2">DIY &amp; Custom Cupboards</span></span></span></a>') % href
 
-def header(active=""):
+def header(active="", cart=False):
     def a(label, href):
         return '<li><a href="%s">%s</a></li>' % (href, label)
     subnav = "".join('<li><a href="%s">%s</a></li>' % (h, t) for t, h in SERVICES)
     m_subnav = subnav
+    cart_svg = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                '<circle cx="9" cy="20.5" r="1.5"/><circle cx="18" cy="20.5" r="1.5"/>'
+                '<path d="M2.5 3h2.2l2.3 12a1.6 1.6 0 0 0 1.6 1.3h8.9a1.6 1.6 0 0 0 1.6-1.3L21 6.5H6.2"/></svg>')
     return """<div class="topbar"><div class="wrap">
   <div class="ti-left">
     <span class="ti-avail"><span class="ti-dot"></span>Open &amp; ready to help with your project</span>
@@ -166,6 +175,7 @@ def header(active=""):
     <li><a href="contact.html">Contact</a></li>
   </ul></nav>
   <div class="hdr-right">
+    <a class="nav-cart" href="cart.html" aria-label="View cart">{cart_svg}<span class="cart-count" data-cart-count hidden>0</span></a>
     <span class="nav-cta"><a href="get-a-quote.html">Get a Free Quote</a></span>
     <a class="hdr-call" href="tel:{tel}" aria-label="Call us now">{s_ph}<span>Call Now</span></a>
     <button class="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
@@ -180,13 +190,14 @@ def header(active=""):
   <li><a href="about.html">About</a></li>
   <li><a href="blog.html">Blog</a></li>
   <li><a href="contact.html">Contact</a></li>
+  <li><a href="cart.html">Cart</a></li>
   <li><a href="get-a-quote.html">Get a Free Quote</a></li>
   <li><a href="tel:{tel}">Call {phone}</a></li>
   <li><a href="https://wa.me/{wa}" target="_blank" rel="noopener">WhatsApp Us</a></li>
 </ul></div>
 </header><main id="main">
 """.format(tel=TEL, phone=PHONE, wa=WA, fb=FB, ig=IG, s_fb=SVG_FB, s_ig=SVG_IG, s_wa=SVG_WA,
-           s_ph=SVG_PHONE, logo=logo(), subnav=subnav, m_subnav=m_subnav)
+           s_ph=SVG_PHONE, logo=logo(), subnav=subnav, m_subnav=m_subnav, cart_svg=cart_svg)
 
 # ---- lead form (used in hero, cta band, quote page) ----
 def lead_form(title="Request Your Free Quote", note="We call you back within one business hour.", btn="Get My Free Quote", project=True):
@@ -219,7 +230,7 @@ REVIEWS = [
  ("Johan Pretorius","Google Review","5.0","We used Cupboard Centre to fit out our shop counters and office cupboards. Great craftsmanship, delivered on time and on budget. Highly recommend.",True),
  ("Nomsa Z.","Google Review","5.0","From quote to install was quick and hassle-free. The bathroom vanity with the quartz top looks like something out of a magazine.",False),
  ("Andrew S.","Google Review","5.0","Excellent DIY kitchen units at a fair price. Delivery to White River was on time and the quality is genuinely solid.",False),
- ("Chantelle B.","Facebook Review","5.0","The custom walk-in wardrobe they designed for us is stunning — shelving, drawers and shoe storage exactly where we wanted them.",False),
+ ("Chantelle B.","Facebook Review","5.0","The custom walk-in wardrobe they designed for us is stunning, shelving, drawers and shoe storage exactly where we wanted them.",False),
 ]
 GREV = '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"></path><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"></path><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"></path><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"></path></svg>'
 FREV = '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#1877F2" d="M24 4C12.95 4 4 12.95 4 24c0 9.98 7.31 18.25 16.88 19.75V29.78h-5.08V24h5.08v-4.41c0-5.02 2.99-7.79 7.56-7.79 2.19 0 4.48.39 4.48.39v4.92h-2.52c-2.49 0-3.26 1.54-3.26 3.12V24h5.55l-.89 5.78h-4.66v13.97C36.69 42.25 44 33.98 44 24 44 12.95 35.05 4 24 4z"></path></svg>'
@@ -272,7 +283,7 @@ def cta_form():
   <div>
     <span class="eyebrow">Free, No-Obligation Quote</span>
     <h2>Get Your Free Cupboard Quote Today</h2>
-    <p>No pressure, no obligation — just honest advice and a clear written quote. Tell us about your space and we’ll get straight back to you.</p>
+    <p>No pressure, no obligation, just honest advice and a clear written quote. Tell us about your space and we’ll get straight back to you.</p>
     <p class="btn-row" style="margin-top:18px"><a class="btn btn-ghost" href="tel:{tel}">Call {phone}</a> <a class="btn btn-ghost" href="https://wa.me/{wa}" target="_blank" rel="noopener">WhatsApp Us</a></p>
   </div>
   {form}
@@ -286,7 +297,7 @@ def footer():
     <div>
       {logo}
       <h2 class="h4" style="margin-top:18px">About Us</h2>
-      <p>For over 25 years, Cupboard Centre has supplied and installed top-quality DIY and custom cupboards — kitchens, bedrooms, bathrooms, melamine doors and quartz countertops — for homes and businesses across Mpumalanga.</p>
+      <p>For over 25 years, Cupboard Centre has supplied and installed top-quality DIY and custom cupboards, kitchens, bedrooms, bathrooms, melamine doors and quartz countertops, for homes and businesses across Mpumalanga.</p>
     </div>
     <div><h2 class="h4">Our Services</h2><ul>{svc}</ul></div>
     <div><h2 class="h4">Quick Links</h2><ul>
@@ -331,7 +342,7 @@ def page_hero(current, eyebrow, h1, subtitle="", cta=True, trail=None, bg_img=No
     # every sub-page hero carries a photo behind a red overlay (like cupboardcentre.co.za)
     if bg_img is None:
         bg_img = img(GENERAL, 0)[0]
-    overlay = "linear-gradient(rgba(22,16,17,.62),rgba(22,16,17,.62))"
+    overlay = "linear-gradient(rgba(22,16,17.62),rgba(22,16,17.62))"
     style = ('padding:76px 0;background:%s,url(%s);background-size:cover;background-position:center' % (overlay, bg_img))
     return """<section class="page-hero" style="{style}"><div class="wrap section-center text-white">
   <nav class="crumbs" aria-label="Breadcrumb">{cr}</nav>
@@ -353,26 +364,26 @@ BLOG = [
   "The quest for the perfect kitchen units often hits a snag when it comes to selecting units that blend function with style. Here’s how to get it right.",
   "Kitchens", KITCHEN,
   [("Start with how you actually use your kitchen","Before you fall in love with a finish, map how you cook, store and move. The best kitchen units are planned around the ‘work triangle’ between your sink, stove and fridge, with the cupboards and drawers you reach for most placed within easy reach. At Cupboard Centre we start every kitchen with this conversation, because layout drives everything else."),
-   ("Choose a door finish that suits your life","Melamine doors are hard-wearing, easy to clean and available in dozens of colours and wood-grains — ideal for busy family kitchens. For a more premium look, add a quartz countertop and soft-close hinges. We’ll show you real samples so you can see and feel the difference before you commit."),
+   ("Choose a door finish that suits your life","Melamine doors are hard-wearing, easy to clean and available in dozens of colours and wood-grains, ideal for busy family kitchens. For a more premium look, add a quartz countertop and soft-close hinges. We’ll show you real samples so you can see and feel the difference before you commit."),
    ("Don’t forget storage that works harder","Deep drawers for pots, built-in spice racks, a dedicated appliance garage and a proper pantry column turn an ordinary kitchen into one that’s a pleasure to use. Custom or DIY, we size every unit to your space so nothing is wasted."),
-   ("DIY or fully installed?","If you’re handy, our pre-cut, pre-drilled DIY kitchen units arrive labelled and ready to assemble — a big saving. Prefer to leave it to us? Our team measures, builds and installs the whole kitchen for you. Either way, the quality is the same.")]),
+   ("DIY or fully installed?","If you’re handy, our pre-cut, pre-drilled DIY kitchen units arrive labelled and ready to assemble, a big saving. Prefer to leave it to us? Our team measures, builds and installs the whole kitchen for you. Either way, the quality is the same.")]),
  ("durable-quartz-countertops","The Ultimate Guide to Durable Quartz Countertops",
-  "Tired of countertops that can’t stand up to daily use? We unveil why quartz outperforms granite and concrete — and how to choose the right slab.",
+  "Tired of countertops that can’t stand up to daily use? We unveil why quartz outperforms granite and concrete, and how to choose the right slab.",
   "Countertops", KITCHEN,
-  [("Why quartz has become the countertop of choice","Quartz is an engineered stone — natural quartz crystals bound with resin — which makes it exceptionally hard, non-porous and consistent in colour. Unlike natural stone, it doesn’t need sealing, resists stains and scratches, and shrugs off the daily grind of a working kitchen."),
+  [("Why quartz has become the countertop of choice","Quartz is an engineered stone, natural quartz crystals bound with resin, which makes it exceptionally hard, non-porous and consistent in colour. Unlike natural stone, it doesn’t need sealing, resists stains and scratches, and shrugs off the daily grind of a working kitchen."),
    ("Quartz vs granite vs melamine tops","Granite is beautiful but porous and needs regular sealing. Melamine tops are affordable and versatile. Quartz sits at the premium end: the low-maintenance durability of stone with a flawless, uniform finish. We stock Eazi Quartz and can match it to your doors."),
-   ("Caring for your quartz top","Simply wipe with warm soapy water — no harsh chemicals or abrasive pads needed. Use a board for chopping and a trivet for very hot pots, and your quartz will look showroom-fresh for decades."),
+   ("Caring for your quartz top","Simply wipe with warm soapy water, no harsh chemicals or abrasive pads needed. Use a board for chopping and a trivet for very hot pots, and your quartz will look showroom-fresh for decades."),
    ("Getting the right fit","A countertop is only as good as its template and installation. Our team measures precisely and installs cleanly, so your joins are tight and your overhangs correct.")]),
  ("granite-countertops-for-your-home","Timeless Elegance: Granite Countertops for Your Home",
   "Granite brings natural character to a kitchen or bathroom. Here’s what to know about choosing, sealing and living with a granite surface.",
   "Countertops", KITCHEN,
-  [("The natural beauty of granite","No two granite slabs are alike. That natural variation — the flecks, veins and depth of colour — gives every kitchen a one-of-a-kind centrepiece that engineered surfaces can’t quite replicate."),
+  [("The natural beauty of granite","No two granite slabs are alike. That natural variation, the flecks, veins and depth of colour, gives every kitchen a one-of-a-kind centrepiece that engineered surfaces can’t quite replicate."),
    ("What to expect from natural stone","Granite is heat-resistant and hard-wearing, but because it’s porous it should be sealed on installation and re-sealed periodically. Done right, it’s a surface that lasts a lifetime."),
-   ("Pairing granite with the right cabinetry","Warm wood-grain melamine doors, crisp white units or bold dark cabinetry — granite works with all of them. We’ll help you balance the tones so your countertop and cupboards feel like one design.")]),
+   ("Pairing granite with the right cabinetry","Warm wood-grain melamine doors, crisp white units or bold dark cabinetry, granite works with all of them. We’ll help you balance the tones so your countertop and cupboards feel like one design.")]),
  ("expert-solutions-for-shop-fitting","Retail Transformation: Expert Solutions for Shop Fitting",
   "The right shop fitting turns floor space into sales. See how custom counters, display units and storage are built to work as hard as you do.",
   "Custom & Shopfitting", CUSTOM,
-  [("Shop fitting that sells","Your counters, shelving and display units are silent salespeople. We design and build retail fittings that guide customers, showcase stock and make the most of every square metre — all finished in hard-wearing materials that survive heavy trading."),
+  [("Shop fitting that sells","Your counters, shelving and display units are silent salespeople. We design and build retail fittings that guide customers, showcase stock and make the most of every square metre, all finished in hard-wearing materials that survive heavy trading."),
    ("Built for your brand and your space","From reception desks and service counters to modular storage and back-of-house cabinetry, everything is made to measure. Choose finishes and colours that match your brand, and we’ll handle the build and installation."),
    ("Durable where it counts","Retail takes a beating. We specify robust melamine, quality edging and soft-close hardware so your fittings still look sharp years down the line.")]),
 ]
@@ -426,19 +437,19 @@ def work_carousel():
 
 # home FAQ + why-accordion content
 WHY_ITEMS = [
- ("25+ Years of Cupboard Expertise","Over two-and-a-half decades supplying and installing cupboards across Mpumalanga — 1028+ projects and counting."),
- ("Custom &amp; DIY Under One Roof","From flat-pack DIY kits you assemble yourself to fully custom, installed cabinetry — whatever suits your budget and skill."),
+ ("25+ Years of Cupboard Expertise","Over two-and-a-half decades supplying and installing cupboards across Mpumalanga, 1028+ projects and counting."),
+ ("Custom &amp; DIY Under One Roof","From flat-pack DIY kits you assemble yourself to fully custom, installed cabinetry, whatever suits your budget and skill."),
  ("Quality Materials, Quality Hardware","Hard-wearing melamine, Eazi Quartz tops and soft-close hinges and runners as standard, not as an upsell."),
- ("Free Measure &amp; Quote","We measure your space and give you a clear, written, no-obligation quote before any work begins."),
+ ("Free, No-Obligation Quotes","We give you a clear, written, no-obligation quote up front, so you know exactly what to expect before any work begins."),
  ("Nationwide Delivery","Pre-cut, labelled DIY units delivered to your door anywhere in South Africa."),
  ("Expert Installation Team","Prefer it done for you? Our installers fit kitchens, wardrobes and vanities cleanly and on schedule."),
 ]
 FAQ_ITEMS = [
- ("Do you supply DIY cupboards as well as installed units?","Yes. You can order pre-cut, pre-drilled DIY flat-pack units to assemble yourself, or let our team supply and install a complete custom solution — kitchens, bedrooms and bathrooms."),
- ("Which areas do you cover?","Our showroom is in Mbombela (Nelspruit) and we install across the Lowveld — Nelspruit, White River, Hazyview and surrounds. Our DIY flat-pack units are delivered nationwide."),
+ ("Do you supply DIY cupboards as well as installed units?","Yes. You can order pre-cut, pre-drilled DIY flat-pack units to assemble yourself, or let our team supply and install a complete custom solution, kitchens, bedrooms and bathrooms."),
+ ("Which areas do you cover?","Our showroom is in Mbombela (Nelspruit) and we install across the Lowveld, Nelspruit, White River, Hazyview and surrounds. Our DIY flat-pack units are delivered nationwide."),
  ("Can you make cupboards to my exact measurements?","Absolutely. Custom cabinetry is our speciality. We measure your space and build units to fit precisely, with the finishes, colours and hardware you choose."),
- ("Do you offer quartz and melamine countertops?","Yes — we supply and fit Eazi Quartz countertops and a wide range of melamine tops and doors to match your cabinetry."),
- ("How do I get a quote?","Send us your measurements or book a free measure. Call 084 683 7467, WhatsApp us, or fill in the quote form and we’ll come back to you within one business hour."),
+ ("Do you offer quartz and melamine countertops?","Yes, we supply and fit Eazi Quartz countertops and a wide range of melamine tops and doors to match your cabinetry."),
+ ("How do I get a quote?","Send us your measurements or your plans, or pop into the showroom. Call 084 683 7467, WhatsApp us, or fill in the quote form and we’ll come back to you within one business hour."),
 ]
 
 def accordion(items, cls="faq-list"):
@@ -463,7 +474,7 @@ def build_home():
     about_u,_ = img(KITCHEN,4)
     commit_u,_ = img(INSTALL,0)
     h  = head("Cupboard Centre | Nelspruit's Best DIY &amp; Custom Cupboard Solutions",
-              "DIY &amp; custom cupboards in Nelspruit &amp; Mbombela — kitchens, bedroom &amp; bathroom cabinetry, melamine doors and quartz countertops. Supply, delivery &amp; installation. Free quote.",
+              "DIY &amp; custom cupboards in Nelspruit &amp; Mbombela, kitchens, bedroom &amp; bathroom cabinetry, melamine doors and quartz countertops. Supply, delivery &amp; installation. Free quote.",
               "https://www.cupboardcentre.co.za/", hero_u)
     h += header("home")
     # 1. HERO
@@ -471,7 +482,7 @@ def build_home():
   <div class="hero-content">
     <span class="hero-eyebrow">{shield}Nelspruit &amp; Mbombela · 25+ Years of Cupboards</span>
     <h1>Nelspruit's Best Choice For<br><span class="sub">DIY &amp; Custom Cupboard Solutions</span></h1>
-    <p>A one-stop shop for cupboards — from custom kitchens, bedroom &amp; bathroom cabinetry and quartz countertops to pre-cut DIY flat-packs delivered to your door. Supply, delivery and expert installation.</p>
+    <p>A one-stop shop for cupboards, from custom kitchens, bedroom &amp; bathroom cabinetry and quartz countertops to pre-cut DIY flat-packs delivered to your door. Supply, delivery and expert installation.</p>
     <div class="review-badges"><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{grev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Google Reviews</span></span></a><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{frev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Facebook Reviews</span></span></a></div>
     <div class="hero-sub-claims"><span>Custom &amp; DIY</span><span>Free Quote</span><span>Nationwide Delivery</span></div>
   </div>
@@ -488,7 +499,7 @@ def build_home():
     <div class="about-panel">
       <span class="about-eyebrow">A Local Team. A Lasting Standard.</span>
       <h3 class="about-heading">Cupboards Done <span class="g2">Properly</span></h3>
-      <p>For over 25 years, Cupboard Centre has been Nelspruit’s go-to for cupboard solutions. Come to us with an idea and we’ll bring a complete solution — we specialise in DIY cupboard kits you can design, build and install yourself, as well as fully custom, professionally fitted cabinetry. With efficient turnaround times, you get exactly what you need without the wait.</p>
+      <p>For over 25 years, Cupboard Centre has been Nelspruit’s go-to for cupboard solutions. Come to us with an idea and we’ll bring a complete solution, we specialise in DIY cupboard kits you can design, build and install yourself, as well as fully custom, professionally fitted cabinetry. With efficient turnaround times, you get exactly what you need without the wait.</p>
       <a class="btn btn-ghost" href="about.html">Learn More About Us</a>
     </div>
   </div>
@@ -498,7 +509,7 @@ def build_home():
     cards="".join(svc_card(t,h2,ic,im) for t,h2,ic,im in HOME_SVCS)
     h += """<section id="services" class="section bg-navy-slate"><div class="wrap section-center">
   <span class="eyebrow">What We Do</span><h2>Everything For Your Cupboards, One Team</h2>
-  <p style="max-width:50em;margin:0 auto 34px">From a full custom kitchen to a single DIY flat-pack wardrobe — kitchens, bedrooms, bathrooms, doors and countertops, tailored to your space and budget.</p>
+  <p style="max-width:50em;margin:0 auto 34px">From a full custom kitchen to a single DIY flat-pack wardrobe, kitchens, bedrooms, bathrooms, doors and countertops, tailored to your space and budget.</p>
   <div class="svc-grid">{cards}</div>
   <p class="btn-row" style="margin-top:30px;justify-content:center"><a class="btn btn-green btn-arrow" href="services.html">Explore All Services</a> <a class="btn btn-outline" href="shop.html">Shop DIY Online</a></p>
 </div></section>
@@ -522,8 +533,8 @@ def build_home():
     h += work_carousel()
     # 7. PROCESS
     steps=[("Get in Touch","Call, WhatsApp or send your measurements for a clear, tailored cupboard solution suited to your space and budget."),
-           ("Measure &amp; Quote","We measure your space (or check your sizes) and build a written plan and quote — free and with no obligation."),
-           ("Build &amp; Deliver","We manufacture your units to spec and deliver — pre-cut and labelled for DIY, or ready for our installers."),
+           ("Plan &amp; Quote","We confirm your sizes and finishes and prepare a written plan and quote, with no obligation."),
+           ("Build &amp; Deliver","We manufacture your units to spec and deliver, pre-cut and labelled for DIY, or ready for our installers."),
            ("Install &amp; Enjoy","Our team fits everything cleanly and on schedule, or supports your DIY build every step of the way.")]
     ps="".join('<div class="proc-step"><div class="proc-num">%d</div><h2 class="h4">%s</h2><p>%s</p></div>'%(i+1,t,d) for i,(t,d) in enumerate(steps))
     h += """<section id="process" class="section bg-navy"><div class="wrap section-center">
@@ -536,7 +547,7 @@ def build_home():
   <div class="offer-cta">
     <span class="eyebrow offer-eyebrow">Our Offer</span>
     <h2>Get a Free, No-Obligation Quote</h2>
-    <p class="offer-line"><span class="offer-ico">{ph}</span>Call <a href="tel:{tel}">{phone}</a> or WhatsApp us — we’ll help you plan your cupboards and send a clear written quote, free and on your schedule.</p>
+    <p class="offer-line"><span class="offer-ico">{ph}</span>Call <a href="tel:{tel}">{phone}</a> or WhatsApp us, we’ll help you plan your cupboards and send a clear written quote, free and on your schedule.</p>
     <a class="btn btn-navy btn-arrow" href="#cta-form" data-scroll="cta-form">Get My Free Quote</a>
   </div>
 </div></section>
@@ -611,8 +622,8 @@ def feature_section(eyebrow,h2,feats,bg="bg-navy"):
 
 def process_section(eyebrow="How It Works",h2="Our Simple Process",bg="bg-navy-slate"):
     steps=[("Get in Touch","Call, WhatsApp or send your measurements for a tailored solution and a clear, written quote."),
-           ("Measure &amp; Quote","We confirm sizes and finishes and build a written plan and quote — free, with no obligation."),
-           ("Build &amp; Deliver","We manufacture to spec and deliver — pre-cut and labelled for DIY, or ready for our installers."),
+           ("Plan &amp; Quote","We confirm your sizes and finishes and prepare a written plan and quote, with no obligation."),
+           ("Build &amp; Deliver","We manufacture to spec and deliver, pre-cut and labelled for DIY, or ready for our installers."),
            ("Install &amp; Enjoy","Our team fits everything cleanly and on schedule, or supports your DIY build all the way.")]
     ps="".join('<div class="proc-step"><div class="proc-num">%d</div><h2 class="h4">%s</h2><p>%s</p></div>'%(i+1,t,d) for i,(t,d) in enumerate(steps))
     return '<section class="section %s"><div class="wrap section-center"><span class="eyebrow">%s</span><h2>%s</h2><div class="proc-grid" style="margin-top:30px">%s</div></div></section>\n'%(bg,eyebrow,h2,ps)
@@ -638,82 +649,82 @@ SERVICE_PAGES = {
    eyebrow="Our Services", h1="Complete Cupboard Installation",
    subtitle="Professional supply and installation of kitchens, wardrobes and cabinetry across Nelspruit and the Lowveld.",
    intro_h="Installation Done Right, First Time",
-   intro=["Come to us with an idea and leave with a complete solution. Our installation team handles everything — measuring, manufacturing and fitting — so your new cupboards go in cleanly, level and built to last.",
+   intro=["Come to us with an idea and leave with a complete solution. Our installation team handles everything, measuring, manufacturing and fitting, so your new cupboards go in cleanly, level and built to last.",
           "Whether it’s a full custom kitchen, built-in bedroom wardrobes or a bathroom vanity, we manage the whole project with efficient turnaround times and a tidy site at the end of every job."],
-   included=["Free on-site measure &amp; assessment","Kitchen &amp; scullery installation","Built-in bedroom wardrobes","Bathroom vanities &amp; storage","Countertop supply &amp; fitting","Soft-close hinges &amp; runners"],
+   included=["Accurate measuring &amp; planning","Kitchen &amp; scullery installation","Built-in bedroom wardrobes","Bathroom vanities &amp; storage","Countertop supply &amp; fitting","Soft-close hinges &amp; runners"],
    img_cat=INSTALL, img_i=2,
    offer_eyebrow="What We Install", offer_h="Every Room, One Team",
    offer_sub="From a single wardrobe to a whole home or office, professionally fitted.",
    offer_tags=["Kitchens","Sculleries","Bedroom Wardrobes","Bathroom Vanities","TV &amp; Wall Units","Office Cupboards","Shop Fittings","Laundry Units"],
    feats=[("ruler","Precision Measured","We measure every wall, corner and service point so your units fit the space exactly."),
-          ("check","Quality Hardware","Soft-close hinges and runners, quality edging and hard-wearing melamine as standard."),
-          ("install","Clean, On-Schedule Fitting","Experienced installers who work neatly, protect your home and finish on time.")]),
+          ("hinge","Quality Hardware","Soft-close hinges and runners, quality edging and hard-wearing melamine as standard."),
+          ("calendar","Clean, On-Schedule Fitting","Experienced installers who work neatly, protect your home and finish on time.")]),
  "kitchen-units.html": dict(
    eyebrow="Our Services", h1="DIY Kitchen Units",
-   subtitle="Pre-cut, pre-drilled kitchen units you can assemble yourself — or let us build and install them for you.",
+   subtitle="Pre-cut, pre-drilled kitchen units you can assemble yourself, or let us build and install them for you.",
    intro_h="Kitchen Units to Suit Your Budget",
-   intro=["Our DIY kitchen units arrive pre-cut, edged and drilled, labelled and ready to assemble over a weekend — a serious saving without cutting corners on quality.",
+   intro=["Our DIY kitchen units arrive pre-cut, edged and drilled, labelled and ready to assemble over a weekend, a serious saving without cutting corners on quality.",
           "Prefer a turnkey kitchen? We’ll design, manufacture and install the whole thing, complete with melamine or quartz tops, soft-close everything and the storage you actually need."],
    included=["Base &amp; wall units in standard sizes","Custom sizes on request","Melamine &amp; quartz countertops","Soft-close hinges &amp; drawer runners","Built-in oven &amp; hob provision","Delivered nationwide"],
    img_cat=KITCHEN, img_i=3,
    offer_eyebrow="What You Can Order", offer_h="Build the Kitchen You Want",
    offer_sub="Mix and match units, finishes and tops to design a kitchen around how you cook.",
    offer_tags=["Base Units","Wall Units","Tall / Pantry Units","Corner Units","Drawer Stacks","Oven Housings","Sink Units","Islands"],
-   feats=[("diy","Easy DIY Assembly","Pre-cut, labelled and drilled — with a bit of DIY know-how you’ll have it together in a weekend."),
+   feats=[("diy","Easy DIY Assembly","Pre-cut, labelled and drilled, with a bit of DIY know-how you’ll have it together in a weekend."),
           ("wallet","Factory-Direct Value","Buying direct from the manufacturer means showroom quality at DIY prices."),
           ("truck","Delivered to Your Door","Flat-packed and protected for delivery anywhere in South Africa.")]),
  "bedroom-bathroom-cabinetry.html": dict(
    eyebrow="Our Services", h1="Bedroom &amp; Bathroom Cabinetry",
-   subtitle="Built-in wardrobes, walk-in closets and bathroom vanities — custom-made to fit your space and style.",
+   subtitle="Built-in wardrobes, walk-in closets and bathroom vanities, custom-made to fit your space and style.",
    intro_h="Storage That Fits Your Life",
    intro=["From floor-to-ceiling built-in wardrobes with hanging space, shelving, drawers and shoe racks, to sleek bathroom vanities topped with quartz, we design cabinetry around the way you live.",
-          "Choose your finishes, handles and internal layout — mirrors, LED lighting, soft-close drawers — and we’ll build and install it to a flawless fit."],
+          "Choose your finishes, handles and internal layout, mirrors, LED lighting, soft-close drawers, and we’ll build and install it to a flawless fit."],
    included=["Built-in &amp; walk-in wardrobes","Chest of drawers &amp; shelving","Mirror &amp; sliding doors","Shoe storage &amp; accessories","Bathroom vanities &amp; cabinets","Waterproof board options"],
    img_cat=BEDROOM, img_i=4,
    offer_eyebrow="What We Build", offer_h="Bedrooms &amp; Bathrooms, Beautifully Organised",
    offer_sub="Every wardrobe and vanity is made to measure for a seamless fit.",
    offer_tags=["Built-in Wardrobes","Walk-in Closets","Sliding-Door Robes","Chest Drawers","Bathroom Vanities","Floating Units","Mirror Cabinets","Linen Cupboards"],
-   feats=[("bed","Made to Measure","Every unit is built to your exact dimensions — no wasted space, no awkward gaps."),
-          ("bath","Water-Smart Bathrooms","Moisture-resistant boards and quartz tops built to handle a busy bathroom."),
-          ("custom","Your Style, Your Layout","Finishes, handles, lighting and internal fittings chosen by you.")]),
+   feats=[("ruler","Made to Measure","Every unit is built to your exact dimensions, no wasted space, no awkward gaps."),
+          ("drop","Water-Smart Bathrooms","Moisture-resistant boards and quartz tops built to handle a busy bathroom."),
+          ("layout","Your Style, Your Layout","Finishes, handles, lighting and internal fittings chosen by you.")]),
  "melamine-doors-quartz-countertops.html": dict(
    eyebrow="Our Services", h1="Melamine Doors &amp; Quartz Countertops",
    subtitle="Affordable, hard-wearing melamine doors and premium Eazi Quartz countertops to finish your cupboards perfectly.",
    intro_h="The Finishing Touch That Lasts",
-   intro=["Doors and tops make or break a cupboard. Our melamine doors come in dozens of colours and wood-grains — tough, easy to clean and great value — while our Eazi Quartz countertops add a premium, non-porous, stain-resistant surface.",
+   intro=["Doors and tops make or break a cupboard. Our melamine doors come in dozens of colours and wood-grains, tough, easy to clean and great value, while our Eazi Quartz countertops add a premium, non-porous, stain-resistant surface.",
           "Replacing tired doors or tops is one of the fastest, most affordable ways to transform a kitchen. We supply on their own or as part of a full installation."],
-   included=["Melamine doors — many colours","Wood-grain &amp; solid finishes","Eazi Quartz countertops","Melamine countertops","Cut-to-size service","Soft-close hinges included"],
+   included=["Melamine doors, many colours","Wood-grain &amp; solid finishes","Eazi Quartz countertops","Melamine countertops","Cut-to-size service","Soft-close hinges included"],
    img_cat=MELAMINE, img_i=0,
    offer_eyebrow="What We Supply", offer_h="Doors &amp; Tops for Every Style",
    offer_sub="Refresh an existing kitchen or finish a new one with surfaces that last.",
    offer_tags=["Melamine Doors","Wood-grain Finishes","Solid Colours","Eazi Quartz Tops","Melamine Tops","Splashbacks","Cut-to-Size","Edging"],
-   feats=[("door","Tough &amp; Affordable","Melamine resists knocks, moisture and daily wear — and it’s kind to your budget."),
-          ("quartz","Premium Quartz","Non-porous, scratch- and stain-resistant, and virtually maintenance-free."),
+   feats=[("door","Tough &amp; Affordable","Melamine resists knocks, moisture and daily wear, and it’s kind to your budget."),
+          ("gem","Premium Quartz","Non-porous, scratch- and stain-resistant, and virtually maintenance-free."),
           ("ruler","Cut to Your Sizes","Doors and tops cut precisely to your measurements for a clean, professional fit.")]),
  "custom-cabinetry.html": dict(
    eyebrow="Our Services", h1="Custom Cabinetry &amp; Shopfitting",
-   subtitle="Bespoke cabinetry for homes and businesses — office cupboards, reception desks, shop counters and display units.",
+   subtitle="Bespoke cabinetry for homes and businesses, office cupboards, reception desks, shop counters and display units.",
    intro_h="Built for Your Space and Your Brand",
    intro=["When off-the-shelf won’t do, we design and build custom. From home offices and entertainment units to retail counters, reception desks and modular office storage, we bring your vision to life with expert craftsmanship.",
-          "Tell us the look, the function and the budget, and we’ll handle design, manufacture and installation — finished in durable materials that stand up to daily use."],
+          "Tell us the look, the function and the budget, and we’ll handle design, manufacture and installation, finished in durable materials that stand up to daily use."],
    included=["Office cupboards &amp; storage","Reception &amp; service desks","Shop counters &amp; displays","Entertainment &amp; wall units","Custom home offices","Commercial shopfitting"],
    img_cat=CUSTOM, img_i=1,
    offer_eyebrow="What We Build", offer_h="Custom Solutions for Home &amp; Business",
-   offer_sub="No two projects are the same — everything is designed and built to order.",
+   offer_sub="No two projects are the same, everything is designed and built to order.",
    offer_tags=["Home Offices","Entertainment Units","Office Cupboards","Reception Desks","Shop Counters","Display Units","Filing &amp; Storage","Retail Fit-outs"],
    feats=[("custom","Designed With You","We turn your idea, sketch or Pinterest board into a buildable, made-to-measure design."),
           ("check","Expert Craftsmanship","Skilled cabinetmakers and quality materials for a finish that impresses."),
-          ("wallet","Priced to Your Brief","Custom doesn’t have to mean expensive — we build to your budget and priorities.")]),
+          ("wallet","Priced to Your Brief","Custom doesn’t have to mean expensive, we build to your budget and priorities.")]),
  "diy-units.html": dict(
    eyebrow="Our Services", h1="DIY Units &amp; Flat-Packs",
-   subtitle="Ready-to-assemble cupboard units delivered to your door — the smart, affordable way to kit out any room.",
+   subtitle="Ready-to-assemble cupboard units delivered to your door, the smart, affordable way to kit out any room.",
    intro_h="DIY Cupboards, Done Properly",
-   intro=["Our DIY units are the same quality we install — pre-cut, edged, drilled and labelled, with all the hardware included. Follow the guide and you’ll have solid, professional-looking cupboards in place over a weekend.",
+   intro=["Our DIY units are the same quality we install, pre-cut, edged, drilled and labelled, with all the hardware included. Follow the guide and you’ll have solid, professional-looking cupboards in place over a weekend.",
           "Kitchens, bedrooms, bathrooms and floor units in a range of standard sizes, with custom sizes on request. Everything is flat-packed and protected for safe delivery nationwide."],
    included=["Floor units in standard widths","Base &amp; wall kitchen units","Wardrobe &amp; storage kits","All hardware &amp; fittings included","Assembly guide provided","Custom sizes on request"],
    img_cat=DIY, img_i=0,
    offer_eyebrow="What You Can Order", offer_h="Flat-Packs for Every Room",
-   offer_sub="Pick your units and sizes — we cut, pack and deliver.",
+   offer_sub="Pick your units and sizes, we cut, pack and deliver.",
    offer_tags=["Floor Units","Kitchen Units","Wardrobe Kits","Drawer Units","Bathroom Units","Shelving","Corner Units","Custom Sizes"],
    feats=[("diy","Assemble It Yourself","Clear labelling and included hardware make assembly straightforward and satisfying."),
           ("wallet","Biggest Savings","DIY is the most affordable way to fit out a room without compromising on quality."),
@@ -744,12 +755,12 @@ for fname,d in SERVICE_PAGES.items():
 # ============================================================ SERVICES HUB
 def build_services_hub():
     og,_=img(KITCHEN,0)
-    h=head("Our Services | Cupboard Centre — Kitchens, Cupboards, Doors &amp; Countertops",
+    h=head("Our Services | Cupboard Centre, Kitchens, Cupboards, Doors &amp; Countertops",
            "Explore Cupboard Centre's full range: complete installation, DIY kitchen units, bedroom &amp; bathroom cabinetry, melamine doors, quartz countertops, custom cabinetry &amp; DIY flat-packs.",
            "https://www.cupboardcentre.co.za/services.html", og)
     h+=header()
     h+=page_hero("Services","What We Do","Cupboards For Every Room &amp; Budget",
-                 "From fully installed custom kitchens to DIY flat-packs delivered to your door — one team for every cupboard.", bg_img=img(KITCHEN,0)[0])
+                 "From fully installed custom kitchens to DIY flat-packs delivered to your door, one team for every cupboard.", bg_img=img(KITCHEN,0)[0])
     cards="".join(svc_card(t,h2,ic,im) for t,h2,ic,im in HOME_SVCS)
     h+="""<section class="section bg-navy"><div class="wrap section-center"><span class="eyebrow">Our Services</span><h2>One Team For Every Cupboard</h2>
   <p style="max-width:50em;margin:0 auto 34px">Whatever the room and whatever the budget, we supply, deliver and install cupboards built to last.</p>
@@ -774,7 +785,7 @@ print("services.html", write("services.html", build_services_hub()), "bytes")
 def build_about():
     og,_=img(KITCHEN,4)
     h=head("About Cupboard Centre | 25+ Years of DIY &amp; Custom Cupboards",
-           "For over 25 years Cupboard Centre has supplied and installed DIY &amp; custom cupboards across Mpumalanga — 1028+ projects, 50+ corporate clients, 100% satisfaction.",
+           "For over 25 years Cupboard Centre has supplied and installed DIY &amp; custom cupboards across Mpumalanga, 1028+ projects, 50+ corporate clients, 100% satisfaction.",
            "https://www.cupboardcentre.co.za/about.html", og)
     h+=header()
     h+=page_hero("About Us","Our Story","Your Trusted DIY &amp; Custom Cupboard Experts",
@@ -785,14 +796,14 @@ def build_about():
     <div class="about-img" style="background-image:url(%s)"></div>
     <div class="about-panel"><span class="about-eyebrow">A Local Team. A Lasting Standard.</span>
       <h2 class="about-heading">We Are <span class="g2">Cupboard Centre</span></h2>
-      <p>For over 25 years, Cupboard Centre has been Nelspruit’s one-stop shop for cupboard solutions. We specialise in DIY cupboard kits you can design, build and install yourself, as well as fully custom, professionally fitted cabinetry — kitchens, bedrooms, bathrooms, doors and countertops. Come to us with an idea and we’ll bring a complete solution to life, with efficient turnaround times and craftsmanship you can trust.</p>
+      <p>For over 25 years, Cupboard Centre has been Nelspruit’s one-stop shop for cupboard solutions. We specialise in DIY cupboard kits you can design, build and install yourself, as well as fully custom, professionally fitted cabinetry, kitchens, bedrooms, bathrooms, doors and countertops. Come to us with an idea and we’ll bring a complete solution to life, with efficient turnaround times and craftsmanship you can trust.</p>
       <div class="stat-pills"><div class="stat-pill"><span class="n">25+</span><span class="l">Years</span></div><div class="stat-pill"><span class="n">1028+</span><span class="l">Projects</span></div><div class="stat-pill"><span class="n">50+</span><span class="l">Corporates</span></div><div class="stat-pill"><span class="n">100%%</span><span class="l">Satisfaction</span></div></div>
       <p style="margin-top:10px;margin-bottom:0"><a class="btn btn-green btn-arrow" href="contact.html">Talk To Our Team</a></p>
     </div></div></div></section>
 """%au
     # mission vision values
     h+=feature_section("What Drives Us","Our Mission, Vision &amp; Values",[
-      ("target","Our Mission","To give every home and business in Mpumalanga beautiful, hard-wearing cupboards — custom or DIY — at a fair price, delivered and installed to a standard we’re proud of."),
+      ("target","Our Mission","To give every home and business in Mpumalanga beautiful, hard-wearing cupboards, custom or DIY, at a fair price, delivered and installed to a standard we’re proud of."),
       ("eye","Our Vision","To remain Nelspruit’s most trusted name in cupboards, the first place people think of for kitchens, wardrobes, doors and countertops."),
       ("check","Our Values","<strong>Quality</strong> in every cut and finish. <strong>Value</strong> that respects your budget. <strong>Service</strong> that’s honest and on time. <strong>Craft</strong> built on 25+ years of experience."),
     ],bg="bg-navy")
@@ -849,7 +860,7 @@ def build_contact():
       <h3>Email</h3>
       <div class="info-row"><a href="mailto:%s">%s</a></div>
       <h3>Business Hours</h3>
-      <div class="info-row">Mon–Fri: 08:00 – 17:00<br>Sat: 08:00 – 13:00<br>Sun &amp; Public Holidays: Closed</div>
+      <div class="info-row">Mon-Fri: 08:00 - 17:00<br>Sat: 08:00 - 13:00<br>Sun &amp; Public Holidays: Closed</div>
       <p style="margin-top:16px"><a class="btn btn-blue btn-arrow" href="service-areas.html">View Our Service Areas</a></p>
     </div>
   </div></div></section>
@@ -859,7 +870,7 @@ def build_contact():
   <div class="branch-maps" style="grid-template-columns:1fr;max-width:960px">
     <div class="branch-map-card">
       <iframe src="%s" loading="lazy" title="Cupboard Centre showroom map" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <div class="bm-body"><h3>Cupboard Centre — Mbombela</h3><p>Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd, Mbombela, 1200<br><a href="tel:%s">%s</a></p></div>
+      <div class="bm-body"><h3>Cupboard Centre, Mbombela</h3><p>Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd, Mbombela, 1200<br><a href="tel:%s">%s</a></p></div>
     </div>
   </div></div></section>
 """%(GMAP,TEL,PHONE)
@@ -870,8 +881,8 @@ print("contact.html", write("contact.html", build_contact()), "bytes")
 # ============================================================ GALLERY
 def build_gallery():
     og,_=img(KITCHEN,0)
-    h=head("Gallery | Cupboard Centre — Kitchens, Wardrobes, Bathrooms &amp; Custom Cabinetry",
-           "Browse completed Cupboard Centre projects — custom kitchens, built-in bedroom cupboards, bathroom vanities, quartz countertops and shopfitting across Mpumalanga.",
+    h=head("Gallery | Cupboard Centre, Kitchens, Wardrobes, Bathrooms &amp; Custom Cabinetry",
+           "Browse completed Cupboard Centre projects, custom kitchens, built-in bedroom cupboards, bathroom vanities, quartz countertops and shopfitting across Mpumalanga.",
            "https://www.cupboardcentre.co.za/gallery.html", og)
     h+=header()
     h+=page_hero("Gallery","Our Work","Spaces We Have Transformed",
@@ -900,8 +911,8 @@ print("gallery.html", write("gallery.html", build_gallery()), "bytes")
 # ============================================================ SERVICE AREAS
 def build_service_areas():
     og,_=img(GENERAL,2)
-    h=head("Service Areas | Cupboard Centre — Nelspruit, Mbombela &amp; the Lowveld",
-           "Cupboard Centre supplies and installs cupboards across Nelspruit, Mbombela, White River, Hazyview and the Lowveld — with DIY flat-packs delivered nationwide.",
+    h=head("Service Areas | Cupboard Centre, Nelspruit, Mbombela &amp; the Lowveld",
+           "Cupboard Centre supplies and installs cupboards across Nelspruit, Mbombela, White River, Hazyview and the Lowveld, with DIY flat-packs delivered nationwide.",
            "https://www.cupboardcentre.co.za/service-areas.html", og)
     h+=header()
     h+=page_hero("Service Areas","Where We Work","Serving Nelspruit, Mbombela &amp; Beyond",
@@ -924,7 +935,7 @@ def build_service_areas():
     h+="""<section class="section bg-navy"><div class="wrap"><div class="section-center"><span class="eyebrow">Find Us</span><h2>Our Showroom</h2></div>
   <div class="branch-maps" style="grid-template-columns:1fr;max-width:960px">
     <div class="branch-map-card"><iframe src="%s" loading="lazy" title="Cupboard Centre showroom" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <div class="bm-body"><h3>Cupboard Centre — Mbombela</h3><p>Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd, Mbombela, 1200<br><a href="tel:%s">%s</a></p></div></div>
+      <div class="bm-body"><h3>Cupboard Centre, Mbombela</h3><p>Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd, Mbombela, 1200<br><a href="tel:%s">%s</a></p></div></div>
   </div></div></section>
 """%(GMAP,TEL,PHONE)
     h+=reviews_section("bg-navy-slate")
@@ -934,17 +945,17 @@ print("service-areas.html", write("service-areas.html", build_service_areas()), 
 
 # ============================================================ FAQ
 FAQ_FULL = FAQ_ITEMS + [
- ("What’s the difference between DIY and installed cupboards?","DIY units arrive pre-cut, edged, drilled and labelled with all hardware included for you to assemble. Installed means we handle everything — measuring, manufacturing and professional fitting. The quality of the units is identical; you choose how hands-on you want to be."),
- ("How long does a project take?","DIY orders are typically ready within a few working days. Custom, installed projects depend on scope — we’ll give you a clear timeline with your quote. We’re known for efficient turnaround."),
- ("Do you offer soft-close hinges and drawers?","Yes — soft-close hinges and drawer runners come standard on our cabinetry, not as an extra."),
+ ("What’s the difference between DIY and installed cupboards?","DIY units arrive pre-cut, edged, drilled and labelled with all hardware included for you to assemble. Installed means we handle everything, measuring, manufacturing and professional fitting. The quality of the units is identical; you choose how hands-on you want to be."),
+ ("How long does a project take?","DIY orders are typically ready within a few working days. Custom, installed projects depend on scope, we’ll give you a clear timeline with your quote. We’re known for efficient turnaround."),
+ ("Do you offer soft-close hinges and drawers?","Yes, soft-close hinges and drawer runners come standard on our cabinetry, not as an extra."),
  ("Can you match a colour or finish I already have?","In most cases, yes. Bring a photo or sample and we’ll match the melamine finish or countertop as closely as possible from our range."),
  ("Do you supply countertops separately?","Yes. We supply and fit Eazi Quartz and melamine countertops on their own or as part of a full kitchen."),
  ("How do I pay and do you take deposits?","We’ll set out payment terms clearly in your quote. Custom projects usually start with a deposit to secure your order and materials."),
 ]
 def build_faq():
     og,_=img(GENERAL,3)
-    h=head("FAQ | Cupboard Centre — DIY &amp; Custom Cupboard Questions Answered",
-           "Answers to common questions about Cupboard Centre's DIY and custom cupboards — ordering, delivery, installation, finishes, countertops and quotes.",
+    h=head("FAQ | Cupboard Centre, DIY &amp; Custom Cupboard Questions Answered",
+           "Answers to common questions about Cupboard Centre's DIY and custom cupboards, ordering, delivery, installation, finishes, countertops and quotes.",
            "https://www.cupboardcentre.co.za/faq.html", og)
     h+=header()
     h+=page_hero("FAQ","Questions?","Frequently Asked Questions",
@@ -958,8 +969,8 @@ print("faq.html", write("faq.html", build_faq()), "bytes")
 # ============================================================ BLOG + POSTS
 def build_blog():
     og,_=img(KITCHEN,1)
-    h=head("Blog | Cupboard Centre — Cupboard, Kitchen &amp; Countertop Tips",
-           "Expert advice on kitchens, cupboards, countertops and DIY from Cupboard Centre — guides to help you plan, choose and build the perfect cabinetry.",
+    h=head("Blog | Cupboard Centre, Cupboard, Kitchen &amp; Countertop Tips",
+           "Expert advice on kitchens, cupboards, countertops and DIY from Cupboard Centre, guides to help you plan, choose and build the perfect cabinetry.",
            "https://www.cupboardcentre.co.za/blog.html", og)
     h+=header()
     h+=page_hero("Blog","Insights","Cupboard &amp; Kitchen Tips",
@@ -976,7 +987,7 @@ def build_post(p):
     og,_=img(imgs,1)
     h=head("%s | Cupboard Centre Blog"%title, excerpt,
            "https://www.cupboardcentre.co.za/blog/%s.html"%slug, og)
-    # header/footer use relative paths — from /blog/ we need ../ prefix
+    # header/footer use relative paths, from /blog/ we need ../ prefix
     hd=header().replace('href="','href="../').replace('href="../#','href="#').replace('href="../http','href="http').replace('href="../tel:','href="tel:').replace('href="../mailto:','href="mailto:').replace('src="assets','src="../assets')
     h=h.replace('href="assets/css/styles.css"','href="../assets/css/styles.css"')
     h+=hd
@@ -1013,20 +1024,20 @@ for p in BLOG:
 # ============================================================ GET A QUOTE
 def build_quote():
     og,_=img(GENERAL,0)
-    h=head("Get a Free Quote | Cupboard Centre — DIY &amp; Custom Cupboards",
+    h=head("Get a Free Quote | Cupboard Centre, DIY &amp; Custom Cupboards",
            "Get a free, no-obligation quote from Cupboard Centre on DIY or custom cupboards, kitchens, wardrobes, doors and countertops. We reply within one business hour.",
            "https://www.cupboardcentre.co.za/get-a-quote.html", og)
     h+=header()
     h+=page_hero("Get a Free Quote","Free &amp; No-Obligation","Get Your Free Cupboard Quote", cta=False, bg_img=img(KITCHEN,7)[0])
-    benefits=[("wallet","Best Value, Guaranteed","Factory-direct pricing on DIY and custom cupboards — quality that beats the big retailers."),
-              ("ruler","Free Measure &amp; Advice","We help you plan the right units and finishes, with a clear written quote and no pressure."),
+    benefits=[("wallet","Best Value, Guaranteed","Factory-direct pricing on DIY and custom cupboards, quality that beats the big retailers."),
+              ("ruler","Planning &amp; Advice","We help you plan the right units and finishes, with a clear written quote and no pressure."),
               ("truck","Delivery &amp; Installation","Nationwide DIY delivery, or full supply-and-install across the Lowveld."),
               ("check","25+ Years’ Experience","Over a thousand completed projects for homes and businesses across Mpumalanga.")]
     bl="".join('<li style="display:flex;gap:12px;align-items:flex-start;margin-bottom:16px"><span style="flex:0 0 auto;width:42px;height:42px;border-radius:50%%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center">%s</span><span><strong style="display:block;color:var(--heading);font-family:\'Poppins\',sans-serif">%s</strong><span style="font-size:14px">%s</span></span></li>'%(IC.get(ic,IC['check']),t,d) for ic,t,d in benefits)
     h+="""<section class="section bg-navy"><div class="wrap"><div class="contact-grid">
     <div>
       <span class="eyebrow">Why Cupboard Centre</span><h2>Honest Advice, Clear Pricing</h2>
-      <p>Tell us about your project — a room, a rough size, or just an idea — and we’ll come back with a clear, written quote within one business hour. No obligation, no pressure.</p>
+      <p>Tell us about your project, a room, a rough size, or just an idea, and we’ll come back with a clear, written quote within one business hour. No obligation, no pressure.</p>
       <ul style="list-style:none;margin-top:22px">%s</ul>
       <p class="btn-row" style="margin-top:8px"><a class="btn btn-outline" href="tel:%s">Call %s</a> <a class="btn btn-outline" href="https://wa.me/%s" target="_blank" rel="noopener">WhatsApp Us</a></p>
     </div>
@@ -1040,43 +1051,54 @@ def build_quote():
 print("get-a-quote.html", write("get-a-quote.html", build_quote()), "bytes")
 
 # ============================================================ SHOP
-PRODUCTS = [
- ("Flat-Pack Wardrobe — Woody Doors","3 doors, 2 drawers with woody-look melamine doors and custom internal storage.","R8 999","R12 999",PRODUCT,0),
- ("DIY Kitchen Base Unit — 600mm","Pre-cut, edged and drilled base unit with soft-close door. Standard 720mm height.","R1 250","",DIY,2),
- ("DIY Kitchen Wall Unit — 800mm","Wall-mounted cupboard, pre-drilled with adjustable shelf and soft-close hinges.","R1 150","",KITCHEN,10),
- ("Built-in Bedroom Cupboard Kit","3-door built-in wardrobe kit with hanging rail, shelving and drawer stack.","R6 499","R7 999",BEDROOM,2),
- ("Bathroom Vanity Unit + Quartz Top","Floating vanity with soft-close drawers and an Eazi Quartz countertop.","R4 750","",BATHROOM,3),
- ("Floor Unit — 900mm","Versatile DIY floor unit, 900mm wide × 720mm high. Custom sizes on request.","R1 480","",DIY,3),
- ("Melamine Door — Wood-grain","Replacement melamine cupboard door in a range of wood-grain finishes. Cut to size.","R289","",MELAMINE,0),
- ("Eazi Quartz Countertop (per m)","Premium non-porous quartz countertop, supplied and cut to your measurements.","R2 950","",KITCHEN,5),
- ("Custom Office Cupboard","Modular office storage cupboard with lockable doors and adjustable shelves.","R5 200","",CUSTOM,4),
-]
+# --- single in-stock product ---
+def _prod_photo():
+    for i in range(len(PRODUCT)):
+        u,a=img(PRODUCT,i)
+        if u.endswith('.jpg'): return u
+    return img(PRODUCT,0)[0]
+PROD = dict(
+    id="flat-pack-wardrobe",
+    name="Flat-Pack Wardrobe, Woody Doors",
+    price=8999, price_disp="R8 999", was="R12 999",
+    short="3-door, 2-drawer flat-pack wardrobe with woody-look melamine doors, a hanging rail and custom internal storage. Pre-cut, edged, drilled and labelled, ready to assemble.",
+    img=_prod_photo(),
+    gallery=[img(BEDROOM,7)[0], img(BEDROOM,2)[0]],
+    features=["3 doors + 2 drawers","Woody-look melamine finish","Hanging rail &amp; adjustable shelves",
+              "Soft-close hinges included","All hardware &amp; assembly guide included","Delivered nationwide, flat-packed"],
+)
+
+def add_cart_attrs(p):
+    return ('data-id="%s" data-name="%s" data-price="%d" data-price-disp="%s" data-img="%s"'
+            % (p['id'], p['name'], p['price'], p['price_disp'], p['img']))
+
 def build_shop():
-    og,_=img(PRODUCT,0)
-    h=head("Shop DIY Cupboards &amp; Pre-Built Cabinetry | Cupboard Centre",
-           "Shop Cupboard Centre online — DIY kitchen units, flat-pack wardrobes, bathroom vanities, melamine doors and quartz countertops. Delivered nationwide.",
-           "https://www.cupboardcentre.co.za/shop.html", og)
-    h+=header()
-    h+=page_hero("Shop","Online Shop","Shop DIY Cupboards &amp; Cabinetry",
-                 "Order DIY flat-pack units and pre-built cabinetry online — delivered to your door, nationwide.", bg_img=img(KITCHEN,3)[0])
-    cards=""
-    for t,d,price,was,lst,i in PRODUCTS:
-        u,a=img(lst,i,t)
-        wasx=' <span class="was">%s</span>'%was if was else ''
-        cards+="""<div class="img-card" style="display:flex;flex-direction:column">
-      <div class="ic-img"><img src="%s" alt="%s" loading="lazy" decoding="async"></div>
-      <div style="padding:20px 22px;display:flex;flex-direction:column;flex:1">
-        <h3 style="font-size:18px;color:var(--heading);margin:0 0 6px">%s</h3>
-        <p style="font-size:14px;flex:1">%s</p>
-        <p class="price" style="margin:6px 0 12px">%s%s</p>
-        <a class="btn btn-green btn-arrow" href="get-a-quote.html" style="width:100%%">Enquire / Order</a>
-      </div></div>"""%(u,esc(a) if a else t,t,d,price,wasx)
+    p=PROD
+    h=head("Shop DIY Cupboards | Cupboard Centre Online Store",
+           "Buy the Cupboard Centre flat-pack wardrobe online, pre-cut, edged and drilled with all hardware included. Delivered nationwide.",
+           "https://www.cupboardcentre.co.za/shop.html", p['img'])
+    h+=header(cart=True)
+    h+=page_hero("Shop","Online Shop","Shop DIY Cupboards",
+                 "DIY flat-pack cupboards, delivered to your door, nationwide.", bg_img=img(KITCHEN,3)[0])
+    wasx=' <span class="was">%s</span>'%p['was'] if p['was'] else ''
     h+="""<section class="section bg-navy"><div class="wrap">
-  <div class="section-center" style="margin-bottom:20px"><span class="eyebrow">Featured Products</span><h2>DIY &amp; Pre-Built Cabinetry</h2>
-  <p style="max-width:46em;margin:6px auto 0;color:var(--muted)">Prices shown are indicative — enquire for exact pricing on your sizes and finishes, or a full custom quote.</p></div>
-  <div class="product-grid">%s</div>
+  <div class="section-center" style="margin-bottom:26px"><span class="eyebrow">In Stock</span><h2>DIY Cupboards, Ready to Order</h2>
+  <p style="max-width:46em;margin:6px auto 0;color:var(--muted)">Looking for custom kitchens, bedrooms or bathrooms? <a href="get-a-quote.html" style="color:var(--cc-red);font-weight:700">Get a free quote</a> and we’ll build to your space.</p></div>
+  <div class="product-grid" style="max-width:420px;margin:0 auto">
+    <div class="img-card" style="display:flex;flex-direction:column">
+      <a class="ic-img" href="product-{id}.html" style="display:block"><img src="{img}" alt="{name}" loading="lazy" decoding="async"></a>
+      <div style="padding:20px 22px;display:flex;flex-direction:column;flex:1">
+        <h3 style="font-size:18px;color:var(--heading);margin:0 0 6px"><a href="product-{id}.html">{name}</a></h3>
+        <p style="font-size:14px;flex:1">{short}</p>
+        <p class="price" style="margin:6px 0 12px">{price}{wasx}</p>
+        <div class="btn-row" style="gap:10px">
+          <button class="btn btn-green" data-add-cart {attrs} style="flex:1">Add to Cart</button>
+          <a class="btn btn-outline" href="product-{id}.html" style="flex:1">View</a>
+        </div>
+      </div></div>
+  </div>
 </div></section>
-"""%cards
+""".format(id=p['id'], img=p['img'], name=p['name'], short="3 doors, 2 drawers, woody-look melamine, custom internal storage.", price=p['price_disp'], wasx=wasx, attrs=add_cart_attrs(p))
     h+=feature_section("Why Shop With Us","DIY Made Easy",[
       ("truck","Nationwide Delivery","Flat-packed, protected and delivered to your door anywhere in South Africa."),
       ("diy","Assembly Ready","Pre-cut, edged, drilled and labelled with all hardware included."),
@@ -1086,6 +1108,73 @@ def build_shop():
     return h
 print("shop.html", write("shop.html", build_shop()), "bytes")
 
+def build_product():
+    p=PROD
+    h=head("%s | Cupboard Centre"%p['name'].replace('&amp;','&'), p['short'].replace('&amp;','&'),
+           "https://www.cupboardcentre.co.za/product-%s.html"%p['id'], p['img'])
+    h+=header(cart=True)
+    h+=page_hero(p['name'],"Shop",p['name'],cta=False,trail=[("Shop","shop.html")],bg_img=img(KITCHEN,3)[0])
+    thumbs="".join('<button class="pd-thumb" data-src="%s"><img src="%s" alt="" loading="lazy"></button>'%(g,g) for g in [p['img']]+p['gallery'])
+    feats="".join('<li>%s</li>'%f for f in p['features'])
+    wasx=' <span class="was">%s</span>'%p['was'] if p['was'] else ''
+    wamsg = "Hi Cupboard Centre, I'd like to order the %s (%s). Is it in stock?"%(p['name'].replace('&amp;','&'), p['price_disp'])
+    import urllib.parse as _u
+    wa_href="https://wa.me/%s?text=%s"%(WA,_u.quote(wamsg))
+    h+="""<section class="section bg-navy"><div class="wrap">
+  <div class="product-detail">
+    <div class="pd-media">
+      <div class="pd-main"><img src="{img}" alt="{name}" data-pd-main></div>
+      <div class="pd-thumbs">{thumbs}</div>
+    </div>
+    <div class="pd-info">
+      <span class="eyebrow">DIY Wardrobe, In Stock</span>
+      <h1 style="font-size:30px;margin:.1em 0 .3em">{name}</h1>
+      <p class="price" style="font-size:26px;margin:0 0 14px">{price}{wasx}</p>
+      <p>{short}</p>
+      <ul class="included-grid" style="grid-template-columns:1fr;margin:16px 0 22px">{feats}</ul>
+      <div class="pd-buy">
+        <div class="qty-box"><button type="button" data-qty-dec aria-label="Decrease">−</button><input type="number" min="1" value="1" data-qty aria-label="Quantity"><button type="button" data-qty-inc aria-label="Increase">+</button></div>
+        <button class="btn btn-green btn-arrow" data-add-cart {attrs} style="flex:1">Add to Cart</button>
+      </div>
+      <p style="margin-top:14px"><a class="btn btn-outline" href="{wa}" target="_blank" rel="noopener">Order via WhatsApp</a> <a class="btn btn-outline" href="cart.html">View Cart</a></p>
+      <p style="font-size:13px;color:var(--muted);margin-top:14px">Prices include the flat-pack unit and hardware. Delivery is quoted on checkout by area. Need a custom size? <a href="get-a-quote.html" style="color:var(--cc-red);font-weight:700">Request a quote</a>.</p>
+    </div>
+  </div>
+</div></section>
+""".format(img=p['img'],name=p['name'],price=p['price_disp'],wasx=wasx,short=p['short'],feats=feats,thumbs=thumbs,attrs=add_cart_attrs(p),wa=wa_href)
+    h+=reviews_section("bg-navy-slate")
+    h+=cta_form(); h+=marquee(); h+=footer()
+    return h
+print("product-%s.html"%PROD['id'], write("product-%s.html"%PROD['id'], build_product()), "bytes")
+
+def build_cart():
+    h=head("Your Cart | Cupboard Centre","Review your Cupboard Centre cart and send your order enquiry.",
+           "https://www.cupboardcentre.co.za/cart.html", PROD['img'])
+    h+=header(cart=True)
+    h+=page_hero("Cart","Shop","Your Cart",cta=False,trail=[("Shop","shop.html")],bg_img=img(KITCHEN,3)[0])
+    h+="""<section class="section bg-navy"><div class="wrap">
+  <div data-cart-root>
+    <div class="cart-empty" data-cart-empty>
+      <p style="font-size:18px;color:var(--heading);font-family:'Poppins',sans-serif;font-weight:700;margin-bottom:6px">Your cart is empty</p>
+      <p style="color:var(--muted);margin-bottom:18px">Browse our DIY cupboards and add something to get started.</p>
+      <a class="btn btn-green btn-arrow" href="shop.html">Go to Shop</a>
+    </div>
+    <div class="cart-body" data-cart-body hidden>
+      <div class="cart-items" data-cart-items></div>
+      <div class="cart-summary">
+        <div class="cart-total-row"><span>Subtotal</span><strong data-cart-total>R0</strong></div>
+        <p style="font-size:13px;color:var(--muted);margin:6px 0 16px">Delivery is quoted by area once you send your enquiry. No payment is taken online.</p>
+        <button class="btn btn-green btn-arrow" data-cart-checkout style="width:100%">Send Order Enquiry via WhatsApp</button>
+        <p style="margin-top:10px"><a class="btn btn-outline" href="shop.html" style="width:100%">Continue Shopping</a></p>
+      </div>
+    </div>
+  </div>
+</div></section>
+"""
+    h+=cta_form(); h+=marquee(); h+=footer()
+    return h
+print("cart.html", write("cart.html", build_cart()), "bytes")
+
 # ============================================================ PRIVACY
 def build_privacy():
     h=head("Privacy Policy | Cupboard Centre","How Cupboard Centre collects, uses and protects your personal information.",
@@ -1093,9 +1182,9 @@ def build_privacy():
     h+=header()
     h+=page_hero("Privacy Policy","Legal","Privacy Policy", cta=False, bg_img=img(GENERAL,0)[0])
     secs=[("Who We Are","Cupboard Centre (“we”, “us”, “our”) supplies and installs DIY and custom cupboards from our showroom at Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd, Mbombela, 1200. You can reach us on 084 683 7467 or at info@cupboardcentre.co.za."),
-      ("Information We Collect","When you submit an enquiry or quote request, we collect the details you provide — such as your name, phone number, email address, suburb/area and information about your project. We may also collect basic, anonymous usage data through our website."),
+      ("Information We Collect","When you submit an enquiry or quote request, we collect the details you provide, such as your name, phone number, email address, suburb/area and information about your project. We may also collect basic, anonymous usage data through our website."),
       ("How We Use Your Information","We use your information to respond to your enquiry, prepare quotes, arrange delivery or installation, and keep you updated about your project. With your consent, we may occasionally send you relevant offers or news. We do not sell your personal information."),
-      ("Sharing Your Information","We only share your information where necessary to deliver our services — for example with delivery partners — or where required by law. We take reasonable steps to ensure any third parties protect your information."),
+      ("Sharing Your Information","We only share your information where necessary to deliver our services, for example with delivery partners, or where required by law. We take reasonable steps to ensure any third parties protect your information."),
       ("Data Security &amp; Retention","We take reasonable technical and organisational measures to protect your personal information and retain it only for as long as needed to provide our services and meet legal obligations."),
       ("Your Rights","You may request access to, correction of, or deletion of your personal information, and you may withdraw consent to marketing at any time by contacting us on info@cupboardcentre.co.za."),
       ("Cookies","Our website may use cookies and similar technologies to improve your experience and understand how the site is used. You can control cookies through your browser settings."),
@@ -1113,7 +1202,7 @@ def build_sitemap():
            "https://www.cupboardcentre.co.za/sitemap.html", img(GENERAL,0)[0])
     h+=header()
     h+=page_hero("Sitemap","Sitemap","Sitemap", cta=False, bg_img=img(GENERAL,0)[0])
-    groups=[("Main",[("Home","index.html"),("About Us","about.html"),("Contact","contact.html"),("Get a Free Quote","get-a-quote.html"),("Online Shop","shop.html"),("Gallery","gallery.html"),("FAQ","faq.html"),("Service Areas","service-areas.html")]),
+    groups=[("Main",[("Home","index.html"),("About Us","about.html"),("Contact","contact.html"),("Get a Free Quote","get-a-quote.html"),("Online Shop","shop.html"),("Product: Flat-Pack Wardrobe","product-flat-pack-wardrobe.html"),("Cart","cart.html"),("Gallery","gallery.html"),("FAQ","faq.html"),("Service Areas","service-areas.html")]),
             ("Services",[("All Services","services.html")]+[(t.replace('&amp;','&'),hh) for t,hh in SERVICES[:-1]]),
             ("Blog",[("Blog","blog.html")]+[(p[1],"blog/%s.html"%p[0]) for p in BLOG]),
             ("Legal",[("Privacy Policy","privacy-policy.html")])]

@@ -250,8 +250,100 @@
     });
   }
 
+  /* ---------- Cart (localStorage) ---------- */
+  var CART_KEY = 'cc_cart_v1';
+  var WA_NUMBER = '27846837467';
+  function cartRead() { try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch (e) { return []; } }
+  function cartWrite(items) { try { localStorage.setItem(CART_KEY, JSON.stringify(items)); } catch (e) {} cartBadge(); }
+  function money(n) { return 'R' + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  function cartBadge() {
+    var n = cartRead().reduce(function (t, i) { return t + i.qty; }, 0);
+    $$('[data-cart-count]').forEach(function (b) {
+      b.textContent = n;
+      if (n > 0) { b.hidden = false; b.removeAttribute('hidden'); } else { b.hidden = true; b.setAttribute('hidden', ''); }
+    });
+  }
+  function cartAdd(p, qty) {
+    var items = cartRead();
+    var ex = null;
+    items.forEach(function (i) { if (i.id === p.id) ex = i; });
+    if (ex) ex.qty += qty; else items.push({ id: p.id, name: p.name, price: p.price, img: p.img, qty: qty });
+    cartWrite(items);
+  }
+  function initAddToCart() {
+    $$('[data-add-cart]').forEach(function (btn) {
+      on(btn, 'click', function () {
+        var buy = btn.closest('.pd-buy');
+        var qInput = buy ? $('[data-qty]', buy) : null;
+        var qty = qInput ? Math.max(1, parseInt(qInput.value, 10) || 1) : 1;
+        cartAdd({
+          id: btn.getAttribute('data-id'), name: btn.getAttribute('data-name'),
+          price: parseInt(btn.getAttribute('data-price'), 10) || 0, img: btn.getAttribute('data-img')
+        }, qty);
+        var old = btn.textContent; btn.textContent = 'Added ✓'; btn.disabled = true;
+        setTimeout(function () { btn.textContent = old; btn.disabled = false; }, 1200);
+      });
+    });
+  }
+  function initProduct() {
+    var main = $('[data-pd-main]');
+    $$('.pd-thumb').forEach(function (t, i) {
+      if (i === 0) t.classList.add('active');
+      on(t, 'click', function () {
+        if (main) main.src = t.getAttribute('data-src');
+        $$('.pd-thumb').forEach(function (x) { x.classList.remove('active'); });
+        t.classList.add('active');
+      });
+    });
+    $$('.pd-buy .qty-box, .product-detail .qty-box').forEach(function (box) {
+      var inp = $('[data-qty]', box); if (!inp) return;
+      on($('[data-qty-dec]', box), 'click', function () { inp.value = Math.max(1, (parseInt(inp.value, 10) || 1) - 1); });
+      on($('[data-qty-inc]', box), 'click', function () { inp.value = (parseInt(inp.value, 10) || 1) + 1; });
+    });
+  }
+  function renderCartItems() {
+    var root = $('[data-cart-root]'); if (!root) return;
+    var items = cartRead();
+    var empty = $('[data-cart-empty]', root), body = $('[data-cart-body]', root);
+    if (!items.length) { if (empty) empty.hidden = false; if (body) body.hidden = true; return; }
+    if (empty) empty.hidden = true; if (body) body.hidden = false;
+    var wrap = $('[data-cart-items]', root); wrap.innerHTML = '';
+    var total = 0;
+    items.forEach(function (it, idx) {
+      total += it.price * it.qty;
+      var el = doc.createElement('div'); el.className = 'cart-item';
+      el.innerHTML = '<img src="' + it.img + '" alt=""><div><h3>' + it.name + '</h3>' +
+        '<span class="ci-price">' + money(it.price) + ' each</span>' +
+        '<div class="qty-box" style="margin-top:8px"><button type="button" data-dec aria-label="Decrease">−</button>' +
+        '<input type="number" min="1" value="' + it.qty + '" data-q aria-label="Quantity"><button type="button" data-inc aria-label="Increase">+</button></div>' +
+        '<button class="ci-remove" data-rm>Remove</button></div>' +
+        '<div class="ci-line"><strong>' + money(it.price * it.qty) + '</strong></div>';
+      on($('[data-dec]', el), 'click', function () { it.qty = Math.max(1, it.qty - 1); cartWrite(items); renderCartItems(); });
+      on($('[data-inc]', el), 'click', function () { it.qty += 1; cartWrite(items); renderCartItems(); });
+      on($('[data-q]', el), 'change', function () { it.qty = Math.max(1, parseInt(this.value, 10) || 1); cartWrite(items); renderCartItems(); });
+      on($('[data-rm]', el), 'click', function () { items.splice(idx, 1); cartWrite(items); renderCartItems(); });
+      wrap.appendChild(el);
+    });
+    var tEl = $('[data-cart-total]', root); if (tEl) tEl.textContent = money(total);
+  }
+  function initCart() {
+    var root = $('[data-cart-root]'); if (!root) return;
+    renderCartItems();
+    var co = $('[data-cart-checkout]', root);
+    if (co) on(co, 'click', function () {
+      var items = cartRead(); if (!items.length) return;
+      var total = 0, lines = items.map(function (it) { total += it.price * it.qty; return '• ' + it.name + ' x' + it.qty + ' (' + money(it.price * it.qty) + ')'; });
+      var msg = "Hi Cupboard Centre, I'd like to order:\n" + lines.join('\n') + '\nTotal: ' + money(total) + '\nPlease advise on availability and delivery.';
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
+    });
+  }
+
   /* ---------- init all ---------- */
   function init() {
+    cartBadge();
+    initAddToCart();
+    initProduct();
+    initCart();
     initMobileMenu();
     initAccordions();
     initScrollButtons();
