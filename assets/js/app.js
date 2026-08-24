@@ -85,7 +85,7 @@
     var track = $('[data-track]', root);
     var slides = $$('.rev-slide', track).filter(function (s) { return s.getAttribute('aria-hidden') !== 'true'; });
     var viewport = $('.carousel-viewport', root);
-    var dotsWrap = $('[data-dots]', root);
+    var dotsWrap = (root.closest('section') || doc).querySelector('[data-dots]');
     if (!track || !slides.length) return;
     // Hide the duplicate (aria-hidden) slides that exist only for the source site's loop
     $$('.rev-slide[aria-hidden="true"]', track).forEach(function (s) { s.style.display = 'none'; });

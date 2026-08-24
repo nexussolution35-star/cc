@@ -130,7 +130,7 @@ def head(title, desc, canonical, og_img):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{fonts}">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e81e2c'/%3E%3Ctext x='16' y='22' font-family='Poppins,Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ECC%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="assets/images/favicon.png" type="image/png">
 <script type="application/ld+json">{ld}</script>
 </head>
 <body>
@@ -253,7 +253,7 @@ def review_slide(rv):
 
 def reviews_section(bg="bg-navy-slate"):
     slides = "".join(review_slide(r) for r in REVIEWS)
-    dots = "".join('<button class="cdot%s" aria-label="Go to review page %d"></button>' % ((' active' if i==0 else ''), i+1) for i in range(3))
+    dots = "".join('<button class="cdot%s" aria-label="Go to review page %d"></button>' % ((' active' if i==0 else ''), i+1) for i in range(max(1, -(-len(REVIEWS)//3))))
     return """<section id="reviews" class="section {bg}"><div class="wrap">
   <div class="reviews-head"><span class="eyebrow">What Clients Say</span>
   <h2 class="reviews-score">Loved by Homes &amp; <span class="g2">Contractors</span></h2>
@@ -503,7 +503,7 @@ def build_home():
     h += """<section id="about" class="section bg-navy"><div class="wrap">
   <div class="section-center about-banner"><h2 class="about-banner-title">We Are <span class="g2">Cupboard Centre</span></h2></div>
   <div class="about-card">
-    <div class="about-img" style="background-image:url({about_u})"></div>
+    <div class="about-img" style="background-image:url({about_u});background-size:auto 145%;background-position:center 74%"></div>
     <div class="about-panel">
       <span class="about-eyebrow">A Local Team. A Lasting Standard.</span>
       <h3 class="about-heading">Cupboards Done <span class="g2">Properly</span></h3>
@@ -1074,6 +1074,7 @@ def build_post(p):
     # header/footer use relative paths, from /blog/ we need ../ prefix
     hd=header().replace('href="','href="../').replace('href="../#','href="#').replace('href="../http','href="http').replace('href="../tel:','href="tel:').replace('href="../mailto:','href="mailto:').replace('src="assets','src="../assets')
     h=h.replace('href="assets/css/styles.css"','href="../assets/css/styles.css"')
+    h=h.replace('href="assets/images/favicon.png"','href="../assets/images/favicon.png"')
     h+=hd
     # page hero with blog trail (fix links for subdir)
     ph=page_hero(title,"Insights",title,cta=False,trail=[("Blog","blog.html")],bg_img='../'+img(imgs,1)[0],prefix="../")
