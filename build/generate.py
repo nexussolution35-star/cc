@@ -140,10 +140,7 @@ def head(title, desc, canonical, og_img):
 def logo(href="index.html", dark_bg=False):
     if dark_bg:
         return ('<a class="logo" href="%s" aria-label="Cupboard Centre home">'
-                '<span class="brand-logo"><span class="bl-mark">'
-                '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M9 8.5h0.01M15 8.5h0.01"/></svg>'
-                '</span><span class="bl-text"><span class="bl-1">Cupboard Centre</span>'
-                '<span class="bl-2">DIY &amp; Custom Cupboards</span></span></span></a>') % href
+                '<img class="logo-img flogo-white" src="assets/images/photos/66db6af75f06f55b858a6efc.png" alt="Cupboard Centre" width="200" height="52"></a>') % href
     return ('<a class="logo" href="%s" aria-label="Cupboard Centre home">'
             '<img class="logo-img" src="assets/images/photos/66db6af75f06f55b858a6efc.png" alt="Cupboard Centre" width="200" height="52"></a>') % href
 
@@ -271,9 +268,9 @@ def reviews_section(bg="bg-navy-slate"):
 </div></section>
 """.format(bg=bg, slides=slides, dots=dots, fb=FB, ig=IG, frev=FREV, ig_ico=SVG_IG)
 
-MARQUEE_ITEM = ('<span class="mq-item"><span class="mq-mark" aria-hidden="true" style="display:inline-flex">%s</span>'
-                '<b class="mq-c">Cupboard</b>&nbsp;<b class="mq-s">Centre</b></span>') % (
-                '<svg viewBox="0 0 24 24" fill="none" stroke="#ff9aa0" stroke-width="2" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18"/></svg>')
+MARQUEE_ITEM = ('<span class="mq-item"><img class="mq-logo flogo-white" '
+                'src="assets/images/photos/66db6af75f06f55b858a6efc.png" alt="" aria-hidden="true" '
+                'width="180" height="46" loading="lazy" decoding="async"></span>')
 def marquee():
     return '<div class="marquee marquee-dark" aria-hidden="true"><div class="marquee-track">%s</div></div>\n' % (MARQUEE_ITEM*16)
 
@@ -388,10 +385,10 @@ BLOG = [
 ]
 
 BLOG_IMG = {
- "choosing-the-perfect-kitchen-units":("assets/images/photos/66effddd3b00e21ab3ee382f.png","Modern fitted kitchen with island and wood-grain cupboards"),
- "durable-quartz-countertops":("assets/images/photos/67229f670323aa18419ba655.png","Quartz kitchen countertop in a custom Cupboard Centre kitchen"),
- "granite-countertops-for-your-home":("assets/images/photos/6722a1d616e7a76fe953bc26.png","Kitchen with natural stone countertop and built-in cabinetry"),
- "expert-solutions-for-shop-fitting":("assets/images/photos/66f5b16bef065d52dae05d07.png","Custom retail shop counter and shelving fit-out"),
+ "choosing-the-perfect-kitchen-units":("assets/images/photos/66f6cbe5d739716cf3c632f5.jpg","Modern fitted kitchen with a white quartz waterfall island"),
+ "durable-quartz-countertops":("assets/images/photos/66f6cc2b52153310a558a6b1.jpg","Durable quartz countertop on a custom Cupboard Centre island"),
+ "granite-countertops-for-your-home":("assets/images/photos/6702dc251b48d6576329d1e9.jpg","Natural stone countertop with high-gloss built-in cabinetry"),
+ "expert-solutions-for-shop-fitting":("assets/images/photos/6702dc1ed6cf170e3edf4b2a.jpg","Custom retail reception counter and shopfitting"),
 }
 def blog_image(slug, imgs):
     return BLOG_IMG.get(slug, img(imgs,1))
@@ -418,14 +415,21 @@ HOME_SVCS = [
   ("DIY Kitchen Units","kitchen-units.html",IC['kitchen'],img(KITCHEN,2,"DIY kitchen units")),
   ("Bedroom Cupboards","bedroom-bathroom-cabinetry.html",IC['bed'],img(BEDROOM,0,"Built-in bedroom cupboards")),
   ("Bathroom Cabinetry","bedroom-bathroom-cabinetry.html",IC['bath'],img(BATHROOM,1,"Bathroom vanity cabinetry")),
-  ("Melamine Doors","melamine-doors-quartz-countertops.html",IC['door'],img(MELAMINE,0,"Melamine cupboard doors")),
+  ("Melamine Doors","melamine-doors-quartz-countertops.html",IC['door'],("assets/images/photos/66f6cb03e1628294c2d7168d.jpg","Wood-grain melamine kitchen with quartz island")),
   ("Quartz Countertops","melamine-doors-quartz-countertops.html",IC['quartz'],img(KITCHEN,5,"Quartz countertops")),
   ("Custom Cabinetry &amp; Shopfitting","custom-cabinetry.html",IC['custom'],img(CUSTOM,0,"Custom cabinetry and shopfitting")),
   ("DIY Units &amp; Flat-Packs","diy-units.html",IC['diy'],img(DIY,0,"DIY flat-pack units")),
 ]
 
 def work_carousel():
-    picks = [img(KITCHEN,0),img(BEDROOM,3),img(CUSTOM,2),img(BATHROOM,0),img(KITCHEN,8),img(BEDROOM,7),img(CUSTOM,6)]
+    picks = [
+      ("assets/images/photos/6702dc2501848c80ac744433.jpg","Custom wood-grain kitchen with island and glass display cabinets"),
+      ("assets/images/photos/6702dc1e01848c97a8744427.jpg","Modern grey kitchen with a large island and induction hob"),
+      ("assets/images/photos/6702dc281e07d901a5811b87.jpg","Custom curved reception desk shopfitting"),
+      ("assets/images/photos/6702dc1f01848c135a74442c.jpg","Fitted office reception counter and workstation"),
+      ("assets/images/photos/6702dc2501848c074b744439.jpg","Bright fitted kitchen with breakfast bar and bar stools"),
+      ("assets/images/photos/6702dc2001848c4c9674442e.jpg","Bathroom vanity with a stone top and vessel basin"),
+    ]
     slides=""
     for i,(u,a) in enumerate(picks):
         slides += ('<button class="work-slide%s" type="button" data-i="%d"><img src="%s" alt="%s" width="400" height="300" loading="lazy" decoding="async"></button>'
@@ -449,7 +453,6 @@ WHY_ITEMS = [
  ("Custom &amp; DIY Under One Roof","From flat-pack DIY kits you assemble yourself to fully custom, installed cabinetry, whatever suits your budget and skill."),
  ("Quality Materials, Quality Hardware","Hard-wearing melamine, Eazi Quartz tops and soft-close hinges and runners as standard, not as an upsell."),
  ("Free, No-Obligation Quotes","We give you a clear, written, no-obligation quote up front, so you know exactly what to expect before any work begins."),
- ("Nationwide Delivery","Pre-cut, labelled DIY units delivered to your door anywhere in South Africa."),
  ("Expert Installation Team","Prefer it done for you? Our installers fit kitchens, wardrobes and vanities cleanly and on schedule."),
 ]
 FAQ_ITEMS = [
@@ -479,8 +482,8 @@ print("blog + home helpers loaded")
 # ============================================================ HOME PAGE
 def build_home():
     hero_u,_ = img(GENERAL,0)
-    about_u = "assets/images/photos/6701c754fbe4fd1483bcbd50.jpg"  # team at the showroom
-    commit_u = "assets/images/photos/66f6cb03e1628294c2d7168d.jpg"  # showroom interior
+    about_u = "assets/images/photos/67028368d6cf1745c3def33d.jpg"  # the Cupboard Centre team
+    commit_u = "assets/images/photos/6701c754fbe4fd1483bcbd50.jpg"  # Cupboard Centre premises + team
     h  = head("Cupboard Centre | Nelspruit's Best DIY &amp; Custom Cupboard Solutions",
               "DIY &amp; custom cupboards in Nelspruit &amp; Mbombela, kitchens, bedroom &amp; bathroom cabinetry, melamine doors and quartz countertops. Supply, delivery &amp; installation. Free quote.",
               "https://www.cupboardcentre.co.za/", hero_u)
@@ -503,7 +506,7 @@ def build_home():
     h += """<section id="about" class="section bg-navy"><div class="wrap">
   <div class="section-center about-banner"><h2 class="about-banner-title">We Are <span class="g2">Cupboard Centre</span></h2></div>
   <div class="about-card">
-    <div class="about-img" style="background-image:url({about_u});background-size:auto 145%;background-position:center 74%"></div>
+    <div class="about-img" style="background-image:url({about_u});background-size:cover;background-position:center 42%"></div>
     <div class="about-panel">
       <span class="about-eyebrow">A Local Team. A Lasting Standard.</span>
       <h3 class="about-heading">Cupboards Done <span class="g2">Properly</span></h3>
@@ -1098,7 +1101,7 @@ def build_post(p):
     # cta + marquee + footer with ../ fix
     cf=cta_form().replace('href="privacy-policy.html"','href="../privacy-policy.html"')
     h+=cf
-    h+=marquee()
+    h+=marquee().replace('src="assets','src="../assets')
     ft=footer().replace('href="','href="../').replace('href="../http','href="http').replace('href="../tel:','href="tel:').replace('href="../mailto:','href="mailto:').replace('href="../#','href="#').replace('src="assets','src="../assets')
     h+=ft
     return h

@@ -122,7 +122,7 @@
   function initWorkCarousel(root) {
     var track = $('[data-work-track]', root);
     var slides = $$('.work-slide', track);
-    var dotsWrap = $('[data-work-dots]', root);
+    var dotsWrap = (root.closest('section') || doc).querySelector('[data-work-dots]');
     if (!track || !slides.length) return;
     var active = 0;
     function render() {
@@ -148,6 +148,10 @@
     }
     var rt; on(window, 'resize', function () { clearTimeout(rt); rt = setTimeout(render, 150); });
     setTimeout(render, 50);
+    // autoplay — keep the carousel cyclable; pause while the visitor is hovering
+    var timer = setInterval(function () { active = (active + 1) % slides.length; render(); }, 5000);
+    on(root, 'mouseenter', function () { clearInterval(timer); timer = null; });
+    on(root, 'mouseleave', function () { if (!timer) timer = setInterval(function () { active = (active + 1) % slides.length; render(); }, 5000); });
   }
 
   /* ---------- Gallery filters ---------- */
