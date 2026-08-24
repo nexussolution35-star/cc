@@ -137,12 +137,15 @@ def head(title, desc, canonical, og_img):
 """.format(title=title, desc=desc, canonical=canonical, og_img=og_img, fonts=FONTS,
            subnav=subnav, ld=ld)
 
-def logo(href="index.html"):
+def logo(href="index.html", dark_bg=False):
+    if dark_bg:
+        return ('<a class="logo" href="%s" aria-label="Cupboard Centre home">'
+                '<span class="brand-logo"><span class="bl-mark">'
+                '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M9 8.5h0.01M15 8.5h0.01"/></svg>'
+                '</span><span class="bl-text"><span class="bl-1">Cupboard Centre</span>'
+                '<span class="bl-2">DIY &amp; Custom Cupboards</span></span></span></a>') % href
     return ('<a class="logo" href="%s" aria-label="Cupboard Centre home">'
-            '<span class="brand-logo"><span class="bl-mark">'
-            '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M9 8.5h0.01M15 8.5h0.01"/></svg>'
-            '</span><span class="bl-text"><span class="bl-1">Cupboard Centre</span>'
-            '<span class="bl-2">DIY &amp; Custom Cupboards</span></span></span></a>') % href
+            '<img class="logo-img" src="assets/images/photos/66db6af75f06f55b858a6efc.png" alt="Cupboard Centre" width="200" height="52"></a>') % href
 
 def header(active="", cart=False):
     def a(label, href):
@@ -223,14 +226,10 @@ def lead_form(title="Request Your Free Quote", note="We call you back within one
 
 # ---- reviews section (reusable) ----
 REVIEWS = [
- ("Thabo M.","Google Review","5.0","Cupboard Centre transformed our kitchen with custom units and a quartz top. The finish is flawless and the price beat every other quote in Nelspruit.",False),
- ("Marié van Wyk","Google Review","5.0","Ordered DIY flat-pack wardrobes for two bedrooms. Everything arrived pre-cut and labelled, and it went together in a weekend. Brilliant value.",False),
- ("Sipho D.","Google Review","5.0","Professional from measurement to installation. Their team fitted our built-in bedroom cupboards perfectly and cleaned up after themselves.",False),
- ("Lerato K.","Facebook Review","5.0","Beautiful melamine doors and soft-close everything. The showroom staff really know cabinetry and helped us pick the right layout.",False),
- ("Johan Pretorius","Google Review","5.0","We used Cupboard Centre to fit out our shop counters and office cupboards. Great craftsmanship, delivered on time and on budget. Highly recommend.",True),
- ("Nomsa Z.","Google Review","5.0","From quote to install was quick and hassle-free. The bathroom vanity with the quartz top looks like something out of a magazine.",False),
- ("Andrew S.","Google Review","5.0","Excellent DIY kitchen units at a fair price. Delivery to White River was on time and the quality is genuinely solid.",False),
- ("Chantelle B.","Facebook Review","5.0","The custom walk-in wardrobe they designed for us is stunning, shelving, drawers and shoe storage exactly where we wanted them.",False),
+ ("Trish Pearce","Google Review","5.0","I had a dressing table made and a cupboard fitted. I paid on Tuesday and they fitted on Thursday. They were amazing, the staff were very polite and professional. I am very happy and I recommend this company and their work.",True),
+ ("Fortune Ngomane","Google Review","5.0","Recommended!!",False),
+ ("Marinda De Clercq","Google Review","5.0","Left Cupboard Centre a 5-star rating.",False),
+ ("Paul Stander","Google Review","5.0","Left Cupboard Centre a 5-star rating.",False),
 ]
 GREV = '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"></path><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"></path><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"></path><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"></path></svg>'
 FREV = '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#1877F2" d="M24 4C12.95 4 4 12.95 4 24c0 9.98 7.31 18.25 16.88 19.75V29.78h-5.08V24h5.08v-4.41c0-5.02 2.99-7.79 7.56-7.79 2.19 0 4.48.39 4.48.39v4.92h-2.52c-2.49 0-3.26 1.54-3.26 3.12V24h5.55l-.89 5.78h-4.66v13.97C36.69 42.25 44 33.98 44 24 44 12.95 35.05 4 24 4z"></path></svg>'
@@ -258,7 +257,7 @@ def reviews_section(bg="bg-navy-slate"):
     return """<section id="reviews" class="section {bg}"><div class="wrap">
   <div class="reviews-head"><span class="eyebrow">What Clients Say</span>
   <h2 class="reviews-score">Loved by Homes &amp; <span class="g2">Contractors</span></h2>
-  <p>Real feedback from homeowners, builders and businesses across Nelspruit, Mbombela and the Lowveld.</p></div>
+  <p>A 5.0 rating from our Google reviews, real feedback from Cupboard Centre customers across Nelspruit and Mbombela.</p></div>
   <div class="review-carousel" data-carousel>
     <button class="carousel-arrow prev" data-prev aria-label="Previous reviews">‹</button>
     <div class="carousel-viewport"><div class="carousel-track" data-track>{slides}</div></div>
@@ -328,7 +327,7 @@ def footer():
 </div></footer>
 <script src="assets/js/app.js" defer></script>
 </body>
-</html>""".format(logo=logo(), svc=svc, tel=TEL, phone=PHONE, wa=WA, email=EMAIL, addrq=ADDR_Q,
+</html>""".format(logo=logo(dark_bg=True), svc=svc, tel=TEL, phone=PHONE, wa=WA, email=EMAIL, addrq=ADDR_Q,
                   s_ph=SVG_PHONE, s_wa=SVG_WA, s_ml=SVG_MAIL, s_pin=SVG_PIN,
                   fb=FB, ig=IG, yt=YT, s_fb=SVG_FB, s_ig=SVG_IG, s_yt=SVG_YT)
 
@@ -388,9 +387,18 @@ BLOG = [
    ("Durable where it counts","Retail takes a beating. We specify robust melamine, quality edging and soft-close hardware so your fittings still look sharp years down the line.")]),
 ]
 
+BLOG_IMG = {
+ "choosing-the-perfect-kitchen-units":("assets/images/photos/66effddd3b00e21ab3ee382f.png","Modern fitted kitchen with island and wood-grain cupboards"),
+ "durable-quartz-countertops":("assets/images/photos/67229f670323aa18419ba655.png","Quartz kitchen countertop in a custom Cupboard Centre kitchen"),
+ "granite-countertops-for-your-home":("assets/images/photos/6722a1d616e7a76fe953bc26.png","Kitchen with natural stone countertop and built-in cabinetry"),
+ "expert-solutions-for-shop-fitting":("assets/images/photos/66f5b16bef065d52dae05d07.png","Custom retail shop counter and shelving fit-out"),
+}
+def blog_image(slug, imgs):
+    return BLOG_IMG.get(slug, img(imgs,1))
+
 def post_card(p):
     slug,title,excerpt,cat,imgs,body = p
-    u,a = img(imgs,1,title)
+    u,a = blog_image(slug, imgs)
     return ('<div class="post-card"><a href="blog/{slug}.html" style="display:block" aria-label="{t}">'
             '<div class="pc-img" style="background-image:url({u})"></div></a>'
             '<div class="pc-body"><span class="eyebrow" style="margin-bottom:6px">{cat}</span>'
@@ -471,8 +479,8 @@ print("blog + home helpers loaded")
 # ============================================================ HOME PAGE
 def build_home():
     hero_u,_ = img(GENERAL,0)
-    about_u,_ = img(KITCHEN,4)
-    commit_u,_ = img(INSTALL,0)
+    about_u = "assets/images/photos/6701c754fbe4fd1483bcbd50.jpg"  # team at the showroom
+    commit_u = "assets/images/photos/66f6cb03e1628294c2d7168d.jpg"  # showroom interior
     h  = head("Cupboard Centre | Nelspruit's Best DIY &amp; Custom Cupboard Solutions",
               "DIY &amp; custom cupboards in Nelspruit &amp; Mbombela, kitchens, bedroom &amp; bathroom cabinetry, melamine doors and quartz countertops. Supply, delivery &amp; installation. Free quote.",
               "https://www.cupboardcentre.co.za/", hero_u)
@@ -481,7 +489,7 @@ def build_home():
     h += """<section id="hero" class="hero"><div class="hero-panel">
   <div class="hero-content">
     <span class="hero-eyebrow">{shield}Nelspruit &amp; Mbombela · 25+ Years of Cupboards</span>
-    <h1>Nelspruit's Best Choice For<br><span class="sub">DIY &amp; Custom Cupboard Solutions</span></h1>
+    <h1>Nelspruit's Best Choice For <span class="sub">DIY &amp; Custom Cupboard Solutions</span></h1>
     <p>A one-stop shop for cupboards, from custom kitchens, bedroom &amp; bathroom cabinetry and quartz countertops to pre-cut DIY flat-packs delivered to your door. Supply, delivery and expert installation.</p>
     <div class="review-badges"><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{grev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Google Reviews</span></span></a><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{frev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Facebook Reviews</span></span></a></div>
     <div class="hero-sub-claims"><span>Custom &amp; DIY</span><span>Free Quote</span><span>Nationwide Delivery</span></div>
@@ -1060,7 +1068,7 @@ print("blog.html", write("blog.html", build_blog()), "bytes")
 
 def build_post(p):
     slug,title,excerpt,cat,imgs,body = p
-    og,_=img(imgs,1)
+    og = blog_image(slug, imgs)[0]
     h=head("%s | Cupboard Centre Blog"%title, excerpt,
            "https://www.cupboardcentre.co.za/blog/%s.html"%slug, og)
     # header/footer use relative paths, from /blog/ we need ../ prefix
@@ -1070,8 +1078,7 @@ def build_post(p):
     # page hero with blog trail (fix links for subdir)
     ph=page_hero(title,"Insights",title,cta=False,trail=[("Blog","blog.html")],bg_img='../'+img(imgs,1)[0],prefix="../")
     h+=ph
-    hero_u,_=img(imgs,1)
-    hero_u='../'+hero_u
+    hero_u = '../'+blog_image(slug, imgs)[0]
     secs=""
     for i,(sh,sp) in enumerate(body):
         secs+='<h2>%s</h2><p>%s</p>'%(sh,sp)
@@ -1160,7 +1167,7 @@ def build_shop():
     h+="""<section class="section bg-navy"><div class="wrap">
   <div class="section-center" style="margin-bottom:26px"><span class="eyebrow">In Stock</span><h2>DIY Cupboards, Ready to Order</h2>
   <p style="max-width:46em;margin:6px auto 0;color:var(--muted)">Looking for custom kitchens, bedrooms or bathrooms? <a href="get-a-quote.html" style="color:var(--cc-red);font-weight:700">Get a free quote</a> and we’ll build to your space.</p></div>
-  <div class="product-grid" style="max-width:420px;margin:0 auto">
+  <div style="max-width:360px;margin:0 auto">
     <div class="img-card" style="display:flex;flex-direction:column">
       <a class="ic-img" href="product-{id}.html" style="display:block"><img src="{img}" alt="{name}" loading="lazy" decoding="async"></a>
       <div style="padding:20px 22px;display:flex;flex-direction:column;flex:1">

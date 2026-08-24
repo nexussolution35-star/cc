@@ -1138,3 +1138,7 @@ a:hover{color:var(--green)}
 /* FAQ dropdowns follow the same opposite-of-background rule */
 .bg-navy-slate .faq-item{background:#ffffff;border:1px solid #ececec}
 .bg-navy .faq-item{background:#f4f5f7}
+/* real logo image in the header */
+.logo-img{height:48px;width:auto;display:block}
+@media(max-width:640px){.logo-img{height:40px}}
+@media(max-width:400px){.logo-img{height:34px}}
