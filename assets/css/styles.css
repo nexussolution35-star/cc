@@ -1152,3 +1152,18 @@ a:hover{color:var(--green)}
 .mq-logo{height:40px;width:214px;flex:0 0 auto;display:block;object-fit:contain}
 .marquee-dark .mq-item{padding:0 34px}
 @media(max-width:640px){.mq-logo{height:32px;width:171px}.marquee-dark .mq-item{padding:0 24px}}
+
+/* ---- Trusted partners band (home, after hero) ---- */
+.partners-band{background:#fff;padding-top:52px;padding-bottom:52px}
+.eyebrow-rule{display:inline-flex;align-items:center;justify-content:center;gap:16px}
+.eyebrow-rule::before,.eyebrow-rule::after{content:"";width:44px;height:2px;background:currentColor;opacity:.55;flex:0 0 auto}
+.partner-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin:32px auto 0;max-width:940px}
+.partner-card{flex:0 0 216px;max-width:216px;min-height:118px;display:flex;align-items:center;justify-content:center;
+  padding:22px 26px;background:#fff;border:1px solid #ececec;border-radius:var(--r-card);
+  box-shadow:0 1px 2px rgba(20,14,15,.05);transition:box-shadow .18s ease,transform .18s ease,border-color .18s ease}
+.partner-card:hover{box-shadow:0 8px 22px rgba(20,14,15,.10);transform:translateY(-3px);border-color:#e0e0e0}
+.partner-logo{max-width:100%;max-height:62px;width:auto;height:auto;object-fit:contain;display:block}
+/* recolour PG Bison's reversed (white) master logo to its brand green */
+.partner-logo.p-green{filter:brightness(0) saturate(100%) invert(38%) sepia(84%) saturate(560%) hue-rotate(93deg) brightness(94%) contrast(92%)}
+@media(max-width:900px){.partner-card{flex-basis:30%;max-width:none;min-height:104px;padding:18px}}
+@media(max-width:560px){.partner-grid{gap:14px}.partner-card{flex-basis:44%;min-height:92px;padding:14px 16px}.partner-logo{max-height:48px}}

@@ -274,6 +274,28 @@ MARQUEE_ITEM = ('<span class="mq-item"><img class="mq-logo flogo-white" '
 def marquee():
     return '<div class="marquee marquee-dark" aria-hidden="true"><div class="marquee-track">%s</div></div>\n' % (MARQUEE_ITEM*16)
 
+# trusted supplier / partner brands (real logos sourced from each brand)
+PARTNERS = [
+    ("PG Bison",       "assets/images/photos/partners/pg-bison.png",       "https://pgbison.co.za",       "p-green"),
+    ("Wood4U",         "assets/images/photos/partners/wood4u.png",         "https://wood4u.co.za",        ""),
+    ("Eezi Quartz",    "assets/images/photos/partners/eezi-quartz.png",    "https://www.eeziquartz.co.za",""),
+    ("Sonae Arauco",   "assets/images/photos/partners/sonae-arauco.svg",   "https://www.sonaearauco.com", ""),
+    ("FHD, Fitting &amp; Handle Distributors", "assets/images/photos/partners/fhd.png", "https://fhd.co.za", ""),
+    ("National Edging","assets/images/photos/partners/national-edging.png","https://www.nationaledging.co.za",""),
+]
+def partners_band():
+    cards=""
+    for name, src, href, cls in PARTNERS:
+        c = " "+cls if cls else ""
+        cards += ('<a class="partner-card" href="%s" target="_blank" rel="noopener noreferrer" '
+                  'title="%s"><img class="partner-logo%s" src="%s" alt="%s logo" loading="lazy" '
+                  'decoding="async"></a>') % (href, name, c, src, name)
+    return """<section id="partners" class="section partners-band"><div class="wrap section-center">
+  <span class="eyebrow eyebrow-rule">In Partnership With Our Trusted Partners</span>
+  <div class="partner-grid">%s</div>
+</div></section>
+""" % cards
+
 def cta_form():
     return """<section id="cta-form" class="cta-band"><div class="cta-panel">
   <div>
@@ -500,6 +522,8 @@ def build_home():
   <div class="hero-form-col">{form}</div>
 </div></section>
 """.format(shield=SVG_SHIELD, fb=FB, grev=GREV, frev=FREV, form=lead_form())
+    # 1b. TRUSTED PARTNERS
+    h += partners_band()
     # 2. REVIEWS
     h += reviews_section("bg-navy-slate")
     # 3. ABOUT
