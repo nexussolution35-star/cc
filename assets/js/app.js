@@ -133,7 +133,10 @@
       track.style.transform = 'translateX(' + (-offset) + 'px)';
       if (dotsWrap) $$('.cdot', dotsWrap).forEach(function (d, i) { d.classList.toggle('active', i === active); });
     }
-    slides.forEach(function (s, i) { on(s, 'click', function () { active = i; render(); }); });
+    // Clicking a slide opens it in the lightbox (with prev/next + close)
+    var lbImgs = slides.map(function (s) { return $('img', s); }).filter(Boolean);
+    var lb = buildLightbox(lbImgs);
+    slides.forEach(function (s, i) { s.style.cursor = 'zoom-in'; on(s, 'click', function () { if (lb) lb.open(i); }); });
     on($('[data-work-prev]', root), 'click', function () { active = (active - 1 + slides.length) % slides.length; render(); });
     on($('[data-work-next]', root), 'click', function () { active = (active + 1) % slides.length; render(); });
     if (dotsWrap) {
@@ -183,12 +186,9 @@
     });
   }
 
-  /* ---------- Lightbox for gallery images ---------- */
-  function initLightbox() {
-    var imgs = $$('.gallery-grid .g-item img:not(.ba-before img)').filter(function (img) {
-      return !img.closest('.ba-before');
-    });
-    if (!imgs.length) return;
+  /* ---------- Reusable lightbox ---------- */
+  function buildLightbox(imgs) {
+    if (!imgs.length) return null;
     var box = doc.createElement('div');
     box.className = 'lightbox';
     box.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button>' +
@@ -200,7 +200,6 @@
     function show(i) { idx = (i + imgs.length) % imgs.length; big.src = imgs[idx].currentSrc || imgs[idx].src; big.alt = imgs[idx].alt || ''; }
     function open(i) { show(i); box.classList.add('open'); }
     function close() { box.classList.remove('open'); }
-    imgs.forEach(function (img, i) { img.style.cursor = 'zoom-in'; on(img, 'click', function () { open(i); }); });
     on($('.lightbox-close', box), 'click', close);
     on($('.lightbox-nav.prev', box), 'click', function (e) { e.stopPropagation(); show(idx - 1); });
     on($('.lightbox-nav.next', box), 'click', function (e) { e.stopPropagation(); show(idx + 1); });
@@ -211,6 +210,17 @@
       if (e.key === 'ArrowLeft') show(idx - 1);
       if (e.key === 'ArrowRight') show(idx + 1);
     });
+    return { open: open, close: close };
+  }
+
+  /* ---------- Lightbox for gallery images ---------- */
+  function initLightbox() {
+    var imgs = $$('.gallery-grid .g-item img').filter(function (img) {
+      return !img.closest('.ba-before');
+    });
+    var lb = buildLightbox(imgs);
+    if (!lb) return;
+    imgs.forEach(function (img, i) { img.style.cursor = 'zoom-in'; on(img, 'click', function () { lb.open(i); }); });
   }
 
   /* ---------- "Show more" services grid ---------- */

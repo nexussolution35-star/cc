@@ -140,7 +140,7 @@ def head(title, desc, canonical, og_img):
 def logo(href="index.html", dark_bg=False):
     if dark_bg:
         return ('<a class="logo" href="%s" aria-label="Cupboard Centre home">'
-                '<img class="logo-img flogo-white" src="assets/images/photos/66db6af75f06f55b858a6efc.png" alt="Cupboard Centre" width="200" height="52"></a>') % href
+                '<img class="logo-img flogo-black" src="assets/images/photos/66db6af75f06f55b858a6efc.png" alt="Cupboard Centre" width="200" height="52"></a>') % href
     return ('<a class="logo" href="%s" aria-label="Cupboard Centre home">'
             '<img class="logo-img" src="assets/images/photos/66db6af75f06f55b858a6efc.png" alt="Cupboard Centre" width="200" height="52"></a>') % href
 
@@ -385,7 +385,7 @@ BLOG = [
 ]
 
 BLOG_IMG = {
- "choosing-the-perfect-kitchen-units":("assets/images/photos/66f6cbe5d739716cf3c632f5.jpg","Modern fitted kitchen with a white quartz waterfall island"),
+ "choosing-the-perfect-kitchen-units":("assets/images/photos/6702dc273cd5463db01f4ef8.jpg","Fitted kitchen with white wall and base cupboard units and a gas hob"),
  "durable-quartz-countertops":("assets/images/photos/66f6cc2b52153310a558a6b1.jpg","Durable quartz countertop on a custom Cupboard Centre island"),
  "granite-countertops-for-your-home":("assets/images/photos/6702dc251b48d6576329d1e9.jpg","Natural stone countertop with high-gloss built-in cabinetry"),
  "expert-solutions-for-shop-fitting":("assets/images/photos/6702dc1ed6cf170e3edf4b2a.jpg","Custom retail reception counter and shopfitting"),

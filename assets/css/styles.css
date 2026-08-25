@@ -1145,6 +1145,7 @@ a:hover{color:var(--green)}
 
 /* ---- white Cupboard Centre logo (footer + marquee), for dark/red backgrounds ---- */
 .flogo-white{filter:brightness(0) invert(1)}
+.flogo-black{filter:brightness(0)}
 .footer .logo-img{height:54px;margin-bottom:6px}
 @media(max-width:640px){.footer .logo-img{height:46px}}
 /* moving footer logo band uses the real logo instead of text */
