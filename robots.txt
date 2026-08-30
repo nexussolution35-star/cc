@@ -1,0 +1,8 @@
+# Production robots.txt for cupboardcentre.co.za
+User-agent: *
+Allow: /
+
+# Utility pages, no search value
+Disallow: /cart.html
+
+Sitemap: https://www.cupboardcentre.co.za/sitemap.xml

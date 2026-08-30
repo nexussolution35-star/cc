@@ -1,0 +1,30 @@
+# 301 redirects: old Wix URLs -> new site.
+# Generated from seo/03-url-migration-map.csv - do not hand-edit.
+# Ordered by internal-link count on the old site (highest equity first).
+
+/home-cc  /  301
+/gallery-designs-of-kitchen-cupboard  /gallery.html  301
+/shop  /shop.html  301
+/gallery-custom-cabinetry  /custom-cabinetry.html  301
+/bedroom-and-bathroom-cabinetry  /bedroom-bathroom-cabinetry.html  301
+/contact-us  /contact.html  301
+/about-us  /about.html  301
+/kitchen-units  /kitchen-units.html  301
+/blog  /blog.html  301
+/get-a-quote  /get-a-quote.html  301
+/melamine-doors-quartz-countertops  /melamine-doors-quartz-countertops.html  301
+/gallery-bedroom-cupboards  /gallery.html  301
+/gallery-bathroom-cabinetry  /gallery.html  301
+/gallery-diy-units  /diy-units.html  301
+/faq  /faq.html  301
+/cupboard-installation  /cupboard-installation.html  301
+/cart  /cart.html  301
+/checkout  /get-a-quote.html  301
+/post/the-ultimate-guide-to-durable-quartz-countertops  /blog/durable-quartz-countertops.html  301
+/post/transform-your-space-a-complete-guide-to-choosing-the-perfect-kitchen-units  /blog/choosing-the-perfect-kitchen-units.html  301
+/post/cupboard-warehouse  /blog.html  301
+/post/shop-fitting  /blog/expert-solutions-for-shop-fitting.html  301
+/post/timeless-elegance-granite-countertops-for-your-home  /blog/granite-countertops-for-your-home.html  301
+/post/top-tips-for-selecting-ideal-kitchen-countertops--ultimate-guide-to-choosing-the-perfect-kitchen-countertops---expert-tips-and-advice-to-help-you-select-the-ideal-countertops-for-your-space  /blog/durable-quartz-countertops.html  301
+/bedroom-cabinetry  /bedroom-bathroom-cabinetry.html  301
+/product-details/product/cc1  /product-flat-pack-wardrobe.html  301

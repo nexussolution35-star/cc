@@ -1,0 +1,199 @@
+keyword,type,intent,suggested_target_page,suggested_role,source,search_volume_FILL_FROM_SEARCH_ATLAS,keyword_difficulty_FILL_FROM_SEARCH_ATLAS,decision_target_or_reject,notes
+cupboard centre,Brand,Navigational,index.html,Primary,Brand,,,,Homepage must rank #1 for the brand name.
+cupboard centre nelspruit,Brand + town,Navigational,index.html,Secondary,Old site + brand,,,,
+cupboard centre mbombela,Brand + town,Navigational,index.html,Secondary,Brand,,,,
+cupboard installation,Core service,Commercial,cupboard-installation.html,Primary,New site services,,,,
+cupboard installation services,"Service + ""services"" variant",Commercial,cupboard-installation.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+kitchen units,Core service,Commercial,kitchen-units.html,Primary,New site services,,,,
+kitchen units services,"Service + ""services"" variant",Commercial,kitchen-units.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+kitchen cupboards,Core service,Commercial,kitchen-units.html,Primary,New site services,,,,
+kitchen cupboards services,"Service + ""services"" variant",Commercial,kitchen-units.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+bedroom cupboards,Core service,Commercial,bedroom-bathroom-cabinetry.html,Primary,New site services,,,,
+bedroom cupboards services,"Service + ""services"" variant",Commercial,bedroom-bathroom-cabinetry.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+built in cupboards,Core service,Commercial,bedroom-bathroom-cabinetry.html,Primary,New site services,,,,
+built in cupboards services,"Service + ""services"" variant",Commercial,bedroom-bathroom-cabinetry.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+bathroom cabinets,Core service,Commercial,bedroom-bathroom-cabinetry.html,Primary,New site services,,,,
+bathroom cabinets services,"Service + ""services"" variant",Commercial,bedroom-bathroom-cabinetry.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+melamine doors,Core service,Commercial,melamine-doors-quartz-countertops.html,Primary,New site services,,,,
+melamine doors services,"Service + ""services"" variant",Commercial,melamine-doors-quartz-countertops.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+quartz countertops,Core service,Commercial,melamine-doors-quartz-countertops.html,Primary,New site services,,,,
+quartz countertops services,"Service + ""services"" variant",Commercial,melamine-doors-quartz-countertops.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+custom cabinetry,Core service,Commercial,custom-cabinetry.html,Primary,New site services,,,,
+custom cabinetry services,"Service + ""services"" variant",Commercial,custom-cabinetry.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+shopfitting,Core service,Transactional,custom-cabinetry.html,Primary,New site services,,,,
+shopfitting services,"Service + ""services"" variant",Transactional,custom-cabinetry.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+office cupboards,Core service,Commercial,custom-cabinetry.html,Primary,New site services,,,,
+office cupboards services,"Service + ""services"" variant",Commercial,custom-cabinetry.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+diy cupboards,Core service,Commercial,diy-units.html,Primary,New site services,,,,
+diy cupboards services,"Service + ""services"" variant",Commercial,diy-units.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+flat pack cupboards,Core service,Commercial,diy-units.html,Primary,New site services,,,,
+flat pack cupboards services,"Service + ""services"" variant",Commercial,diy-units.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+kitchen cupboard doors,Core service,Commercial,melamine-doors-quartz-countertops.html,Primary,New site services,,,,
+kitchen cupboard doors services,"Service + ""services"" variant",Commercial,melamine-doors-quartz-countertops.html,Secondary,Framework Rule 5,,,,"Always test: the ""services"" variant often beats the bare term on volume AND difficulty."
+cupboard installation Nelspruit,Service + town,Commercial,cupboard-installation.html,Secondary,Service areas,,,,
+cupboard installation Mbombela,Service + town,Commercial,cupboard-installation.html,Secondary,Service areas,,,,
+kitchen units Nelspruit,Service + town,Commercial,kitchen-units.html,Secondary,Service areas,,,,
+kitchen units Mbombela,Service + town,Commercial,kitchen-units.html,Secondary,Service areas,,,,
+kitchen cupboards Nelspruit,Service + town,Commercial,kitchen-units.html,Secondary,Service areas,,,,
+kitchen cupboards Mbombela,Service + town,Commercial,kitchen-units.html,Secondary,Service areas,,,,
+bedroom cupboards Nelspruit,Service + town,Commercial,bedroom-bathroom-cabinetry.html,Secondary,Service areas,,,,
+bedroom cupboards Mbombela,Service + town,Commercial,bedroom-bathroom-cabinetry.html,Secondary,Service areas,,,,
+built in cupboards Nelspruit,Service + town,Commercial,bedroom-bathroom-cabinetry.html,Secondary,Service areas,,,,
+built in cupboards Mbombela,Service + town,Commercial,bedroom-bathroom-cabinetry.html,Secondary,Service areas,,,,
+bathroom cabinets Nelspruit,Service + town,Commercial,bedroom-bathroom-cabinetry.html,Secondary,Service areas,,,,
+bathroom cabinets Mbombela,Service + town,Commercial,bedroom-bathroom-cabinetry.html,Secondary,Service areas,,,,
+melamine doors Nelspruit,Service + town,Commercial,melamine-doors-quartz-countertops.html,Secondary,Service areas,,,,
+melamine doors Mbombela,Service + town,Commercial,melamine-doors-quartz-countertops.html,Secondary,Service areas,,,,
+quartz countertops Nelspruit,Service + town,Commercial,melamine-doors-quartz-countertops.html,Secondary,Service areas,,,,
+quartz countertops Mbombela,Service + town,Commercial,melamine-doors-quartz-countertops.html,Secondary,Service areas,,,,
+custom cabinetry Nelspruit,Service + town,Commercial,custom-cabinetry.html,Secondary,Service areas,,,,
+custom cabinetry Mbombela,Service + town,Commercial,custom-cabinetry.html,Secondary,Service areas,,,,
+shopfitting Nelspruit,Service + town,Transactional,custom-cabinetry.html,Secondary,Service areas,,,,
+shopfitting Mbombela,Service + town,Transactional,custom-cabinetry.html,Secondary,Service areas,,,,
+office cupboards Nelspruit,Service + town,Commercial,custom-cabinetry.html,Secondary,Service areas,,,,
+office cupboards Mbombela,Service + town,Commercial,custom-cabinetry.html,Secondary,Service areas,,,,
+diy cupboards Nelspruit,Service + town,Commercial,diy-units.html,Secondary,Service areas,,,,
+diy cupboards Mbombela,Service + town,Commercial,diy-units.html,Secondary,Service areas,,,,
+flat pack cupboards Nelspruit,Service + town,Commercial,diy-units.html,Secondary,Service areas,,,,
+flat pack cupboards Mbombela,Service + town,Commercial,diy-units.html,Secondary,Service areas,,,,
+kitchen cupboard doors Nelspruit,Service + town,Commercial,melamine-doors-quartz-countertops.html,Secondary,Service areas,,,,
+kitchen cupboard doors Mbombela,Service + town,Commercial,melamine-doors-quartz-countertops.html,Secondary,Service areas,,,,
+cupboards Nelspruit,Town coverage,Commercial,service-areas.html,Primary,Service areas,,,,Keep a city page only where there is demand OR genuine unique local content (A3).
+kitchen cupboards Nelspruit,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,
+cupboards Mbombela,Town coverage,Commercial,service-areas.html,Primary,Service areas,,,,Keep a city page only where there is demand OR genuine unique local content (A3).
+kitchen cupboards Mbombela,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,
+cupboards White River,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,Keep a city page only where there is demand OR genuine unique local content (A3).
+kitchen cupboards White River,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,
+cupboards Hazyview,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,Keep a city page only where there is demand OR genuine unique local content (A3).
+kitchen cupboards Hazyview,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,
+cupboards Barberton,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,Keep a city page only where there is demand OR genuine unique local content (A3).
+kitchen cupboards Barberton,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,
+cupboards Sabie,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,Keep a city page only where there is demand OR genuine unique local content (A3).
+kitchen cupboards Sabie,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,
+cupboards Malelane,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,Keep a city page only where there is demand OR genuine unique local content (A3).
+kitchen cupboards Malelane,Town coverage,Commercial,service-areas.html,Coverage only,Service areas,,,,
+cupboard company,Category / product,Commercial,index.html,Secondary,Niche research,,,,
+cupboard manufacturers,Category / product,Commercial,index.html,Secondary,Niche research,,,,
+kitchen cupboard prices,Category / product,Transactional,kitchen-units.html,Secondary,Niche research,,,,
+built in cupboards prices,Category / product,Transactional,bedroom-bathroom-cabinetry.html,Secondary,Niche research,,,,
+kitchen renovation,Category / product,Commercial,kitchen-units.html,Secondary,Niche research,,,,
+walk in closet,Category / product,Commercial,bedroom-bathroom-cabinetry.html,Secondary,Niche research,,,,
+bathroom vanity,Category / product,Commercial,bedroom-bathroom-cabinetry.html,Secondary,Niche research,,,,
+reception desk,Category / product,Commercial,custom-cabinetry.html,Secondary,Niche research,,,,
+shop counters,Category / product,Transactional,custom-cabinetry.html,Secondary,Niche research,,,,
+cupboard doors,Category / product,Commercial,melamine-doors-quartz-countertops.html,Secondary,Niche research,,,,
+soft close hinges,Category / product,Commercial,melamine-doors-quartz-countertops.html,Secondary,Niche research,,,,
+flat pack wardrobe,Category / product,Commercial,product-flat-pack-wardrobe.html,Secondary,Niche research,,,,
+cupboard repairs,Category / product,Commercial,cupboard-installation.html,Secondary,Niche research,,,,
+how to choose kitchen units,Informational,Informational,blog/choosing-the-perfect-kitchen-units.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+quartz vs granite countertops,Informational,Informational,blog/durable-quartz-countertops.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+granite countertops guide,Informational,Informational,blog/granite-countertops-for-your-home.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+shop fitting ideas,Informational,Transactional,blog/expert-solutions-for-shop-fitting.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+how to install kitchen cupboards,Informational,Informational,blog.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+kitchen cupboard design ideas,Informational,Informational,blog.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+melamine vs wood cupboards,Informational,Informational,blog.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+how to assemble flat pack cupboards,Informational,Informational,blog.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+cost of built in cupboards south africa,Informational,Transactional,blog.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+how to measure for kitchen cupboards,Informational,Informational,blog.html,Blog primary,Content gap,,,,Informational intent — blog only. Never target on a money page (A3 intent trap).
+bathroom cabinetry,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bathroom cabinets,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bathroom remodeling,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bathroom storage solutions,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bathroom vanities,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bathroom vanity design,Legacy (from old site),Informational,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bedroom cabinetry,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bedroom cabinets,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bedroom cupboards,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bedroom diy cupboards,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+bedside cabinets,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+builders  warehouse built in kitchen cupboards,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+builders warehouse bathroom cupboards,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+builders warehouse diy kitchen cupboards,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+built-in cupboards,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+built-in wardrobes,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cabinet handles,Legacy (from old site),Commercial,melamine-doors-quartz-countertops.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cabinetry experts,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cabinetry installation,Legacy (from old site),Commercial,cupboard-installation.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cart,Legacy (from old site),Navigational,shop.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+checkout,Legacy (from old site),Navigational,shop.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+chest drawer,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+chest of drawer,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+christmas holidays,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+complete installation,Legacy (from old site),Commercial,cupboard-installation.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+contact cupboard centre,Legacy (from old site),Navigational,contact.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard center cart,Legacy (from old site),Navigational,shop.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard center quote,Legacy (from old site),Navigational,get-a-quote.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard centre,Legacy (from old site),Navigational,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard centre contact,Legacy (from old site),Navigational,contact.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard centre nelspruit,Legacy (from old site),Navigational,index.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard delivery,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard installation,Legacy (from old site),Commercial,cupboard-installation.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard installation assistance,Legacy (from old site),Commercial,cupboard-installation.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard installers,Legacy (from old site),Commercial,cupboard-installation.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard materials,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+cupboard warehouse,Legacy (from old site),Commercial,blog.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+custom cabinet quotes,Legacy (from old site),Transactional,get-a-quote.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+custom cabinetry,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+custom cabinets,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+custom cupboard help,Legacy (from old site),Commercial,contact.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+custom cupboard installation,Legacy (from old site),Commercial,cupboard-installation.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+custom cupboards,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+custom design cupboards,Legacy (from old site),Informational,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+custom kitchen cabinets,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+designs of kitchen cupboard,Legacy (from old site),Informational,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy bathroom units,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy bedroom cupboard,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy cabinets,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy cupboard,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy cupboard experts,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy cupboard solutions,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy cupboards,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy cupboards support,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy kitchen cabinets,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy kitchen cupboards builders warehouse,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy kitchen units,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy solutions,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy units,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+diy wardrobe,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+drawer units,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+durable countertops,Legacy (from old site),Commercial,melamine-doors-quartz-countertops.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+eazi quartz,Legacy (from old site),Commercial,melamine-doors-quartz-countertops.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+finalize selection,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+flat panel doors,Legacy (from old site),Commercial,melamine-doors-quartz-countertops.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+flat-pack wardrobes,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+floor units,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+get a free quote,Legacy (from old site),Transactional,get-a-quote.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+get a quote cupboards,Legacy (from old site),Transactional,get-a-quote.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+home renovation,Legacy (from old site),Commercial,shop.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen cabinets,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen countertops,Legacy (from old site),Commercial,melamine-doors-quartz-countertops.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen cupboard design,Legacy (from old site),Informational,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen cupboard designs,Legacy (from old site),Informational,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen cupboard installation,Legacy (from old site),Commercial,cupboard-installation.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen cupboards,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen organization,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen storage,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen storage solutions,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+kitchen units,Legacy (from old site),Commercial,kitchen-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+melamine doors,Legacy (from old site),Commercial,melamine-doors-quartz-countertops.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+nelspruit,Legacy (from old site),Commercial,index.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+office cupboards,Legacy (from old site),Commercial,custom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+office desks,Legacy (from old site),Commercial,custom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+one-stop shop,Legacy (from old site),Transactional,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+pre-assembled bathroom cabinets,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+pre-assembled cabinets,Legacy (from old site),Commercial,shop.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+pre-assembled wardrobe,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+professional cabinet fitters,Legacy (from old site),Commercial,cupboard-installation.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+pvc waterproof,Legacy (from old site),Commercial,melamine-doors-quartz-countertops.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+quartz countertops,Legacy (from old site),Commercial,melamine-doors-quartz-countertops.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+quote request,Legacy (from old site),Transactional,get-a-quote.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+reception desks,Legacy (from old site),Commercial,custom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+review items,Legacy (from old site),Commercial,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+secure checkout,Legacy (from old site),Navigational,shop.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+shoe storage,Legacy (from old site),Commercial,bedroom-bathroom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+shop counters,Legacy (from old site),Transactional,custom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+shop fitting,Legacy (from old site),Transactional,custom-cabinetry.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+storage solutions,Legacy (from old site),Commercial,shop.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+visit cupboard centre,Legacy (from old site),Navigational,services.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+wall racks,Legacy (from old site),Commercial,diy-units.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.
+wardrobe installers,Legacy (from old site),Commercial,cupboard-installation.html,Re-test,Old site meta keywords,,,,Carried over from the old site; only target if the matrix justifies it.

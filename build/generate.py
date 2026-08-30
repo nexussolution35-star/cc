@@ -1239,7 +1239,7 @@ def build_product():
     </div>
     <div class="pd-info">
       <span class="eyebrow">DIY Wardrobe, In Stock</span>
-      <h1 style="font-size:30px;margin:.1em 0 .3em">{name}</h1>
+      <h2 style="font-size:30px;margin:.1em 0 .3em">{name}</h2>
       <p class="price" style="font-size:26px;margin:0 0 14px">{price}{wasx}</p>
       <p>{short}</p>
       <ul class="included-grid" style="grid-template-columns:1fr;margin:16px 0 22px">{feats}</ul>
@@ -1328,5 +1328,56 @@ def build_sitemap():
     h+=cta_form(); h+=marquee(); h+=footer()
     return h
 print("sitemap.html", write("sitemap.html", build_sitemap()), "bytes")
+
+# ============================================================ sitemap.xml / robots.txt / _redirects
+SITE = "https://www.cupboardcentre.co.za"
+
+# priority + change frequency by page role
+SITEMAP_PAGES = [
+    ("",                                       "1.0", "weekly"),
+    ("services.html",                          "0.9", "monthly"),
+    ("cupboard-installation.html",             "0.9", "monthly"),
+    ("kitchen-units.html",                     "0.9", "monthly"),
+    ("bedroom-bathroom-cabinetry.html",        "0.9", "monthly"),
+    ("melamine-doors-quartz-countertops.html", "0.9", "monthly"),
+    ("custom-cabinetry.html",                  "0.9", "monthly"),
+    ("diy-units.html",                         "0.9", "monthly"),
+    ("shop.html",                              "0.8", "weekly"),
+    ("product-flat-pack-wardrobe.html",        "0.7", "weekly"),
+    ("gallery.html",                           "0.7", "monthly"),
+    ("service-areas.html",                     "0.7", "monthly"),
+    ("about.html",                             "0.6", "yearly"),
+    ("contact.html",                           "0.7", "yearly"),
+    ("get-a-quote.html",                       "0.8", "yearly"),
+    ("faq.html",                               "0.6", "monthly"),
+    ("blog.html",                              "0.6", "weekly"),
+    ("sitemap.html",                           "0.3", "yearly"),
+    ("privacy-policy.html",                    "0.2", "yearly"),
+]
+# NOINDEX list (per SEO spec): cart is a utility page, excluded from the sitemap.
+NOINDEX = ["cart.html"]
+
+def build_sitemap_xml():
+    from datetime import date
+    today = date.today().isoformat()
+    urls = list(SITEMAP_PAGES) + [("blog/%s.html" % p[0], "0.5", "monthly") for p in BLOG]
+    body = ""
+    for loc, pri, freq in urls:
+        body += ("  <url>\n    <loc>%s/%s</loc>\n    <lastmod>%s</lastmod>\n"
+                 "    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>\n"
+                 % (SITE, loc, today, freq, pri))
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n%s</urlset>\n' % body)
+
+def build_robots():
+    return ("# Production robots.txt for cupboardcentre.co.za\n"
+            "User-agent: *\n"
+            "Allow: /\n\n"
+            "# Utility pages, no search value\n"
+            "Disallow: /cart.html\n\n"
+            "Sitemap: %s/sitemap.xml\n" % SITE)
+
+print("sitemap.xml", write("sitemap.xml", build_sitemap_xml()), "bytes")
+print("robots.txt", write("robots.txt", build_robots()), "bytes")
 
 print("\nALL PAGES GENERATED.")
