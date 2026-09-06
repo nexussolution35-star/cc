@@ -3,6 +3,6 @@ User-agent: *
 Allow: /
 
 # Utility pages, no search value
-Disallow: /cart.html
+Disallow: /cart
 
 Sitemap: https://www.cupboardcentre.co.za/sitemap.xml

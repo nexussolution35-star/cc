@@ -101,7 +101,37 @@ SERVICES = [
     ("All Services", "services.html"),
 ]
 
-def head(title, desc, canonical, og_img):
+
+SITE_URL = "https://www.cupboardcentre.co.za"
+
+def sch_breadcrumb(trail):
+    """trail: list of (name, path) ending with the current page."""
+    items = []
+    for i, (name, path) in enumerate(trail, 1):
+        items.append('{"@type":"ListItem","position":%d,"name":%s,"item":"%s%s"}'
+                     % (i, json.dumps(name.replace('&amp;','&')), SITE_URL, path))
+    return '{"@type":"BreadcrumbList","itemListElement":[%s]}' % ",".join(items)
+
+def sch_service(name, desc, path):
+    return ('{"@type":"Service","name":%s,"description":%s,"url":"%s%s",'
+            '"serviceType":%s,'
+            '"provider":{"@type":"HomeAndConstructionBusiness","name":"Cupboard Centre","@id":"%s/"},'
+            '"areaServed":[%s]}'
+            % (json.dumps(name.replace('&amp;','&')), json.dumps(desc.replace('&amp;','&')),
+               SITE_URL, path, json.dumps(name.replace('&amp;','&')), SITE_URL,
+               ",".join('{"@type":"City","name":"%s"}' % t for t in
+                        ["Nelspruit","Mbombela","White River","Hazyview","Barberton","Sabie","Malelane"])))
+
+def sch_faq(pairs):
+    qs = ",".join('{"@type":"Question","name":%s,"acceptedAnswer":{"@type":"Answer","text":%s}}'
+                  % (json.dumps(q.replace('&amp;','&')), json.dumps(a.replace('&amp;','&')))
+                  for q, a in pairs)
+    return '{"@type":"FAQPage","mainEntity":[%s]}' % qs
+
+def head(title, desc, canonical, og_img, schema=None, local_business=False):
+    # canonical must byte-match what the server serves: extensionless, no index.html
+    if canonical.endswith('/index.html'): canonical = canonical[:-10]
+    elif canonical.endswith('.html'):     canonical = canonical[:-5]
     subnav = "".join('<li><a href="%s">%s</a></li>' % (h, t) for t, h in SERVICES)
     ld = (
       '{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness",'
@@ -113,6 +143,13 @@ def head(title, desc, canonical, og_img):
       '"openingHours":["Mo-Fr 08:00-17:00","Sa 08:00-13:00"],'
       '"sameAs":["%s","%s"]}' % (og_img, EMAIL, FB, IG)
     )
+    # LocalBusiness belongs on the homepage and contact page only; every other page
+    # carries the schema that describes what THAT page is.
+    nodes = ([ld] if local_business else []) + list(schema or [])
+    if not nodes:
+        nodes = ['{"@context":"https://schema.org","@type":"WebPage","name":%s,"url":"%s"}'
+                 % (json.dumps(title.replace('&amp;','&')), canonical)]
+    ld = ('{"@context":"https://schema.org","@graph":[%s]}' % ",".join(nodes)) if len(nodes) > 1 else nodes[0]
     return """<!doctype html>
 <html lang="en">
 <head>
@@ -122,6 +159,7 @@ def head(title, desc, canonical, og_img):
 <meta name="description" content="{desc}">
 <meta name="author" content="Cupboard Centre">
 <link rel="canonical" href="{canonical}">
+<meta property="og:url" content="{canonical}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Cupboard Centre">
 <meta property="og:title" content="{title}">
@@ -370,7 +408,26 @@ def page_hero(current, eyebrow, h1, subtitle="", cta=True, trail=None, bg_img=No
 </div></section>
 """.format(style=style, cr=cr, eyebrow=eyebrow, h1=h1, sub=sub, ctab=ctab)
 
+import re as _re
+def clean_urls(html):
+    """Internal links -> root-relative and extensionless (/about, not about.html).
+
+    The old Wix site served extensionless URLs, so this keeps the new site on the
+    same URL shape and removes a whole class of redirects. Root-relative also makes
+    the link correct from any directory depth (e.g. /blog/post)."""
+    def fix(m):
+        href = m.group(1)
+        if href.startswith(('http://', 'https://', '#', 'tel:', 'mailto:', '//')):
+            return m.group(0)
+        path = href.lstrip('./')
+        while path.startswith('../'):
+            path = path[3:]
+        path = path[:-5] if path.endswith('.html') else path
+        return 'href="/"' if path in ('index', '') else 'href="/%s"' % path
+    return _re.sub(r'href="([^"]+\.html)"', fix, html)
+
 def write(name, html):
+    html = clean_urls(html)
     path = os.path.join(OUT, name)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     open(path, 'w').write(html)
@@ -516,7 +573,7 @@ def build_home():
     commit_u = "assets/images/photos/6701c754fbe4fd1483bcbd50.jpg"  # Cupboard Centre premises + team
     h  = head("DIY &amp; Custom Cupboards Nelspruit | Cupboard Centre",
               "DIY cupboards and custom cabinetry from Cupboard Centre, Nelspruit. Kitchens, wardrobes, bathroom cabinets and quartz tops, supplied and installed. Free quote.",
-              "https://www.cupboardcentre.co.za/", hero_u)
+              "https://www.cupboardcentre.co.za/", hero_u, local_business=True)
     h += header("home")
     # 1. HERO
     h += """<section id="hero" class="hero"><div class="hero-panel">
@@ -926,7 +983,12 @@ def build_service(fname, d):
     # keep &amp; encoded - a raw & in <title>/<meta> is invalid HTML
     title = d.get('title') or ("%s | Cupboard Centre" % d['h1'])
     desc  = d.get('desc')  or d['subtitle']
-    h = head(title, desc, "https://www.cupboardcentre.co.za/%s"%fname, og)
+    slug = "/" + fname[:-5]
+    faqs = service_faq(d['h1'].replace('&amp;','&'))
+    h = head(title, desc, "https://www.cupboardcentre.co.za/%s"%fname, og,
+             schema=[sch_service(d['h1'], desc, slug),
+                     sch_breadcrumb([("Home","/"),("Services","/services"),(d['h1'], slug)]),
+                     sch_faq(faqs)])
     h += header(cart=True)
     h += page_hero(d['h1'], d['eyebrow'], d['h1'], d['subtitle'], trail=[("Services","services.html")], bg_img=img(cat,i)[0])
     # 1 — intro: image left, text right
@@ -939,8 +1001,7 @@ def build_service(fname, d):
     h += services_carousel(fname, eyebrow="Explore",
                            intro="One team for every cupboard. Browse the rest of what we do.", bg="bg-navy")
     # 4 — FAQ accordion (white cards on the grey section)
-    h += faq_section("Questions", accent(d['h1'] + ", Answered"),
-                     service_faq(d['h1'].replace('&amp;','&')), bg="bg-navy-slate")
+    h += faq_section("Questions", accent(d['h1'] + ", Answered"), faqs, bg="bg-navy-slate")
     h += cta_form()
     h += marquee()
     h += footer()
@@ -954,7 +1015,8 @@ def build_services_hub():
     og,_=img(KITCHEN,0)
     h=head("Our Services | Cupboard Centre",
            "Everything Cupboard Centre does: kitchen cupboards, bedroom and bathroom cabinetry, quartz tops, shopfitting, office desks and DIY flat-packs. Get a free quote.",
-           "https://www.cupboardcentre.co.za/services.html", og)
+           "https://www.cupboardcentre.co.za/services.html", og,
+           schema=[sch_breadcrumb([("Home","/"),("Services","/services")])])
     h+=header()
     h+=page_hero("Services","What We Do","Cupboards For Every Room &amp; Budget",
                  "From fully installed custom kitchens to DIY flat-packs delivered to your door, one team for every cupboard.", bg_img=img(KITCHEN,0)[0])
@@ -983,7 +1045,8 @@ def build_about():
     og,_=img(KITCHEN,4)
     h=head("About Cupboard Centre | 25+ Years in Mpumalanga",
            "For over 25 years Cupboard Centre has supplied and installed DIY &amp; custom cupboards across Mpumalanga, 1028+ projects, 50+ corporate clients, 100% satisfaction.",
-           "https://www.cupboardcentre.co.za/about.html", og)
+           "https://www.cupboardcentre.co.za/about.html", og,
+           schema=[sch_breadcrumb([("Home","/"),("About","/about")])])
     h+=header(cart=True)
     h+=page_hero("About Us","Our Story","Your Trusted DIY &amp; Custom Cupboard Experts",
                  "Over 25 years designing, building and installing cupboards for homes and businesses across Mpumalanga.", bg_img=img(KITCHEN,4)[0])
@@ -1033,7 +1096,8 @@ def build_contact():
     og,_=img(GENERAL,1)
     h=head("Contact Cupboard Centre | Nelspruit &amp; Mbombela",
            "Contact Cupboard Centre in Mbombela (Nelspruit). Call 084 683 7467, WhatsApp us or visit our showroom. Free quotes on DIY &amp; custom cupboards.",
-           "https://www.cupboardcentre.co.za/contact.html", og)
+           "https://www.cupboardcentre.co.za/contact.html", og, local_business=True,
+           schema=[sch_breadcrumb([("Home","/"),("Contact","/contact")])])
     h+=header()
     h+=page_hero("Contact Us","Get In Touch","Contact Us", cta=False, bg_img=img(GENERAL,1)[0])
     h+="""<section class="section bg-navy"><div class="wrap"><div class="contact-grid">
@@ -1070,7 +1134,8 @@ def build_gallery():
     og,_=img(KITCHEN,0)
     h=head("Project Gallery | Cupboard Centre",
            "Browse completed Cupboard Centre projects, custom kitchens, built-in bedroom cupboards, bathroom vanities, quartz countertops and shopfitting across Mpumalanga.",
-           "https://www.cupboardcentre.co.za/gallery.html", og)
+           "https://www.cupboardcentre.co.za/gallery.html", og,
+           schema=[sch_breadcrumb([("Home","/"),("Gallery","/gallery")])])
     h+=header()
     h+=page_hero("Gallery","Our Work","Spaces We Have Transformed",
                  "A selection of custom and DIY cupboard projects we’ve designed, built and installed.", bg_img=img(KITCHEN,0)[0])
@@ -1100,7 +1165,8 @@ def build_kitchen_gallery():
     og,_=img(KITCHEN,0)
     h=head("Designs of Kitchen Cupboard: Photo Gallery | Cupboard Centre",
            "Browse real designs of kitchen cupboard projects we have built and installed, wood-grain, gloss and quartz-topped kitchens. Get a free quote on yours.",
-           "https://www.cupboardcentre.co.za/gallery-designs-of-kitchen-cupboard.html", og)
+           "https://www.cupboardcentre.co.za/gallery-designs-of-kitchen-cupboard.html", og,
+           schema=[sch_breadcrumb([("Home","/"),("Gallery","/gallery"),("Designs of Kitchen Cupboard","/gallery-designs-of-kitchen-cupboard")])])
     h+=header()
     h+=page_hero("Kitchen Designs","Kitchen Gallery","Designs of Kitchen Cupboard",
                  "Real kitchen cupboard designs we have measured, manufactured and fitted across Mpumalanga.",
@@ -1138,7 +1204,8 @@ def build_service_areas():
     og,_=img(GENERAL,2)
     h=head("Cupboards in Nelspruit &amp; Mbombela | Cupboard Centre",
            "Cupboard Centre installs cupboards across Nelspruit, Mbombela, White River, Hazyview, Barberton, Sabie and Malelane, with DIY flat-packs delivered nationwide.",
-           "https://www.cupboardcentre.co.za/service-areas.html", og)
+           "https://www.cupboardcentre.co.za/service-areas.html", og,
+           schema=[sch_breadcrumb([("Home","/"),("Service Areas","/service-areas")])])
     h+=header()
     h+=page_hero("Service Areas","Where We Work","Serving Nelspruit, Mbombela &amp; Beyond",
                  "Installation across the Lowveld from our Mbombela showroom, and DIY flat-pack delivery nationwide.", bg_img=img(GENERAL,2)[0])
@@ -1181,7 +1248,8 @@ def build_faq():
     og,_=img(GENERAL,3)
     h=head("Cupboard Questions Answered | Cupboard Centre",
            "Answers to common questions about Cupboard Centre's DIY and custom cupboards, ordering, delivery, installation, finishes, countertops and quotes.",
-           "https://www.cupboardcentre.co.za/faq.html", og)
+           "https://www.cupboardcentre.co.za/faq.html", og,
+           schema=[sch_faq(FAQ_ITEMS), sch_breadcrumb([("Home","/"),("FAQ","/faq")])])
     h+=header()
     h+=page_hero("FAQ","Questions?","Frequently Asked Questions",
                  "Everything you need to know about ordering, delivery and installation.", bg_img=img(GENERAL,3)[0])
@@ -1196,7 +1264,8 @@ def build_blog():
     og,_=img(KITCHEN,1)
     h=head("Blog | Cupboard Centre, Cupboard, Kitchen &amp; Countertop Tips",
            "Expert advice on kitchens, cupboards, countertops and DIY from Cupboard Centre, guides to help you plan, choose and build the perfect cabinetry.",
-           "https://www.cupboardcentre.co.za/blog.html", og)
+           "https://www.cupboardcentre.co.za/blog.html", og,
+           schema=[sch_breadcrumb([("Home","/"),("Blog","/blog")])])
     h+=header()
     h+=page_hero("Blog","Insights","Cupboard &amp; Kitchen Tips",
                  "Guides and advice to help you plan, choose and get the most from your cupboards.", bg_img=img(KITCHEN,1)[0])
@@ -1210,8 +1279,16 @@ print("blog.html", write("blog.html", build_blog()), "bytes")
 def build_post(p):
     slug,title,excerpt,cat,imgs,body = p
     og = blog_image(slug, imgs)[0]
+    post_schema = ('{"@type":"BlogPosting","headline":%s,"description":%s,"image":"%s/%s",'
+                   '"author":{"@type":"Organization","name":"Cupboard Centre"},'
+                   '"publisher":{"@type":"Organization","name":"Cupboard Centre"},'
+                   '"mainEntityOfPage":"%s/blog/%s"}'
+                   % (json.dumps(title.replace('&amp;','&')),
+                      json.dumps(excerpt.replace('&amp;','&')), SITE_URL, og, SITE_URL, slug))
     h=head(BLOG_TITLE.get(slug, title) + " | Cupboard Centre", excerpt,
-           "https://www.cupboardcentre.co.za/blog/%s.html"%slug, og)
+           "https://www.cupboardcentre.co.za/blog/%s.html"%slug, og,
+           schema=[post_schema,
+                   sch_breadcrumb([("Home","/"),("Blog","/blog"),(title,"/blog/"+slug)])])
     # header/footer use relative paths, from /blog/ we need ../ prefix
     hd=header().replace('href="','href="../').replace('href="../#','href="#').replace('href="../http','href="http').replace('href="../tel:','href="tel:').replace('href="../mailto:','href="mailto:').replace('src="assets','src="../assets')
     h=h.replace('href="assets/css/styles.css"','href="../assets/css/styles.css"')
@@ -1251,7 +1328,8 @@ def build_quote():
     og,_=img(GENERAL,0)
     h=head("Get a Free Quote | Cupboard Centre, DIY &amp; Custom Cupboards",
            "Get a free, no-obligation quote from Cupboard Centre on DIY or custom cupboards, kitchens, wardrobes, doors and countertops. We reply within one business hour.",
-           "https://www.cupboardcentre.co.za/get-a-quote.html", og)
+           "https://www.cupboardcentre.co.za/get-a-quote.html", og,
+           schema=[sch_breadcrumb([("Home","/"),("Get a Quote","/get-a-quote")])])
     h+=header()
     h+=page_hero("Get a Free Quote","Free &amp; No-Obligation","Get Your Free Cupboard Quote", cta=False, bg_img=img(KITCHEN,7)[0])
     benefits=[("wallet","Best Value, Guaranteed","Factory-direct pricing on DIY and custom cupboards, quality that beats the big retailers."),
@@ -1301,7 +1379,8 @@ def build_shop():
     p=PROD
     h=head("Shop Pre-Assembled &amp; Flat Pack Cupboards | Cupboard Centre",
            "Buy Cupboard Centre flat-pack and pre-assembled cupboards online, pre-cut, edged and drilled with all hardware included. Delivered nationwide.",
-           "https://www.cupboardcentre.co.za/shop.html", p['img'])
+           "https://www.cupboardcentre.co.za/shop.html", p['img'],
+           schema=[sch_breadcrumb([("Home","/"),("Shop","/shop")])])
     h+=header(cart=True)
     h+=page_hero("Shop","Online Shop","Shop DIY Cupboards",
                  "DIY flat-pack cupboards, delivered to your door, nationwide.", bg_img=img(KITCHEN,3)[0])
@@ -1337,7 +1416,15 @@ def build_product():
     p=PROD
     h=head("%s | Cupboard Centre"%p['name'].replace('&amp;','&'),
            "Flat pack wardrobe with woody melamine doors, 3 doors and 2 drawers. Pre-cut, edged and drilled with all hardware included. Delivered nationwide.",
-           "https://www.cupboardcentre.co.za/product-%s.html"%p['id'], p['img'])
+           "https://www.cupboardcentre.co.za/product-%s.html"%p['id'], p['img'],
+           schema=[('{"@type":"Product","name":%s,"description":%s,"image":"%s/%s",'
+                    '"brand":{"@type":"Brand","name":"Cupboard Centre"},'
+                    '"offers":{"@type":"Offer","priceCurrency":"ZAR","price":"%d",'
+                    '"availability":"https://schema.org/InStock","url":"%s/product-%s"}}'
+                    % (json.dumps(p['name'].replace('&amp;','&')),
+                       json.dumps(p['short'].replace('&amp;','&')), SITE_URL, p['img'],
+                       p['price'], SITE_URL, p['id'])),
+                   sch_breadcrumb([("Home","/"),("Shop","/shop"),(p['name'],"/product-"+p['id'])])])
     h+=header(cart=True)
     h+=page_hero(p['name'],"Shop",p['name'],cta=False,trail=[("Shop","shop.html")],bg_img=img(KITCHEN,3)[0])
     thumbs="".join('<button class="pd-thumb" data-src="%s"><img src="%s" alt="" loading="lazy"></button>'%(g,g) for g in [p['img']]+p['gallery'])
@@ -1481,6 +1568,7 @@ def build_sitemap_xml():
     urls = list(SITEMAP_PAGES) + [("blog/%s.html" % p[0], "0.5", "monthly") for p in BLOG]
     body = ""
     for loc, pri, freq in urls:
+        loc = loc[:-5] if loc.endswith('.html') else loc
         body += ("  <url>\n    <loc>%s/%s</loc>\n    <lastmod>%s</lastmod>\n"
                  "    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>\n"
                  % (SITE, loc, today, freq, pri))
@@ -1492,7 +1580,7 @@ def build_robots():
             "User-agent: *\n"
             "Allow: /\n\n"
             "# Utility pages, no search value\n"
-            "Disallow: /cart.html\n\n"
+            "Disallow: /cart\n\n"
             "Sitemap: %s/sitemap.xml\n" % SITE)
 
 print("sitemap.xml", write("sitemap.xml", build_sitemap_xml()), "bytes")
