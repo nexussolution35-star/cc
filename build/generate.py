@@ -128,7 +128,7 @@ def sch_faq(pairs):
                   for q, a in pairs)
     return '{"@type":"FAQPage","mainEntity":[%s]}' % qs
 
-def head(title, desc, canonical, og_img, schema=None, local_business=False):
+def head(title, desc, canonical, og_img, schema=None, local_business=False, preload=None):
     # canonical must byte-match what the server serves: extensionless, no index.html
     if canonical.endswith('/index.html'): canonical = canonical[:-10]
     elif canonical.endswith('.html'):     canonical = canonical[:-5]
@@ -170,12 +170,16 @@ def head(title, desc, canonical, og_img, schema=None, local_business=False):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{fonts}">
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="icon" href="assets/images/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png" sizes="500x500">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+{preload}
 <script type="application/ld+json">{ld}</script>
 </head>
 <body>
 """.format(title=title, desc=desc, canonical=canonical, og_img=og_img, fonts=FONTS,
-           subnav=subnav, ld=ld)
+           subnav=subnav, ld=ld,
+           preload='{preload}')
 
 def logo(href="index.html", dark_bg=False):
     if dark_bg:
@@ -454,8 +458,19 @@ def responsive_img(u, alt, cls="", extra=""):
                 % (sm, sm, full, full, alt, (' class="%s"' % cls) if cls else '', extra))
     return '<img src="%s" alt="%s"%s%s loading="lazy" decoding="async">' % (u, alt, (' class="%s"' % cls) if cls else '', extra)
 
+def add_hero_preload(html):
+    """Preload the page-hero background: it is the LCP element and, being a CSS
+    url(), is only discovered after CSS parses. Derived from the emitted markup so
+    the preload URL always byte-matches the request. Pages without a hero image
+    (the homepage hero is plain white) get no preload."""
+    m = _re.search(r'class="page-hero"[^>]*style="[^"]*url\(([^)]+)\)', html)
+    if not m:
+        return html.replace('{preload}\n', '').replace('{preload}', '')
+    tag = '<link rel="preload" as="image" href="%s" fetchpriority="high">' % m.group(1)
+    return html.replace('{preload}', tag, 1).replace('{preload}', '')
+
 def write(name, html):
-    html = use_webp(clean_urls(html))
+    html = add_hero_preload(use_webp(clean_urls(html)))
     path = os.path.join(OUT, name)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     open(path, 'w').write(html)
@@ -1298,7 +1313,9 @@ def build_blog():
     h+=page_hero("Blog","Insights","Cupboard &amp; Kitchen Tips",
                  "Guides and advice to help you plan, choose and get the most from your cupboards.", bg_img=img(KITCHEN,1)[0])
     pc="".join(post_card(p) for p in BLOG)
-    h+="""<section class="section bg-navy"><div class="wrap"><div class="blog-grid">%s</div></div></section>
+    h+="""<section class="section bg-navy"><div class="wrap">
+  <div class="section-center"><span class="eyebrow">Guides &amp; Advice</span><h2>Cupboard, Kitchen &amp; Countertop Guides</h2></div>
+  <div class="blog-grid" style="margin-top:30px">%s</div></div></section>
 """%pc
     h+=cta_form(); h+=marquee(); h+=footer()
     return h
