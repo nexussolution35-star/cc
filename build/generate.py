@@ -92,9 +92,11 @@ FONTS = "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family
 SERVICES = [
     ("Complete Installation", "cupboard-installation.html"),
     ("DIY Kitchen Units", "kitchen-units.html"),
-    ("Bedroom &amp; Bathroom Cabinetry", "bedroom-bathroom-cabinetry.html"),
+    ("Bedroom Cupboards", "bedroom-cupboards.html"),
+    ("Bathroom Cabinets", "bathroom-cabinets.html"),
     ("Melamine Doors &amp; Quartz Countertops", "melamine-doors-quartz-countertops.html"),
-    ("Custom Cabinetry &amp; Shopfitting", "custom-cabinetry.html"),
+    ("Shopfitting &amp; Custom Cabinetry", "custom-cabinetry.html"),
+    ("Office &amp; Reception Desks", "office-reception-desks.html"),
     ("DIY Units &amp; Flat-Packs", "diy-units.html"),
     ("All Services", "services.html"),
 ]
@@ -406,6 +408,12 @@ BLOG = [
    ("Durable where it counts","Retail takes a beating. We specify robust melamine, quality edging and soft-close hardware so your fittings still look sharp years down the line.")]),
 ]
 
+BLOG_TITLE = {
+ "choosing-the-perfect-kitchen-units":  "Kitchen Cupboard Design Ideas",
+ "durable-quartz-countertops":          "Quartz vs Granite Countertops",
+ "granite-countertops-for-your-home":   "Granite Countertops Guide",
+ "expert-solutions-for-shop-fitting":   "Shop Fitting Ideas for Retail",
+}
 BLOG_IMG = {
  "choosing-the-perfect-kitchen-units":("assets/images/photos/6702dc273cd5463db01f4ef8.jpg","Fitted kitchen with white wall and base cupboard units and a gas hob"),
  "durable-quartz-countertops":("assets/images/photos/66f6cc2b52153310a558a6b1.jpg","Durable quartz countertop on a custom Cupboard Centre island"),
@@ -435,8 +443,8 @@ def svc_card(title, href, icon, imgtuple):
 HOME_SVCS = [
   ("Complete Installation","cupboard-installation.html",IC['install'],img(INSTALL,0,"Professional cupboard installation")),
   ("DIY Kitchen Units","kitchen-units.html",IC['kitchen'],img(KITCHEN,2,"DIY kitchen units")),
-  ("Bedroom Cupboards","bedroom-bathroom-cabinetry.html",IC['bed'],img(BEDROOM,0,"Built-in bedroom cupboards")),
-  ("Bathroom Cabinetry","bedroom-bathroom-cabinetry.html",IC['bath'],img(BATHROOM,1,"Bathroom vanity cabinetry")),
+  ("Bedroom Cupboards","bedroom-cupboards.html",IC['bed'],img(BEDROOM,0,"Built-in bedroom cupboards")),
+  ("Bathroom Cabinets","bathroom-cabinets.html",IC['bath'],img(BATHROOM,1,"Bathroom vanity cabinetry")),
   ("Melamine Doors","melamine-doors-quartz-countertops.html",IC['door'],("assets/images/photos/66f6cb03e1628294c2d7168d.jpg","Wood-grain melamine kitchen with quartz island")),
   ("Quartz Countertops","melamine-doors-quartz-countertops.html",IC['quartz'],img(KITCHEN,5,"Quartz countertops")),
   ("Custom Cabinetry &amp; Shopfitting","custom-cabinetry.html",IC['custom'],img(CUSTOM,0,"Custom cabinetry and shopfitting")),
@@ -506,8 +514,8 @@ def build_home():
     hero_u,_ = img(GENERAL,0)
     about_u = "assets/images/photos/67028368d6cf1745c3def33d.jpg"  # the Cupboard Centre team
     commit_u = "assets/images/photos/6701c754fbe4fd1483bcbd50.jpg"  # Cupboard Centre premises + team
-    h  = head("Cupboard Centre | Nelspruit's Best DIY &amp; Custom Cupboard Solutions",
-              "DIY &amp; custom cupboards in Nelspruit &amp; Mbombela, kitchens, bedroom &amp; bathroom cabinetry, melamine doors and quartz countertops. Supply, delivery &amp; installation. Free quote.",
+    h  = head("DIY &amp; Custom Cupboards Nelspruit | Cupboard Centre",
+              "DIY cupboards and custom cabinetry from Cupboard Centre, Nelspruit. Kitchens, wardrobes, bathroom cabinets and quartz tops, supplied and installed. Free quote.",
               "https://www.cupboardcentre.co.za/", hero_u)
     h += header("home")
     # 1. HERO
@@ -664,7 +672,9 @@ def process_section(eyebrow="How It Works",h2="Our Simple Process",bg="bg-navy-s
     return '<section class="section %s"><div class="wrap section-center"><span class="eyebrow">%s</span><h2>%s</h2><div class="proc-grid" style="margin-top:30px">%s</div></div></section>\n'%(bg,eyebrow,h2,ps)
 
 RELATED = [("Complete Installation","cupboard-installation.html"),("DIY Kitchen Units","kitchen-units.html"),
-           ("Bedroom &amp; Bathroom Cabinetry","bedroom-bathroom-cabinetry.html"),
+           ("Bedroom Cupboards","bedroom-cupboards.html"),
+           ("Bathroom Cabinets","bathroom-cabinets.html"),
+           ("Office &amp; Reception Desks","office-reception-desks.html"),
            ("Melamine Doors &amp; Quartz Countertops","melamine-doors-quartz-countertops.html"),
            ("Custom Cabinetry &amp; Shopfitting","custom-cabinetry.html"),("All Services","services.html")]
 def related_section(current):
@@ -723,7 +733,9 @@ def faq_section(eyebrow, h2, items, bg="bg-navy-slate"):
 SVC_CARDS = [
  ("Complete Installation","Full supply and fitting of kitchens, wardrobes and cabinetry across the Lowveld.","cupboard-installation.html", img(INSTALL,2)),
  ("DIY Kitchen Units","Pre-cut, ready-to-assemble kitchen units, delivered to your door.","kitchen-units.html", img(KITCHEN,3)),
- ("Bedroom &amp; Bathroom Cabinetry","Built-in wardrobes and bathroom vanities, made to measure.","bedroom-bathroom-cabinetry.html", img(BEDROOM,4)),
+ ("Bedroom Cupboards","Built-in wardrobes and walk-in closets, made to measure.","bedroom-cupboards.html", img(BEDROOM,4)),
+ ("Bathroom Cabinets","Vanities and bathroom storage in moisture-resistant board.","bathroom-cabinets.html", img(BATHROOM,1)),
+ ("Office &amp; Reception Desks","Custom office desks, reception counters and office storage.","office-reception-desks.html", img(CUSTOM,4)),
  ("Melamine Doors &amp; Quartz Countertops","Hard-wearing doors and premium Eazi Quartz tops.","melamine-doors-quartz-countertops.html", img(MELAMINE,0)),
  ("Custom Cabinetry &amp; Shopfitting","Bespoke cabinetry for homes, offices and shops.","custom-cabinetry.html", img(CUSTOM,1)),
  ("DIY Units &amp; Flat-Packs","Flat-pack units for every room, delivered nationwide.","diy-units.html", img(DIY,0)),
@@ -759,13 +771,19 @@ def service_faq(short):
       "Call 084 683 7467, WhatsApp us, or use the quote form below and we will come back to you with a clear, written quote within one business hour."),
     ]
 
+TOWNS_LINE = ("We supply, deliver and install across Nelspruit, Mbombela, White River, "
+              "Hazyview, Barberton, Sabie and Malelane.")
+
 SERVICE_PAGES = {
  "cupboard-installation.html": dict(
-   eyebrow="Our Services", h1="Complete Cupboard Installation",
-   subtitle="Professional supply and installation of kitchens, wardrobes and cabinetry across Nelspruit and the Lowveld.",
+   title="Kitchen Cupboard Installation | Cupboard Centre",
+   desc="Professional kitchen cupboard installation, built-in wardrobes and bathroom vanities, measured, manufactured and fitted by our own team. Get a free quote today.",
+   eyebrow="Our Services", h1="Kitchen Cupboard Installation",
+   subtitle="Professional supply and installation of kitchens, wardrobes and cabinetry across Mpumalanga.",
    intro_h="Installation Done Right, First Time",
    intro=["Come to us with an idea and leave with a complete solution. Our installation team handles everything, measuring, manufacturing and fitting, so your new cupboards go in cleanly, level and built to last.",
-          "Whether it’s a full custom kitchen, built-in bedroom wardrobes or a bathroom vanity, we manage the whole project with efficient turnaround times and a tidy site at the end of every job."],
+          "Whether it’s a full custom kitchen, built-in bedroom wardrobes or a bathroom vanity, we manage the whole project with efficient turnaround times and a tidy site at the end of every job.",
+          TOWNS_LINE],
    included=["Accurate measuring &amp; planning","Kitchen &amp; scullery installation","Built-in bedroom wardrobes","Bathroom vanities &amp; storage","Countertop supply &amp; fitting","Soft-close hinges &amp; runners"],
    img_cat=INSTALL, img_i=2,
    offer_eyebrow="What We Install", offer_h="Every Room, One Team",
@@ -774,12 +792,16 @@ SERVICE_PAGES = {
    feats=[("ruler","Precision Measured","We measure every wall, corner and service point so your units fit the space exactly."),
           ("hinge","Quality Hardware","Soft-close hinges and runners, quality edging and hard-wearing melamine as standard."),
           ("calendar","Clean, On-Schedule Fitting","Experienced installers who work neatly, protect your home and finish on time.")]),
+
  "kitchen-units.html": dict(
-   eyebrow="Our Services", h1="DIY Kitchen Units",
-   subtitle="Pre-cut, pre-drilled kitchen units you can assemble yourself, or let us build and install them for you.",
+   title="Kitchen Cupboards &amp; DIY Kitchen Units | Cupboard Centre",
+   desc="Kitchen cupboards built to your space, plus pre-cut DIY kitchen units you assemble yourself. Factory-direct prices, delivered nationwide. Get a free quote.",
+   eyebrow="Our Services", h1="Kitchen Cupboards &amp; DIY Kitchen Units",
+   subtitle="Kitchen cupboards made to measure, or pre-cut, pre-drilled kitchen units you can assemble yourself.",
    intro_h="Kitchen Units to Suit Your Budget",
    intro=["Our DIY kitchen units arrive pre-cut, edged and drilled, labelled and ready to assemble over a weekend, a serious saving without cutting corners on quality.",
-          "Prefer a turnkey kitchen? We’ll design, manufacture and install the whole thing, complete with melamine or quartz tops, soft-close everything and the storage you actually need."],
+          "Prefer a turnkey kitchen? We’ll design, manufacture and install the whole thing, complete with melamine or quartz tops, soft-close everything and the storage you actually need.",
+          TOWNS_LINE],
    included=["Base &amp; wall units in standard sizes","Custom sizes on request","Melamine &amp; quartz countertops","Soft-close hinges &amp; drawer runners","Built-in oven &amp; hob provision","Delivered nationwide"],
    img_cat=KITCHEN, img_i=3,
    offer_eyebrow="What You Can Order", offer_h="Build the Kitchen You Want",
@@ -788,54 +810,106 @@ SERVICE_PAGES = {
    feats=[("diy","Easy DIY Assembly","Pre-cut, labelled and drilled, with a bit of DIY know-how you’ll have it together in a weekend."),
           ("wallet","Factory-Direct Value","Buying direct from the manufacturer means showroom quality at DIY prices."),
           ("truck","Delivered to Your Door","Flat-packed and protected for delivery anywhere in South Africa.")]),
- "bedroom-bathroom-cabinetry.html": dict(
-   eyebrow="Our Services", h1="Bedroom &amp; Bathroom Cabinetry",
-   subtitle="Built-in wardrobes, walk-in closets and bathroom vanities, custom-made to fit your space and style.",
+
+ "bedroom-cupboards.html": dict(
+   title="Bedroom Cupboards &amp; Built-In Wardrobes | Cupboard Centre",
+   desc="Bedroom cupboards and built-in wardrobes made to measure, with hanging space, drawers and shoe storage designed around your room. Get a free quote today.",
+   eyebrow="Our Services", h1="Bedroom Cupboards &amp; Built-In Wardrobes",
+   subtitle="Built-in wardrobes, walk-in closets and bedroom cupboards, custom-made to fit your space and style.",
    intro_h="Storage That Fits Your Life",
-   intro=["From floor-to-ceiling built-in wardrobes with hanging space, shelving, drawers and shoe racks, to sleek bathroom vanities topped with quartz, we design cabinetry around the way you live.",
-          "Choose your finishes, handles and internal layout, mirrors, LED lighting, soft-close drawers, and we’ll build and install it to a flawless fit."],
-   included=["Built-in &amp; walk-in wardrobes","Chest of drawers &amp; shelving","Mirror &amp; sliding doors","Shoe storage &amp; accessories","Bathroom vanities &amp; cabinets","Waterproof board options"],
+   intro=["From floor-to-ceiling built-in wardrobes with hanging space, shelving, drawers and shoe racks, to sliding-door robes and walk-in closets, we design bedroom cupboards around the way you live.",
+          "Choose your finishes, handles and internal layout, mirrors, LED lighting, soft-close drawers, and we’ll build and install it to a flawless fit.",
+          TOWNS_LINE],
+   included=["Built-in &amp; walk-in wardrobes","Chest of drawers &amp; shelving","Mirror &amp; sliding doors","Shoe storage &amp; accessories","Bedside cabinets","DIY wardrobe kits"],
    img_cat=BEDROOM, img_i=4,
-   offer_eyebrow="What We Build", offer_h="Bedrooms &amp; Bathrooms, Beautifully Organised",
-   offer_sub="Every wardrobe and vanity is made to measure for a seamless fit.",
-   offer_tags=["Built-in Wardrobes","Walk-in Closets","Sliding-Door Robes","Chest Drawers","Bathroom Vanities","Floating Units","Mirror Cabinets","Linen Cupboards"],
+   offer_eyebrow="What We Build", offer_h="Bedrooms, Beautifully Organised",
+   offer_sub="Every wardrobe is made to measure for a seamless, wall-to-wall fit.",
+   offer_tags=["Built-in Wardrobes","Walk-in Closets","Sliding-Door Robes","Chest Drawers","Bedside Cabinets","Shoe Storage","Shelving","Linen Cupboards"],
    feats=[("ruler","Made to Measure","Every unit is built to your exact dimensions, no wasted space, no awkward gaps."),
-          ("drop","Water-Smart Bathrooms","Moisture-resistant boards and quartz tops built to handle a busy bathroom."),
-          ("layout","Your Style, Your Layout","Finishes, handles, lighting and internal fittings chosen by you.")]),
+          ("layout","Your Style, Your Layout","Finishes, handles, lighting and internal fittings chosen by you."),
+          ("hinge","Quality Hardware","Soft-close drawers and runners as standard, not as an upsell.")]),
+
+ "bathroom-cabinets.html": dict(
+   title="Bathroom Cabinets &amp; Vanities | Cupboard Centre",
+   desc="Bathroom cabinets and vanities built to measure, in moisture-resistant board with quartz tops. Floating units, mirror cabinets and storage. Get a free quote.",
+   eyebrow="Our Services", h1="Bathroom Cabinets &amp; Vanities",
+   subtitle="Bathroom cabinets, vanities and storage, made to measure in moisture-resistant board with quartz tops.",
+   intro_h="Bathroom Storage Built to Last",
+   intro=["A bathroom is a hard place for cabinetry. We build vanities and bathroom cabinets in moisture-resistant board, topped with non-porous quartz, so they handle steam, splashes and daily use without swelling or staining.",
+          "Floating vanities, double basins, mirror cabinets and tall storage columns, all sized to your bathroom and finished in the colours and handles you choose.",
+          TOWNS_LINE],
+   included=["Vanity units &amp; double basins","Floating &amp; floor-standing options","Quartz &amp; melamine tops","Mirror cabinets","Tall storage columns","Waterproof board options"],
+   img_cat=BATHROOM, img_i=1,
+   offer_eyebrow="What We Build", offer_h="Vanities &amp; Bathroom Storage",
+   offer_sub="Made to measure for a seamless fit around plumbing and tiling.",
+   offer_tags=["Vanity Units","Double Basins","Floating Vanities","Mirror Cabinets","Storage Columns","Under-Basin Units","Quartz Tops","Waterproof Board"],
+   feats=[("drop","Water-Smart Bathrooms","Moisture-resistant boards and quartz tops built to handle a busy bathroom."),
+          ("ruler","Fits Around Plumbing","We measure to your existing pipework and tiling so the unit sits flush and level."),
+          ("gem","Premium Surfaces","Non-porous quartz tops that resist stains, scratches and daily wear.")]),
+
  "melamine-doors-quartz-countertops.html": dict(
-   eyebrow="Our Services", h1="Melamine Doors &amp; Quartz Countertops",
-   subtitle="Affordable, hard-wearing melamine doors and premium Eazi Quartz countertops to finish your cupboards perfectly.",
+   title="Quartz Countertops &amp; Melamine Doors | Cupboard Centre",
+   desc="Eazi Quartz countertops and hard-wearing melamine cupboard doors, cut to size and fitted. The fastest way to transform a kitchen. Get a free quote today.",
+   eyebrow="Our Services", h1="Quartz Countertops &amp; Melamine Doors",
+   subtitle="Premium Eazi Quartz countertops and affordable, hard-wearing melamine doors to finish your cupboards perfectly.",
    intro_h="The Finishing Touch That Lasts",
-   intro=["Doors and tops make or break a cupboard. Our melamine doors come in dozens of colours and wood-grains, tough, easy to clean and great value, while our Eazi Quartz countertops add a premium, non-porous, stain-resistant surface.",
-          "Replacing tired doors or tops is one of the fastest, most affordable ways to transform a kitchen. We supply on their own or as part of a full installation."],
-   included=["Melamine doors, many colours","Wood-grain &amp; solid finishes","Eazi Quartz countertops","Melamine countertops","Cut-to-size service","Soft-close hinges included"],
+   intro=["Doors and tops make or break a cupboard. Our Eazi Quartz countertops add a premium, non-porous, stain-resistant surface, while our melamine doors come in dozens of colours and wood-grains, tough, easy to clean and great value.",
+          "Replacing tired doors or kitchen countertops is one of the fastest, most affordable ways to transform a kitchen. We supply on their own or as part of a full installation.",
+          TOWNS_LINE],
+   included=["Eazi Quartz countertops","Melamine countertops","Melamine doors, many colours","Wood-grain &amp; solid finishes","Cut-to-size service","Soft-close hinges included"],
    img_cat=MELAMINE, img_i=0,
    offer_eyebrow="What We Supply", offer_h="Doors &amp; Tops for Every Style",
    offer_sub="Refresh an existing kitchen or finish a new one with surfaces that last.",
-   offer_tags=["Melamine Doors","Wood-grain Finishes","Solid Colours","Eazi Quartz Tops","Melamine Tops","Splashbacks","Cut-to-Size","Edging"],
-   feats=[("door","Tough &amp; Affordable","Melamine resists knocks, moisture and daily wear, and it’s kind to your budget."),
-          ("gem","Premium Quartz","Non-porous, scratch- and stain-resistant, and virtually maintenance-free."),
+   offer_tags=["Eazi Quartz Tops","Melamine Tops","Kitchen Cupboard Doors","Wood-grain Finishes","Solid Colours","Splashbacks","Cut-to-Size","Soft-Close Hinges"],
+   feats=[("gem","Premium Quartz","Non-porous, scratch- and stain-resistant, and virtually maintenance-free."),
+          ("door","Tough &amp; Affordable","Melamine resists knocks, moisture and daily wear, and it’s kind to your budget."),
           ("ruler","Cut to Your Sizes","Doors and tops cut precisely to your measurements for a clean, professional fit.")]),
+
  "custom-cabinetry.html": dict(
-   eyebrow="Our Services", h1="Custom Cabinetry &amp; Shopfitting",
-   subtitle="Bespoke cabinetry for homes and businesses, office cupboards, reception desks, shop counters and display units.",
+   title="Shopfitting &amp; Custom Cabinetry | Cupboard Centre",
+   desc="Shopfitting and custom cabinetry for retail and business, shop counters, display units and made-to-measure storage, designed and installed. Get a free quote.",
+   eyebrow="Our Services", h1="Shopfitting &amp; Custom Cabinetry",
+   subtitle="Shop counters, display units and bespoke cabinetry for retail, hospitality and business premises.",
    intro_h="Built for Your Space and Your Brand",
-   intro=["When off-the-shelf won’t do, we design and build custom. From home offices and entertainment units to retail counters, reception desks and modular office storage, we bring your vision to life with expert craftsmanship.",
-          "Tell us the look, the function and the budget, and we’ll handle design, manufacture and installation, finished in durable materials that stand up to daily use."],
-   included=["Office cupboards &amp; storage","Reception &amp; service desks","Shop counters &amp; displays","Entertainment &amp; wall units","Custom home offices","Commercial shopfitting"],
+   intro=["Your counters, shelving and display units are silent salespeople. We design and build retail shopfitting that guides customers, showcases stock and makes the most of every square metre, finished in hard-wearing materials that survive heavy trading.",
+          "Tell us the look, the function and the budget, and we’ll handle design, manufacture and installation, from a single service counter to a complete retail fit-out.",
+          TOWNS_LINE],
+   included=["Shop counters &amp; displays","Retail fit-outs","Service &amp; till counters","Display shelving","Stockroom storage","Custom cabinetry to order"],
    img_cat=CUSTOM, img_i=1,
    offer_eyebrow="What We Build", offer_h="Custom Solutions for Home &amp; Business",
    offer_sub="No two projects are the same, everything is designed and built to order.",
-   offer_tags=["Home Offices","Entertainment Units","Office Cupboards","Reception Desks","Shop Counters","Display Units","Filing &amp; Storage","Retail Fit-outs"],
+   offer_tags=["Shop Counters","Display Units","Retail Fit-outs","Till Counters","Stockroom Storage","Entertainment Units","Home Offices","Custom Cabinetry"],
    feats=[("custom","Designed With You","We turn your idea, sketch or Pinterest board into a buildable, made-to-measure design."),
           ("check","Expert Craftsmanship","Skilled cabinetmakers and quality materials for a finish that impresses."),
           ("wallet","Priced to Your Brief","Custom doesn’t have to mean expensive, we build to your budget and priorities.")]),
+
+ "office-reception-desks.html": dict(
+   title="Office Desks &amp; Reception Desks | Cupboard Centre",
+   desc="Custom office desks, reception desks and office cupboards built to measure for your workspace, designed, manufactured and installed. Get a free quote today.",
+   eyebrow="Our Services", h1="Office Desks &amp; Reception Desks",
+   subtitle="Custom office desks, reception counters and office cupboards, built to measure for the way your team works.",
+   intro_h="Workspaces Built to Measure",
+   intro=["A desk bought off a shelf rarely fits the room. We design and build office desks, reception desks and workstations to your exact floor plan, with cable management, storage and finishes chosen to match your brand.",
+          "From a single home-office desk to a full commercial reception counter and matching office cupboards, we handle design, manufacture and installation.",
+          TOWNS_LINE],
+   included=["Custom office desks","Reception &amp; service counters","Workstations &amp; pods","Office cupboards &amp; storage","Filing &amp; credenza units","Cable management built in"],
+   img_cat=CUSTOM, img_i=4,
+   offer_eyebrow="What We Build", offer_h="Desks, Counters &amp; Office Storage",
+   offer_sub="Designed around your floor plan, your team and your brand.",
+   offer_tags=["Office Desks","Reception Desks","Workstations","Office Cupboards","Filing Units","Credenzas","Boardroom Tables","Home Offices"],
+   feats=[("layout","Planned To Your Floor","We work to your floor plan so desks, storage and walkways actually fit."),
+          ("custom","Finished In Your Brand","Colours, edging and detailing chosen to match your corporate identity."),
+          ("hinge","Built For Daily Use","Commercial-grade board, edging and hardware that stands up to office wear.")]),
+
  "diy-units.html": dict(
-   eyebrow="Our Services", h1="DIY Units &amp; Flat-Packs",
-   subtitle="Ready-to-assemble cupboard units delivered to your door, the smart, affordable way to kit out any room.",
+   title="Flat Pack Cupboards &amp; DIY Units | Cupboard Centre",
+   desc="Flat pack cupboards and DIY units, pre-cut, edged, drilled and labelled with all hardware included. Delivered nationwide. Order online or get a free quote.",
+   eyebrow="Our Services", h1="Flat Pack Cupboards &amp; DIY Units",
+   subtitle="Ready-to-assemble flat pack cupboards delivered to your door, the smart, affordable way to kit out any room.",
    intro_h="DIY Cupboards, Done Properly",
-   intro=["Our DIY units are the same quality we install, pre-cut, edged, drilled and labelled, with all the hardware included. Follow the guide and you’ll have solid, professional-looking cupboards in place over a weekend.",
-          "Kitchens, bedrooms, bathrooms and floor units in a range of standard sizes, with custom sizes on request. Everything is flat-packed and protected for safe delivery nationwide."],
+   intro=["Our flat pack cupboards are the same quality we install, pre-cut, edged, drilled and labelled, with all the hardware included. Follow the guide and you’ll have solid, professional-looking cupboards in place over a weekend.",
+          "Kitchens, bedrooms, bathrooms and floor units in a range of standard sizes, with custom sizes on request. Everything is flat-packed and protected for safe delivery nationwide.",
+          TOWNS_LINE],
    included=["Floor units in standard widths","Base &amp; wall kitchen units","Wardrobe &amp; storage kits","All hardware &amp; fittings included","Assembly guide provided","Custom sizes on request"],
    img_cat=DIY, img_i=0,
    offer_eyebrow="What You Can Order", offer_h="Flat-Packs for Every Room",
@@ -849,8 +923,9 @@ SERVICE_PAGES = {
 def build_service(fname, d):
     cat=d['img_cat']; i=d['img_i']
     og,_=img(cat,i)
-    title = "%s | Cupboard Centre" % d['h1'].replace('&amp;','&')
-    h = head(title, d['subtitle'].replace('&amp;','&'), "https://www.cupboardcentre.co.za/%s"%fname, og)
+    title = (d.get('title') or ("%s | Cupboard Centre" % d['h1'])).replace('&amp;','&')
+    desc  = (d.get('desc')  or d['subtitle']).replace('&amp;','&')
+    h = head(title, desc, "https://www.cupboardcentre.co.za/%s"%fname, og)
     h += header(cart=True)
     h += page_hero(d['h1'], d['eyebrow'], d['h1'], d['subtitle'], trail=[("Services","services.html")], bg_img=img(cat,i)[0])
     # 1 — intro: image left, text right
@@ -876,8 +951,8 @@ for fname,d in SERVICE_PAGES.items():
 # ============================================================ SERVICES HUB
 def build_services_hub():
     og,_=img(KITCHEN,0)
-    h=head("Our Services | Cupboard Centre, Kitchens, Cupboards, Doors &amp; Countertops",
-           "Explore Cupboard Centre's full range: complete installation, DIY kitchen units, bedroom &amp; bathroom cabinetry, melamine doors, quartz countertops, custom cabinetry &amp; DIY flat-packs.",
+    h=head("Our Services | Cupboard Centre",
+           "Everything Cupboard Centre does: kitchen cupboards, bedroom and bathroom cabinetry, quartz tops, shopfitting, office desks and DIY flat-packs. Get a free quote.",
            "https://www.cupboardcentre.co.za/services.html", og)
     h+=header()
     h+=page_hero("Services","What We Do","Cupboards For Every Room &amp; Budget",
@@ -905,7 +980,7 @@ print("services.html", write("services.html", build_services_hub()), "bytes")
 # ============================================================ ABOUT
 def build_about():
     og,_=img(KITCHEN,4)
-    h=head("About Cupboard Centre | 25+ Years of DIY &amp; Custom Cupboards",
+    h=head("About Cupboard Centre | 25+ Years in Mpumalanga",
            "For over 25 years Cupboard Centre has supplied and installed DIY &amp; custom cupboards across Mpumalanga, 1028+ projects, 50+ corporate clients, 100% satisfaction.",
            "https://www.cupboardcentre.co.za/about.html", og)
     h+=header(cart=True)
@@ -955,7 +1030,7 @@ def contact_form():
 
 def build_contact():
     og,_=img(GENERAL,1)
-    h=head("Contact Cupboard Centre | Nelspruit &amp; Mbombela Cupboard Specialists",
+    h=head("Contact Cupboard Centre | Nelspruit &amp; Mbombela",
            "Contact Cupboard Centre in Mbombela (Nelspruit). Call 084 683 7467, WhatsApp us or visit our showroom. Free quotes on DIY &amp; custom cupboards.",
            "https://www.cupboardcentre.co.za/contact.html", og)
     h+=header()
@@ -992,7 +1067,7 @@ print("contact.html", write("contact.html", build_contact()), "bytes")
 # ============================================================ GALLERY
 def build_gallery():
     og,_=img(KITCHEN,0)
-    h=head("Gallery | Cupboard Centre, Kitchens, Wardrobes, Bathrooms &amp; Custom Cabinetry",
+    h=head("Project Gallery | Cupboard Centre",
            "Browse completed Cupboard Centre projects, custom kitchens, built-in bedroom cupboards, bathroom vanities, quartz countertops and shopfitting across Mpumalanga.",
            "https://www.cupboardcentre.co.za/gallery.html", og)
     h+=header()
@@ -1012,18 +1087,56 @@ def build_gallery():
     h+="""<section class="section bg-navy"><div class="wrap">
   <div class="gallery-filters">%s</div>
   <div class="gallery-grid">%s</div>
-  <p class="section-center" style="margin-top:34px"><a class="btn btn-green btn-arrow" href="#cta-form" data-scroll="cta-form">Start Your Project</a></p>
+  <p class="section-center" style="margin-top:34px"><a class="btn btn-outline" href="gallery-designs-of-kitchen-cupboard.html">See All Kitchen Cupboard Designs</a> <a class="btn btn-green btn-arrow" href="#cta-form" data-scroll="cta-form">Start Your Project</a></p>
 </div></section>
 """%(filt,grid)
     h+=cta_form(); h+=marquee(); h+=footer()
     return h
 print("gallery.html", write("gallery.html", build_gallery()), "bytes")
 
+# ---- dedicated kitchen-designs gallery (restores the old, most-linked URL) ----
+def build_kitchen_gallery():
+    og,_=img(KITCHEN,0)
+    h=head("Designs of Kitchen Cupboard: Photo Gallery | Cupboard Centre",
+           "Browse real designs of kitchen cupboard projects we have built and installed, wood-grain, gloss and quartz-topped kitchens. Get a free quote on yours.",
+           "https://www.cupboardcentre.co.za/gallery-designs-of-kitchen-cupboard.html", og)
+    h+=header()
+    h+=page_hero("Kitchen Designs","Kitchen Gallery","Designs of Kitchen Cupboard",
+                 "Real kitchen cupboard designs we have measured, manufactured and fitted across Mpumalanga.",
+                 trail=[("Gallery","gallery.html")], bg_img=img(KITCHEN,0)[0])
+    def items(lst,cat,n,start=0):
+        out=""
+        for i in range(start,min(start+n,len(lst))):
+            u,a=img(lst,i,"kitchen cupboard design")
+            cap=('<figcaption>%s</figcaption>'%esc(a)) if a and a!="kitchen cupboard design" else ''
+            out+='<figure class="g-item" data-cat="%s"><img src="%s" alt="%s" loading="lazy" decoding="async">%s</figure>'%(cat,u,esc(a) if a else cat,cap)
+        return out
+    h+="""<section class="section bg-navy"><div class="wrap section-center">
+  <span class="eyebrow">Kitchen Cupboard Designs</span>
+  <h2>Every Kitchen Here Was Built To Fit</h2>
+  <p style="max-width:52em;margin:0 auto 30px">From wood-grain melamine and high-gloss doors to quartz-topped islands, these are kitchen cupboard designs we have built for real homes. Use them for ideas, then tell us about your space.</p>
+  <div class="gallery-grid">%s</div>
+  <p style="margin-top:34px"><a class="btn btn-green btn-arrow" href="kitchen-units.html">See Kitchen Cupboards &amp; Units</a></p>
+</div></section>
+"""%(items(KITCHEN,"kitchen",24))
+    h+=faq_section("Questions", accent("Kitchen Cupboard Designs, Answered"),
+                   [("What kitchen cupboard designs are most popular right now?",
+                     "Wood-grain melamine with a contrasting quartz top is the most requested look, followed by plain white or grey gloss doors with handleless or slim-line handles. We will show you real samples so you can see and feel the finish before you decide."),
+                    ("Can you build a kitchen from a design I have seen?",
+                     "Yes. Bring a photo, a sketch or a Pinterest board and we will work out how to build it for your space and budget, then measure, manufacture and install it."),
+                    ("Do you design the layout as well as build it?",
+                     "We do. We plan the layout around how you actually cook and store things, the work triangle between sink, stove and fridge, then size every unit to your walls.")],
+                   bg="bg-navy-slate")
+    h+=cta_form(); h+=marquee(); h+=footer()
+    return h
+print("gallery-designs-of-kitchen-cupboard.html",
+      write("gallery-designs-of-kitchen-cupboard.html", build_kitchen_gallery()), "bytes")
+
 # ============================================================ SERVICE AREAS
 def build_service_areas():
     og,_=img(GENERAL,2)
-    h=head("Service Areas | Cupboard Centre, Nelspruit, Mbombela &amp; the Lowveld",
-           "Cupboard Centre supplies and installs cupboards across Nelspruit, Mbombela, White River, Hazyview and the Lowveld, with DIY flat-packs delivered nationwide.",
+    h=head("Cupboards in Nelspruit &amp; Mbombela | Cupboard Centre",
+           "Cupboard Centre installs cupboards across Nelspruit, Mbombela, White River, Hazyview, Barberton, Sabie and Malelane, with DIY flat-packs delivered nationwide.",
            "https://www.cupboardcentre.co.za/service-areas.html", og)
     h+=header()
     h+=page_hero("Service Areas","Where We Work","Serving Nelspruit, Mbombela &amp; Beyond",
@@ -1065,7 +1178,7 @@ FAQ_FULL = FAQ_ITEMS + [
 ]
 def build_faq():
     og,_=img(GENERAL,3)
-    h=head("FAQ | Cupboard Centre, DIY &amp; Custom Cupboard Questions Answered",
+    h=head("Cupboard Questions Answered | Cupboard Centre",
            "Answers to common questions about Cupboard Centre's DIY and custom cupboards, ordering, delivery, installation, finishes, countertops and quotes.",
            "https://www.cupboardcentre.co.za/faq.html", og)
     h+=header()
@@ -1096,7 +1209,7 @@ print("blog.html", write("blog.html", build_blog()), "bytes")
 def build_post(p):
     slug,title,excerpt,cat,imgs,body = p
     og = blog_image(slug, imgs)[0]
-    h=head("%s | Cupboard Centre Blog"%title, excerpt,
+    h=head(BLOG_TITLE.get(slug, title) + " | Cupboard Centre", excerpt,
            "https://www.cupboardcentre.co.za/blog/%s.html"%slug, og)
     # header/footer use relative paths, from /blog/ we need ../ prefix
     hd=header().replace('href="','href="../').replace('href="../#','href="#').replace('href="../http','href="http').replace('href="../tel:','href="tel:').replace('href="../mailto:','href="mailto:').replace('src="assets','src="../assets')
@@ -1185,8 +1298,8 @@ def add_cart_attrs(p):
 
 def build_shop():
     p=PROD
-    h=head("Shop DIY Cupboards | Cupboard Centre Online Store",
-           "Buy the Cupboard Centre flat-pack wardrobe online, pre-cut, edged and drilled with all hardware included. Delivered nationwide.",
+    h=head("Shop Pre-Assembled &amp; Flat Pack Cupboards | Cupboard Centre",
+           "Buy Cupboard Centre flat-pack and pre-assembled cupboards online, pre-cut, edged and drilled with all hardware included. Delivered nationwide.",
            "https://www.cupboardcentre.co.za/shop.html", p['img'])
     h+=header(cart=True)
     h+=page_hero("Shop","Online Shop","Shop DIY Cupboards",
@@ -1221,7 +1334,8 @@ print("shop.html", write("shop.html", build_shop()), "bytes")
 
 def build_product():
     p=PROD
-    h=head("%s | Cupboard Centre"%p['name'].replace('&amp;','&'), p['short'].replace('&amp;','&'),
+    h=head("%s | Cupboard Centre"%p['name'].replace('&amp;','&'),
+           "Flat pack wardrobe with woody melamine doors, 3 doors and 2 drawers. Pre-cut, edged and drilled with all hardware included. Delivered nationwide.",
            "https://www.cupboardcentre.co.za/product-%s.html"%p['id'], p['img'])
     h+=header(cart=True)
     h+=page_hero(p['name'],"Shop",p['name'],cta=False,trail=[("Shop","shop.html")],bg_img=img(KITCHEN,3)[0])
@@ -1259,7 +1373,7 @@ def build_product():
 print("product-%s.html"%PROD['id'], write("product-%s.html"%PROD['id'], build_product()), "bytes")
 
 def build_cart():
-    h=head("Your Cart | Cupboard Centre","Review your Cupboard Centre cart and send your order enquiry.",
+    h=head("Your Cart | Cupboard Centre","Review the DIY cupboard units in your Cupboard Centre cart, adjust quantities and send your order enquiry straight through to our Mbombela team.",
            "https://www.cupboardcentre.co.za/cart.html", PROD['img'])
     h+=header(cart=True)
     h+=page_hero("Cart","Shop","Your Cart",cta=False,trail=[("Shop","shop.html")],bg_img=img(KITCHEN,3)[0])
@@ -1288,7 +1402,7 @@ print("cart.html", write("cart.html", build_cart()), "bytes")
 
 # ============================================================ PRIVACY
 def build_privacy():
-    h=head("Privacy Policy | Cupboard Centre","How Cupboard Centre collects, uses and protects your personal information.",
+    h=head("Privacy Policy | Cupboard Centre","How Cupboard Centre collects, uses, stores and protects the personal information you share with us through our website, forms and enquiries.",
            "https://www.cupboardcentre.co.za/privacy-policy.html", img(GENERAL,0)[0])
     h+=header()
     h+=page_hero("Privacy Policy","Legal","Privacy Policy", cta=False, bg_img=img(GENERAL,0)[0])
@@ -1309,7 +1423,7 @@ print("privacy-policy.html", write("privacy-policy.html", build_privacy()), "byt
 
 # ============================================================ SITEMAP
 def build_sitemap():
-    h=head("Sitemap | Cupboard Centre","Full list of pages on the Cupboard Centre website.",
+    h=head("Sitemap | Cupboard Centre","Every page on the Cupboard Centre website in one place, our cupboard services, project galleries, online shop, guides and contact details.",
            "https://www.cupboardcentre.co.za/sitemap.html", img(GENERAL,0)[0])
     h+=header()
     h+=page_hero("Sitemap","Sitemap","Sitemap", cta=False, bg_img=img(GENERAL,0)[0])
@@ -1338,7 +1452,10 @@ SITEMAP_PAGES = [
     ("services.html",                          "0.9", "monthly"),
     ("cupboard-installation.html",             "0.9", "monthly"),
     ("kitchen-units.html",                     "0.9", "monthly"),
-    ("bedroom-bathroom-cabinetry.html",        "0.9", "monthly"),
+    ("bedroom-cupboards.html",                 "0.9", "monthly"),
+    ("bathroom-cabinets.html",                 "0.9", "monthly"),
+    ("office-reception-desks.html",            "0.9", "monthly"),
+    ("gallery-designs-of-kitchen-cupboard.html","0.8", "monthly"),
     ("melamine-doors-quartz-countertops.html", "0.9", "monthly"),
     ("custom-cabinetry.html",                  "0.9", "monthly"),
     ("diy-units.html",                         "0.9", "monthly"),

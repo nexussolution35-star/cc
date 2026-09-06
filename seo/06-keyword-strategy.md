@@ -31,34 +31,33 @@ You've asked to target Mpumalanga instead of Nelspruit. Worth knowing what the d
 Nelspruit is the *only* local modifier with measurable demand. Dropping it entirely would
 forfeit that, and their Google Business Profile is anchored there.
 
-**My recommendation:** use both, in different jobs — **Mpumalanga** as the region wording
-in body copy and on the service-areas page (it honestly reflects the wider trading area),
-**Nelspruit** retained in the homepage title and GBP-aligned spots. You lose nothing and
-gain the broader positioning. Say the word if you'd rather go Mpumalanga-only and I'll
-apply it as specified.
+**DECIDED:** since provincial volume is nil, we name the actual **towns** on the pages
+rather than chase "Mpumalanga" as a term. Every service page now carries one natural line —
+*"We supply, deliver and install across Nelspruit, Mbombela, White River, Hazyview,
+Barberton, Sabie and Malelane"* — Mpumalanga is used as regional wording in body copy, and
+**Nelspruit stays in the homepage title** because it is the only local modifier with
+measurable demand.
 
 Either way: per the framework, service pages stay **region-neutral** (they serve the whole
 province) — only the homepage and location pages carry a place name.
 
 ---
 
-## Three structural recommendations
+## Three structural changes — ALL APPROVED AND BUILT
 
-These need your yes/no before I write any metadata.
-
-**A. Split `bedroom-bathroom-cabinetry` into two pages.**
+**A. Split `bedroom-bathroom-cabinetry` into two pages. ✅ BUILT**
 One page can't own both. `bathroom cabinets` is 9,900 @ KD 8 and `bedroom cupboards` is
 2,900 @ KD 3 — together the second- and fourth-best opportunities on the site, currently
 competing with each other on one URL.
 
-**B. Restore a dedicated kitchen gallery page.**
+**B. Restore a dedicated kitchen gallery page. ✅ BUILT**
 You were right that the old site had a page per gallery. `/gallery-designs-of-kitchen-cupboard`
 was the **most internally-linked page on the old site (127 links)** and
 `designs of kitchen cupboard` is 3,600 @ KD 28. We merged all five galleries into one
 `gallery.html` and lost that. Browse intent is genuinely different from service intent, so
 it doesn't cannibalise the kitchen service page.
 
-**C. Add an office & reception desks page.**
+**C. Add an office & reception desks page. ✅ BUILT**
 `office desks` is **8,100 @ KD 8** and `reception desks` is **1,600 @ KD 3** — and they
 genuinely build both (they're all over the custom-cabinetry gallery). Right now these sit
 buried as secondaries. This is the single biggest untapped opportunity in the set.
@@ -78,7 +77,7 @@ Ordered by opportunity (volume ÷ difficulty). Full detail incl. secondaries in 
 | `index` (home) | **diy cupboards** | 2,400 | 14 | 171 |
 | `melamine-doors-quartz-countertops` | **quartz countertops** | 2,900 | 19 | 153 |
 | `diy-units` | **flat pack cupboards** | 390 | 3 | 130 |
-| `gallery-kitchen` *(restore)* | **designs of kitchen cupboard** | 3,600 | 28 | 129 |
+| `gallery-designs-of-kitchen-cupboard` *(restored)* | **designs of kitchen cupboard** | 3,600 | 28 | 129 |
 | `custom-cabinetry` | **shopfitting** | 590 | 5 | 118 |
 | `product-flat-pack-wardrobe` | **flat pack wardrobe** | 110 | 5 | 22 |
 | `cupboard-installation` | **kitchen cupboard installation** | 170 | 42 | 4 |
@@ -142,3 +141,38 @@ This is the A3 exit gate: **confirm the map + the three structural decisions (A/
 the Mpumalanga/Nelspruit call**, and I'll write the full A4 spec — every title, meta
 description, H1, H2 skeleton and intro paragraph, per page, with each keyword landing once
 and naturally. No stuffing; the old keyword set is guidance, not a template.
+
+
+---
+
+## A4 applied — what shipped
+
+Every title, meta description and H1 was rewritten against the map. Verified across all
+**27 pages**:
+
+- unique titles, all **≤ 60 characters**, keyword-first + `| Cupboard Centre`
+- unique meta descriptions, all **120–170 characters**, one benefit + one action
+- exactly **one H1 per page**, leading with that page's primary keyword
+- canonical on every page; **zero broken internal links**
+- `sitemap.xml` regenerated (26 URLs, new pages in, the merged page out)
+
+**New/changed URLs**
+
+| URL | Status |
+|---|---|
+| `/bedroom-cupboards.html` | new (split) |
+| `/bathroom-cabinets.html` | new (split) |
+| `/office-reception-desks.html` | new |
+| `/gallery-designs-of-kitchen-cupboard.html` | **old URL preserved exactly** — no equity redirected away |
+| `/bedroom-bathroom-cabinetry.html` | removed; old Wix URL now 301s to `/bedroom-cupboards.html` |
+
+The old `/gallery-bathroom-cabinetry` and `/gallery-bedroom-cupboards` URLs now redirect to
+the matching split service pages instead of the generic gallery hub — better intent match
+for the 60+ internal links each carried.
+
+### Still outstanding
+
+**Google Search Console data.** It remains the one input I don't have, and it is the only
+way to confirm the keep-as-is list — which pages already rank, and therefore which wording
+must not be touched. The rewrites above follow the map and the framework, but GSC is what
+would let us verify we haven't over-optimised a page that was already working.
