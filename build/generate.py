@@ -923,8 +923,9 @@ SERVICE_PAGES = {
 def build_service(fname, d):
     cat=d['img_cat']; i=d['img_i']
     og,_=img(cat,i)
-    title = (d.get('title') or ("%s | Cupboard Centre" % d['h1'])).replace('&amp;','&')
-    desc  = (d.get('desc')  or d['subtitle']).replace('&amp;','&')
+    # keep &amp; encoded - a raw & in <title>/<meta> is invalid HTML
+    title = d.get('title') or ("%s | Cupboard Centre" % d['h1'])
+    desc  = d.get('desc')  or d['subtitle']
     h = head(title, desc, "https://www.cupboardcentre.co.za/%s"%fname, og)
     h += header(cart=True)
     h += page_hero(d['h1'], d['eyebrow'], d['h1'], d['subtitle'], trail=[("Services","services.html")], bg_img=img(cat,i)[0])
