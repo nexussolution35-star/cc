@@ -426,8 +426,36 @@ def clean_urls(html):
         return 'href="/"' if path in ('index', '') else 'href="/%s"' % path
     return _re.sub(r'href="([^"]+\.html)"', fix, html)
 
+def use_webp(html):
+    """Point every <img>/background at the .webp twin when one exists on disk."""
+    def swap(m):
+        pre, path, post = m.group(1), m.group(2), m.group(3)
+        webp = _re.sub(r'\.(jpe?g|png)$', '.webp', path, flags=_re.I)
+        disk = webp.lstrip('./')
+        while disk.startswith('../'): disk = disk[3:]
+        return pre + webp + post if os.path.exists(os.path.join(OUT, disk)) else m.group(0)
+    html = _re.sub(r'(src=")([^"]+\.(?:jpe?g|png))(")', swap, html, flags=_re.I)
+    html = _re.sub(r'(url\()([^)"\']+\.(?:jpe?g|png))(\))', swap, html, flags=_re.I)
+    return html
+
+
+def responsive_img(u, alt, cls="", extra=""):
+    """Gallery grid image: 700px thumb by default, full file for retina + lightbox.
+
+    `u` arrives as the original .jpg/.png path (the webp swap runs later in write()),
+    so derive both variants from the base name here."""
+    base = _re.sub(r'\.(jpe?g|png|webp)$', '', u)
+    full, sm = base + '.webp', base + '-sm.webp'
+    def on_disk(x): return os.path.exists(os.path.join(OUT, x.lstrip('/')))
+    if on_disk(full) and on_disk(sm):
+        return ('<img src="%s" srcset="%s 700w, %s 1600w"'
+                ' sizes="(max-width:700px) 100vw, (max-width:1000px) 50vw, 33vw"'
+                ' data-full="%s" alt="%s"%s%s loading="lazy" decoding="async">'
+                % (sm, sm, full, full, alt, (' class="%s"' % cls) if cls else '', extra))
+    return '<img src="%s" alt="%s"%s%s loading="lazy" decoding="async">' % (u, alt, (' class="%s"' % cls) if cls else '', extra)
+
 def write(name, html):
-    html = clean_urls(html)
+    html = use_webp(clean_urls(html))
     path = os.path.join(OUT, name)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     open(path, 'w').write(html)
@@ -1147,7 +1175,7 @@ def build_gallery():
         for i in range(min(n,len(lst))):
             u,a=img(lst,i,cat+" project")
             cap=('<figcaption>%s</figcaption>'%esc(a)) if a and a!=cat+" project" else ''
-            out+='<figure class="g-item" data-cat="%s"><img src="%s" alt="%s" loading="lazy" decoding="async">%s</figure>'%(cat,u,esc(a) if a else cat,cap)
+            out+='<figure class="g-item" data-cat="%s">%s%s</figure>'%(cat,responsive_img(u,esc(a) if a else cat),cap)
         return out
     grid = items(KITCHEN,"kitchen",12)+items(BEDROOM,"bedroom",10)+items(BATHROOM,"bathroom",8)+items(CUSTOM,"custom",10)+items(DIY,"diy",6)
     h+="""<section class="section bg-navy"><div class="wrap">
@@ -1176,7 +1204,7 @@ def build_kitchen_gallery():
         for i in range(start,min(start+n,len(lst))):
             u,a=img(lst,i,"kitchen cupboard design")
             cap=('<figcaption>%s</figcaption>'%esc(a)) if a and a!="kitchen cupboard design" else ''
-            out+='<figure class="g-item" data-cat="%s"><img src="%s" alt="%s" loading="lazy" decoding="async">%s</figure>'%(cat,u,esc(a) if a else cat,cap)
+            out+='<figure class="g-item" data-cat="%s">%s%s</figure>'%(cat,responsive_img(u,esc(a) if a else cat),cap)
         return out
     h+="""<section class="section bg-navy"><div class="wrap section-center">
   <span class="eyebrow">Kitchen Cupboard Designs</span>

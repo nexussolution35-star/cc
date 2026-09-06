@@ -197,7 +197,7 @@
       '<button class="lightbox-nav next" aria-label="Next">&rsaquo;</button>';
     doc.body.appendChild(box);
     var big = $('img', box), idx = 0;
-    function show(i) { idx = (i + imgs.length) % imgs.length; big.src = imgs[idx].currentSrc || imgs[idx].src; big.alt = imgs[idx].alt || ''; }
+    function show(i) { idx = (i + imgs.length) % imgs.length; var im = imgs[idx]; big.src = im.getAttribute('data-full') || im.currentSrc || im.src; big.alt = im.alt || ''; }
     function open(i) { show(i); box.classList.add('open'); }
     function close() { box.classList.remove('open'); }
     on($('.lightbox-close', box), 'click', close);
