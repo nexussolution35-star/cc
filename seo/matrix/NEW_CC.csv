@@ -1,0 +1,182 @@
+,keyword,cpc,sv,is_restricted,search_intent_list,kd,ppcd,last_updated_at
+0,chest of drawer,0.18,33100,False,"['transactional', 'commercial']",30,100.0,2026-09-06 15:09:25.995450+00:00
+1,nelspruit,0.36,27100,False,"['informational', 'commercial']",47,2.0,2026-07-23 10:56:35.106898+00:00
+2,kitchen cupboards,0.53,22200,False,"['informational', 'transactional']",6,100.0,2026-04-19 19:20:11.381694+00:00
+3,quote request,2.06,12100,False,[],51,6.0,2026-08-29 06:14:21.384655+00:00
+4,bathroom cabinetry,0.18,9900,False,['transactional'],48,100.0,2026-09-06 15:09:14.454105+00:00
+5,bathroom cabinets,0.18,9900,False,['transactional'],8,100.0,2026-09-06 14:41:16.985832+00:00
+6,kitchen units,0.32,9900,False,['informational'],5,100.0,2024-10-25 01:21:51.189292+00:00
+7,office desks,0.78,8100,False,[],8,100.0,2026-09-06 14:41:39.856514+00:00
+8,kitchen cabinets,0.51,6600,False,"['informational', 'navigational']",78,100.0,2026-09-06 14:41:51.133272+00:00
+9,built in cupboards,0.6,4400,False,['informational'],17,100.0,2026-09-06 14:41:16.387776+00:00
+10,bathroom vanities,0.28,3600,False,"['informational', 'transactional']",19,100.0,2025-12-29 11:29:39.328473+00:00
+11,bathroom vanity,0.28,3600,False,"['informational', 'commercial']",16,100.0,2026-08-27 02:38:12.808719+00:00
+12,designs of kitchen cupboard,0.53,3600,False,['commercial'],28,100.0,2026-09-06 14:41:15.813792+00:00
+13,bedroom cupboards,0.34,2900,False,"['commercial', 'informational']",3,100.0,2026-09-06 15:09:18.060955+00:00
+14,quartz countertops,0.45,2900,False,['informational'],19,100.0,2026-09-06 14:41:39.850770+00:00
+15,built in wardrobes,0.48,2400,False,"['commercial', 'informational']",3,100.0,2026-09-06 15:09:23.430688+00:00
+16,diy cupboard,0.15,2400,False,[],7,100.0,2026-09-06 14:41:10.758918+00:00
+17,diy cupboards,0.15,2400,False,"['navigational', 'informational']",14,100.0,2026-09-06 14:41:20.606066+00:00
+18,eazi quartz,0.45,2400,False,"['navigational', 'commercial']",5,14.000000000000002,2026-09-06 14:41:35.632355+00:00
+19,kitchen countertops,0.46,2400,False,[],7,100.0,2026-09-01 20:51:02.179742+00:00
+20,kitchen cupboard design,0.48,2400,False,[],4,100.0,2026-09-06 14:41:37.230834+00:00
+21,kitchen cupboard designs,0.41,2400,False,"['commercial', 'informational']",42,100.0,2026-09-06 14:41:37.738070+00:00
+22,chest drawer,0.17,1900,False,"['commercial', 'navigational']",45,100.0,2026-09-06 15:09:13.973178+00:00
+23,shoe storage,0.3,1900,False,"['commercial', 'informational']",35,100.0,2026-09-06 14:42:09.662030+00:00
+24,reception desk,1.48,1600,False,[],48,100.0,2026-08-28 17:16:32.103441+00:00
+25,reception desks,1.48,1600,False,[],3,100.0,2026-09-02 14:12:58.961406+00:00
+26,diy kitchen cabinets,0.2,1300,False,['informational'],20,100.0,2026-09-06 14:41:21.333929+00:00
+27,walk in closet,0.46,1000,False,[],80,87.0,2025-09-16 11:29:06.726126+00:00
+28,kitchen renovation,1.59,880,False,[],36,92.0,2026-08-13 15:31:14.946491+00:00
+29,cupboard doors,0.34,720,False,"['informational', 'navigational']",7,100.0,2026-09-06 15:09:21.636642+00:00
+30,cabinet handles,0.15,590,False,"['commercial', 'informational']",45,100.0,2025-04-02 01:46:37.197776+00:00
+31,home renovation,1.29,590,False,[],34,28.999999999999996,2026-08-11 21:41:03.903236+00:00
+32,kitchen cupboard prices,0.32,590,False,[],12,100.0,2026-09-06 15:08:59.611807+00:00
+33,shopfitting,1.51,590,False,[],5,73.0,2025-01-24 00:23:23.019332+00:00
+34,bedside cabinets,0.18,480,False,['informational'],28,100.0,2026-09-06 14:41:21.842408+00:00
+35,kitchen cupboard doors,0.32,480,False,[],6,99.0,
+36,office cupboards,0.84,480,False,[],6,100.0,2026-09-06 14:41:44.878848+00:00
+37,shop fitting,1.29,480,False,['informational'],18,75.0,2026-09-06 14:41:42.020287+00:00
+38,soft close hinges,0.1,480,False,[],12,100.0,2025-06-05 19:30:13.579880+00:00
+39,flat pack cupboards,0.21,390,False,[],3,100.0,
+40,kitchen storage,0.44,390,False,[],18,100.0,2026-09-06 14:41:55.114227+00:00
+41,one stop shop,0.0,390,False,[],14,3.0,2026-09-06 14:41:33.282457+00:00
+42,bathroom remodeling,0.95,320,False,['navigational'],49,99.0,2026-08-17 21:41:23.527478+00:00
+43,bedroom cabinetry,0.15,320,False,"['commercial', 'informational']",37,100.0,2026-09-06 15:09:10.820079+00:00
+44,bedroom cabinets,0.15,320,False,"['commercial', 'informational']",11,100.0,2026-09-06 15:09:09.624724+00:00
+45,cupboard warehouse,0.24,320,False,['transactional'],6,94.0,2026-09-06 14:41:14.124546+00:00
+46,diy wardrobe,0.21,320,False,"['navigational', 'informational']",24,100.0,2026-09-06 14:41:16.992665+00:00
+47,storage solutions,1.01,320,False,[],15,100.0,2025-01-28 23:37:57.380005+00:00
+48,shop counters,0.85,210,False,[],7,100.0,2026-09-06 14:41:38.561089+00:00
+49,built in cupboards prices,0.56,170,False,['transactional'],6,100.0,2026-09-06 15:09:22.905316+00:00
+50,christmas holidays,0.34,170,False,[],36,14.000000000000002,2026-09-06 14:41:08.225648+00:00
+51,diy bedroom cupboard,0.26,170,False,"['navigational', 'commercial']",27,100.0,2026-09-06 14:41:23.473855+00:00
+52,diy cabinets,0.15,170,False,[],8,100.0,2024-12-19 08:23:47.298481+00:00
+53,drawer units,0.2,170,False,[],20,100.0,2026-09-06 14:41:37.023594+00:00
+54,kitchen cupboard installation,1.24,170,False,['navigational'],42,85.0,2026-09-06 14:41:35.908528+00:00
+55,bathroom vanity design,0.21,140,False,[],28,99.0,2026-09-06 14:41:22.525504+00:00
+56,builders warehouse bathroom cupboards,0.09,140,False,['navigational'],18,100.0,2026-09-06 15:09:13.589416+00:00
+57,cupboard installation,0.98,140,False,['navigational'],43,85.0,2026-09-06 15:09:17.024042+00:00
+58,cupboard installers,0.98,140,False,"['commercial', 'transactional']",58,85.0,2026-09-06 15:09:23.458784+00:00
+59,custom cupboards,0.72,110,False,[],3,100.0,2026-09-06 14:41:18.745278+00:00
+60,custom kitchen cabinets,0.8,110,False,[],23,100.0,2026-09-06 14:41:15.812401+00:00
+61,flat pack wardrobe,0.32,110,False,[],5,100.0,2026-09-06 15:09:01.198601+00:00
+62,flat pack wardrobes,0.32,110,False,[],30,100.0,2026-09-06 14:41:43.555219+00:00
+63,quartz vs granite countertops,0.19,110,False,[],26,51.0,2026-07-30 22:09:55.458079+00:00
+64,wall racks,0.3,110,False,[],9,100.0,2026-09-06 14:42:17.771523+00:00
+65,cupboard materials,0.26,90,False,['informational'],12,100.0,2026-09-06 15:09:17.896942+00:00
+66,kitchen cupboard design ideas,0.47,90,False,[],30,100.0,
+67,kitchen organization,0.34,90,False,[],48,100.0,2026-04-27 21:55:08.531909+00:00
+68,custom cabinetry,0.84,70,False,"['navigational', 'transactional']",4,100.0,2026-09-06 14:41:13.480862+00:00
+69,custom cabinets,0.84,70,False,"['commercial', 'navigational']",15,100.0,2025-11-12 02:24:14.366898+00:00
+70,builders warehouse built in kitchen cupboards,0.0,50,False,['navigational'],9,85.0,2026-09-06 14:41:27.375408+00:00
+71,cabinetry installation,1.03,50,False,['informational'],28,43.0,2026-09-06 15:09:17.358584+00:00
+72,cupboard centre,0.0,50,False,"['navigational', 'commercial']",24,72.0,2026-09-06 15:09:20.328390+00:00
+73,cupboard manufacturers,0.89,50,False,"['transactional', 'commercial']",3,86.0,2026-09-06 15:09:11.882615+00:00
+74,diy kitchen cupboards builders warehouse,0.1,50,False,['navigational'],11,100.0,2026-09-06 14:41:28.612165+00:00
+75,diy kitchen units,0.33,50,False,['navigational'],29,100.0,2026-09-06 14:41:21.549223+00:00
+76,how to install kitchen cupboards,0.0,50,False,[],13,23.0,2026-09-06 15:08:59.301017+00:00
+77,kitchen cupboards nelspruit,0.47,50,False,[],9,100.0,2026-09-06 15:09:02.126236+00:00
+78,cupboard repairs,1.23,40,False,[],3,56.00000000000001,2026-09-06 15:08:51.968027+00:00
+79,melamine doors,0.0,40,False,['informational'],22,89.0,2026-09-06 14:42:32.039719+00:00
+80,pvc waterproof,1.74,40,False,[],7,89.0,2026-09-06 14:42:01.107694+00:00
+81,builders warehouse diy kitchen cupboards,0.1,30,False,['navigational'],16,100.0,2026-09-06 14:41:33.991110+00:00
+82,bathroom storage solutions,0.15,20,False,['navigational'],36,100.0,2026-06-02 00:29:29.632165+00:00
+83,cost of built in cupboards south africa,0.0,20,False,['transactional'],3,100.0,2026-09-06 15:09:18.104852+00:00
+84,cupboard company,2.04,20,False,['transactional'],21,86.0,2024-08-28 00:59:23.716340+00:00
+85,kitchen storage solutions,0.24,20,False,[],28,100.0,2026-09-06 14:41:49.103695+00:00
+86,secure checkout,0.0,20,False,[],41,19.0,2026-09-06 14:41:45.287774+00:00
+87,bedroom diy cupboards,0.0,10,False,[],7,100.0,2026-09-06 14:41:26.339206+00:00
+88,built in cupboards services,0.0,10,False,[],2,0.0,2026-09-06 15:08:41.841112+00:00
+89,complete installation,0.0,10,False,"['navigational', 'informational']",60,4.0,2026-09-06 15:09:19.884831+00:00
+90,cupboard centre nelspruit,0.0,10,False,"['commercial', 'navigational']",24,45.0,2026-09-06 15:09:20.237967+00:00
+91,cupboard delivery,0.0,10,False,[],5,19.0,2026-09-06 15:09:25.503696+00:00
+92,custom design cupboards,0.0,10,False,[],3,39.0,2026-09-06 14:42:39.276063+00:00
+93,diy solutions,0.0,10,False,[],22,4.0,2026-09-06 14:41:27.505014+00:00
+94,diy units,0.0,10,False,['informational'],32,62.0,2026-09-06 14:41:22.914059+00:00
+95,durable countertops,0.0,10,False,[],13,100.0,2026-09-06 14:41:34.709033+00:00
+96,flat panel doors,1.04,10,False,['informational'],29,95.0,2026-09-06 14:41:55.552576+00:00
+97,floor units,0.0,10,False,[],9,86.0,2026-09-06 14:41:46.911363+00:00
+98,get a free quote,10.46,10,False,[],33,52.0,2025-11-09 03:16:46.221626+00:00
+99,kitchen cupboards services,0.0,10,False,[],2,0.0,2026-09-06 15:08:42.039869+00:00
+100,pre assembled bathroom cabinets,0.0,10,False,[],33,100.0,2026-09-06 14:41:58.221865+00:00
+101,pre assembled cabinets,3.3,10,False,"['informational', 'commercial']",18,100.0,2025-07-28 14:38:06.871706+00:00
+102,pre assembled wardrobe,0.0,10,False,[],17,100.0,2026-09-06 14:42:11.375590+00:00
+103,review items,0.0,10,False,[],53,10.0,2026-09-06 14:41:29.461021+00:00
+104,shop fitting ideas,0.0,10,False,[],7,83.0,2026-09-06 15:09:21.032469+00:00
+105,shopfitting services,0.0,10,False,[],9,0.0,2026-09-06 15:09:20.627012+00:00
+106,wardrobe installers,0.0,10,False,"['transactional', 'informational']",29,95.0,2026-09-06 14:41:33.776293+00:00
+107,bathroom cabinets mbombela,0.0,0,False,[],30,0.0,
+108,bathroom cabinets nelspruit,0.0,0,False,[],24,0.0,2026-09-06 15:08:37.462029+00:00
+109,bathroom cabinets services,0.0,0,False,[],10,0.0,2026-09-06 15:08:37.614257+00:00
+110,bedroom cupboards mbombela,0.0,0,False,[],20,0.0,2026-09-06 15:08:37.625732+00:00
+111,bedroom cupboards nelspruit,0.0,0,False,"['commercial', 'navigational']",13,0.0,2026-09-06 15:09:16.588524+00:00
+112,bedroom cupboards services,0.0,0,False,[],5,0.0,2026-09-06 15:08:37.707918+00:00
+113,built in cupboards mbombela,0.0,0,False,[],8,0.0,
+114,built in cupboards nelspruit,0.0,0,False,['transactional'],19,0.0,2026-09-06 15:08:42.028605+00:00
+115,cabinetry experts,0.0,0,False,"['navigational', 'commercial']",2,0.0,2026-09-06 15:09:19.875692+00:00
+116,contact cupboard centre,0.0,0,False,[],25,0.0,2026-09-06 14:42:39.310617+00:00
+117,cuoboards near me,0.0,0,False,[],36,0.0,2026-09-06 15:08:39.083535+00:00
+118,cupboard center cart,0.0,0,False,[],8,0.0,2026-09-06 14:42:39.329312+00:00
+119,cupboard center quote,0.0,0,False,[],25,0.0,2026-09-06 14:42:39.243125+00:00
+120,cupboard centre contact,0.0,0,False,['navigational'],21,0.0,2026-09-06 15:09:23.457773+00:00
+121,cupboard centre mbombela,0.0,0,False,[],21,0.0,2026-09-06 15:08:44.893181+00:00
+122,cupboard installation assistance,0.0,0,False,[],30,0.0,2026-09-06 14:42:39.153311+00:00
+123,cupboard installation mbombela,0.0,0,False,[],7,0.0,2026-09-06 15:08:45.009832+00:00
+124,cupboard installation nelspruit,0.0,0,False,[],9,0.0,2026-09-06 15:08:50.858265+00:00
+125,cupboard installation services,0.0,0,False,[],48,0.0,2026-09-06 15:08:54.173745+00:00
+126,cupboards barberton,0.0,0,False,[],28,0.0,
+127,cupboards hazyview,0.0,0,False,[],20,0.0,
+128,cupboards malelane,0.0,0,False,[],30,0.0,
+129,cupboards mbombela,0.0,0,False,[],20,0.0,
+130,cupboards nelspruit,0.0,0,False,[],8,0.0,
+131,cupboards sabie,0.0,0,False,[],8,0.0,
+132,cupboards white river,0.0,0,False,[],17,0.0,
+133,custom cabinet quotes,0.0,0,False,['navigational'],29,0.0,2026-09-06 15:09:22.905483+00:00
+134,custom cabinetry mbombela,0.0,0,False,[],2,0.0,
+135,custom cabinetry nelspruit,0.0,0,False,[],2,0.0,
+136,custom cabinetry services,0.0,0,False,"['navigational', 'commercial']",3,0.0,2026-09-06 15:09:23.764771+00:00
+137,custom cupboard help,0.0,0,False,[],22,0.0,2026-09-06 14:42:39.346846+00:00
+138,custom cupboard installation,0.0,0,False,[],2,0.0,2026-09-06 15:09:24.222502+00:00
+139,diy bathroom units,0.0,0,False,[],6,0.0,2026-09-06 14:42:39.362377+00:00
+140,diy cupboard experts,0.0,0,False,[],3,0.0,2026-09-06 14:42:39.227008+00:00
+141,diy cupboard solutions,0.0,0,False,"['commercial', 'navigational']",28,0.0,2026-09-06 14:41:33.585936+00:00
+142,diy cupboards mbombela,0.0,0,False,[],11,0.0,
+143,diy cupboards nelspruit,0.0,0,False,[],21,0.0,2026-09-06 15:09:25.800540+00:00
+144,diy cupboards services,0.0,0,False,[],4,0.0,
+145,diy cupboards support,0.0,0,False,[],5,0.0,2026-09-06 14:42:39.101819+00:00
+146,finalize selection,0.0,0,False,[],70,0.0,2026-09-06 14:42:39.173741+00:00
+147,flat pack cupboards mbombela,0.0,0,False,[],20,0.0,
+148,flat pack cupboards nelspruit,0.0,0,False,[],6,0.0,
+149,flat pack cupboards services,0.0,0,False,[],3,0.0,2026-09-06 15:08:37.382449+00:00
+150,get a quote cupboards,0.0,0,False,[],3,0.0,2026-09-06 14:42:39.293725+00:00
+151,granite countertops guide,0.0,0,False,[],11,0.0,2026-09-06 15:09:02.449799+00:00
+152,how to assemble flat pack cupboards,0.0,0,False,[],4,0.0,
+153,how to choose kitchen units,0.0,0,False,[],15,0.0,
+154,how to measure for kitchen cupboards,0.0,0,False,[],12,0.0,
+155,kitchen cupboard doors mbombela,0.0,0,False,[],19,0.0,
+156,kitchen cupboard doors nelspruit,0.0,0,False,[],26,0.0,
+157,kitchen cupboard doors services,0.0,0,False,[],4,0.0,2026-09-06 15:08:37.153624+00:00
+158,kitchen cupboards barberton,0.0,0,False,[],21,0.0,
+159,kitchen cupboards hazyview,0.0,0,False,[],28,0.0,
+160,kitchen cupboards malelane,0.0,0,False,[],24,0.0,
+161,kitchen cupboards mbombela,0.0,0,False,"['informational', 'commercial']",7,0.0,
+162,kitchen cupboards sabie,0.0,0,False,[],27,0.0,
+163,kitchen cupboards white river,0.0,0,False,['navigational'],19,0.0,
+164,kitchen units mbombela,0.0,0,False,[],10,0.0,
+165,kitchen units nelspruit,0.0,0,False,"['transactional', 'commercial']",8,0.0,2024-10-30 19:54:13.088263+00:00
+166,kitchen units services,0.0,0,False,[],9,0.0,
+167,melamine doors mbombela,0.0,0,False,[],14,0.0,2026-09-06 15:09:23.617342+00:00
+168,melamine doors nelspruit,0.0,0,False,[],18,0.0,2026-09-06 15:09:26.058191+00:00
+169,melamine doors services,0.0,0,False,[],4,0.0,
+170,melamine vs wood cupboards,0.0,0,False,[],16,0.0,
+171,office cupboards mbombela,0.0,0,False,[],33,0.0,
+172,office cupboards nelspruit,0.0,0,False,[],25,0.0,
+173,office cupboards services,0.0,0,False,[],18,0.0,
+174,professional cabinet fitters,0.0,0,False,[],13,0.0,2026-09-06 14:42:39.190128+00:00
+175,quartz countertops mbombela,0.0,0,False,[],15,0.0,
+176,quartz countertops nelspruit,0.0,0,False,[],17,0.0,
+177,quartz countertops services,0.0,0,False,[],3,0.0,
+178,shopfitting mbombela,0.0,0,False,[],22,0.0,
+179,shopfitting nelspruit,0.0,0,False,[],10,0.0,
+180,visit cupboard centre,0.0,0,False,[],27,0.0,2026-09-06 14:42:39.135059+00:00

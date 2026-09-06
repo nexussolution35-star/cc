@@ -1,0 +1,38 @@
+keyword,sv,kd,intent,reason_rejected
+chest of drawer,33100,30,transactional/commercial,"Intent trap. 33,100 searches but transactional retail intent - people buying loose furniture, not built-in cupboards. Highest volume in the set and still wrong."
+chest drawer,1900,45,commercial/navigational,Same retail-furniture intent as above.
+quote request,12100,51,unclassified,"Intent trap. 12,100 searches, but the searchers want quote templates/software, not a cupboard quote."
+nelspruit,27100,47,informational/commercial,"Bare geographic term - informational, no commercial intent, unwinnable and worthless."
+kitchen cabinets,6600,78,informational/navigational,KD 78 - the hardest term in the set. 'kitchen cupboards' is the SA phrasing anyway.
+walk in closet,1000,80,unclassified,KD 80 and US phrasing; not what they sell.
+shoe storage,1900,35,commercial/informational,Retail-furniture intent. At most an H2 mention inside the bedroom page - never a target.
+bathroom remodeling,320,49,navigational,Not their service. They build cabinetry; they do not remodel bathrooms.
+home renovation,590,34,unclassified,Far too broad and not their service.
+kitchen renovation,880,36,unclassified,"Adjacent but not their service - they supply and fit cupboards, not full renovations."
+storage solutions,320,15,unclassified,Generic filler; no product meaning.
+one stop shop,390,14,unclassified,Meaningless as a search target.
+christmas holidays,170,36,unclassified,Seasonal leftover from the old site's keyword stuffing. Irrelevant.
+wall racks,110,9,unclassified,Not a product line - confirmed with client.
+kitchen organization,90,48,unclassified,"KD 48, US phrasing, and closer to lifestyle blogging than their business."
+cart,0,0,NOT IN MATRIX,Utility page term.
+cupboard center cart,0,8,unclassified,"Utility page term, zero volume."
+review items,10,53,unclassified,Utility page term.
+secure checkout,20,41,unclassified,Utility page term.
+finalize selection,0,70,unclassified,"Utility page term, KD 70, zero volume."
+cupboard center quote,0,25,unclassified,"Zero volume, invented phrasing."
+cupboard warehouse,320,6,transactional,Competitor/brand navigational term - the traffic is looking for a different company.
+builders warehouse built in kitchen cupboards,50,9,navigational,"Competitor brand. Cannot rank, and the traffic wants Builders Warehouse."
+builders warehouse diy kitchen cupboards,30,16,navigational,Competitor brand.
+builders warehouse bathroom cupboards,140,18,navigational,Competitor brand.
+diy kitchen cupboards builders warehouse,50,11,navigational,Competitor brand.
+cuoboards near me,0,36,unclassified,"Typo keyword; 'near me' is won on the Google Business Profile, not on-page."
+complete installation,10,60,navigational/informational,"KD 60 on 10 searches, and the phrase is meaningless out of context."
+pvc waterproof,40,7,unclassified,"Fragment, not a real query for their business."
+flat panel doors,10,29,informational,10 searches; covered as body copy on the doors page.
+diy solutions,10,22,unclassified,Generic fragment.
+bathroom storage solutions,20,36,navigational,"20 searches, KD 36 - not worth a slot."
+kitchen storage solutions,20,28,unclassified,"20 searches, KD 28 - covered by 'kitchen storage'."
+cabinet handles,590,45,commercial/informational,KD 45 for an accessory they do not lead with.
+custom kitchen cabinets,110,23,unclassified,"US phrasing, KD 23, only 110 searches - 'kitchen cupboards' covers it."
+bathroom cabinetry,9900,48,transactional,"Same 9,900 volume as 'bathroom cabinets' but KD 48 vs 8. Target the easy variant."
+reception desk,1600,48,unclassified,"Singular reads KD 48; the plural 'reception desks' is KD 3 for the same 1,600 volume."

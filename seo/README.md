@@ -11,6 +11,10 @@ final metadata (A4) — see *Why no rewrites yet* below.
 | `01-old-site-keywords.csv` | Every keyword the old Wix site declared (164 rows / 102 unique), with its page, URL, old title, whether that page had a meta description, duplication flag, intent, and the new page it maps to. |
 | `02-keyword-opportunities.csv` | The **Search Atlas candidate list** (198 rows): brand, core services, `[service] services` variants, service+town, town coverage, category/product, informational, plus every legacy term re-listed for re-testing. |
 | `03-url-migration-map.csv` | All 27 old URLs → new URLs, with old internal-link counts and ranking risk. |
+| `04-keyword-map-per-page.csv` | The confirmed map: primary + secondaries per page, with volume, difficulty and opportunity. |
+| `05-rejected-keywords.csv` | 37 rejected terms, each with a one-line reason. |
+| `06-keyword-strategy.md` | The A3 write-up: structural recommendations, the map, rejections. |
+| `matrix/OLD_CC.csv`, `matrix/NEW_CC.csv` | Raw Search Atlas exports. |
 | `redirects.htaccess` / `redirects.nginx.conf` | Server configs generated from the map. |
 | `/_redirects` (repo root) | Netlify / Cloudflare Pages / Lovable format. |
 
