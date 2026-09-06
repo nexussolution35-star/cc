@@ -458,15 +458,18 @@ def responsive_img(u, alt, cls="", extra=""):
                 % (sm, sm, full, full, alt, (' class="%s"' % cls) if cls else '', extra))
     return '<img src="%s" alt="%s"%s%s loading="lazy" decoding="async">' % (u, alt, (' class="%s"' % cls) if cls else '', extra)
 
+HOME_HERO = "assets/images/photos/66f6cc2b52153310a558a6b1.webp"  # .hero-panel bg in styles.css
+
 def add_hero_preload(html):
     """Preload the page-hero background: it is the LCP element and, being a CSS
     url(), is only discovered after CSS parses. Derived from the emitted markup so
     the preload URL always byte-matches the request. Pages without a hero image
     (the homepage hero is plain white) get no preload."""
     m = _re.search(r'class="page-hero"[^>]*style="[^"]*url\(([^)]+)\)', html)
-    if not m:
+    hero_url = m.group(1) if m else (HOME_HERO if 'class="hero-panel"' in html else None)
+    if not hero_url:
         return html.replace('{preload}\n', '').replace('{preload}', '')
-    tag = '<link rel="preload" as="image" href="%s" fetchpriority="high">' % m.group(1)
+    tag = '<link rel="preload" as="image" href="%s" fetchpriority="high">' % hero_url
     return html.replace('{preload}', tag, 1).replace('{preload}', '')
 
 def write(name, html):
