@@ -347,7 +347,7 @@ def cta_form():
     <span class="eyebrow">Free, No-Obligation Quote</span>
     <h2>Get Your Free Cupboard Quote Today</h2>
     <p>No pressure, no obligation, just honest advice and a clear written quote. Tell us about your space and we’ll get straight back to you.</p>
-    <p class="btn-row" style="margin-top:18px"><a class="btn btn-ghost" href="tel:{tel}">Call {phone}</a> <a class="btn btn-ghost" href="https://wa.me/{wa}" target="_blank" rel="noopener">WhatsApp {wa_disp}</a></p>
+    <p class="btn-row" style="margin-top:18px"><a class="btn btn-ghost" href="tel:{tel}">Call {phone}</a> <a class="btn btn-ghost" href="https://wa.me/{wa}" target="_blank" rel="noopener">WhatsApp Us</a></p>
   </div>
   {form}
 </div></section>

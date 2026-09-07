@@ -1167,3 +1167,8 @@ a:hover{color:var(--green)}
 .partner-logo.p-green{filter:brightness(0) saturate(100%) invert(38%) sepia(84%) saturate(560%) hue-rotate(93deg) brightness(94%) contrast(92%)}
 @media(max-width:900px){.partner-card{flex-basis:30%;max-width:none;min-height:104px;padding:18px}}
 @media(max-width:560px){.partner-grid{gap:14px}.partner-card{flex-basis:44%;min-height:92px;padding:14px 16px}.partner-logo{max-height:48px}}
+
+/* Footer social icons on hover: the circle turns white, so the icon must go dark.
+   Needs to outrank .footer ul li a:hover{color:#fff}, hence the extra class. */
+.footer .fsocial li a:hover{color:var(--navy)}
+.footer .fsocial li a:hover svg{color:var(--navy)}
