@@ -12,7 +12,8 @@ IMG_MAP = json.load(open(os.path.join(os.path.dirname(__file__), '..', '_extract
 SITE   = "Cupboard Centre"
 PHONE  = "084 683 7467"
 TEL    = "0846837467"
-WA     = "27846837467"           # WhatsApp
+WA     = "27793057321"           # WhatsApp - a DIFFERENT number to the call line
+WA_DISP= "079 305 7321"          # WhatsApp, display format
 EMAIL  = "info@cupboardcentre.co.za"
 ADDR   = "Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd, Mbombela, 1200"
 ADDR_Q = "Cupboard+Centre,+Old+Pretoria+Rd,+Mbombela,+1200"
@@ -346,11 +347,11 @@ def cta_form():
     <span class="eyebrow">Free, No-Obligation Quote</span>
     <h2>Get Your Free Cupboard Quote Today</h2>
     <p>No pressure, no obligation, just honest advice and a clear written quote. Tell us about your space and we’ll get straight back to you.</p>
-    <p class="btn-row" style="margin-top:18px"><a class="btn btn-ghost" href="tel:{tel}">Call {phone}</a> <a class="btn btn-ghost" href="https://wa.me/{wa}" target="_blank" rel="noopener">WhatsApp Us</a></p>
+    <p class="btn-row" style="margin-top:18px"><a class="btn btn-ghost" href="tel:{tel}">Call {phone}</a> <a class="btn btn-ghost" href="https://wa.me/{wa}" target="_blank" rel="noopener">WhatsApp {wa_disp}</a></p>
   </div>
   {form}
 </div></section>
-""".format(tel=TEL, phone=PHONE, wa=WA, form=lead_form(project=False))
+""".format(tel=TEL, phone=PHONE, wa=WA, wa_disp=WA_DISP, form=lead_form(project=False))
 
 def footer():
     svc = "".join('<li><a href="%s">%s</a></li>' % (h, t) for t, h in SERVICES[:6])
@@ -374,7 +375,7 @@ def footer():
     <div><h2 class="h4">Get In Touch</h2>
       <ul class="fcontact">
         <li><a href="tel:{tel}"><span class="fc-ico">{s_ph}</span><span>{phone}</span></a></li>
-        <li><a href="https://wa.me/{wa}" target="_blank" rel="noopener"><span class="fc-ico">{s_wa}</span><span>WhatsApp Us</span></a></li>
+        <li><a href="https://wa.me/{wa}" target="_blank" rel="noopener"><span class="fc-ico">{s_wa}</span><span>WhatsApp {wa_disp}</span></a></li>
         <li><a href="mailto:{email}"><span class="fc-ico">{s_ml}</span><span>{email}</span></a></li>
         <li><a href="https://maps.google.com/maps?q={addrq}" target="_blank" rel="noopener"><span class="fc-ico">{s_pin}</span><span>Point S Building, Cnr Silva St, Mbombela</span></a></li>
       </ul>
@@ -391,7 +392,7 @@ def footer():
 <script src="assets/js/app.js" defer></script>
 </body>
 </html>""".format(logo=logo(dark_bg=True), svc=svc, tel=TEL, phone=PHONE, wa=WA, email=EMAIL, addrq=ADDR_Q,
-                  s_ph=SVG_PHONE, s_wa=SVG_WA, s_ml=SVG_MAIL, s_pin=SVG_PIN,
+                  s_ph=SVG_PHONE, s_wa=SVG_WA, s_ml=SVG_MAIL, s_pin=SVG_PIN, wa_disp=WA_DISP,
                   fb=FB, ig=IG, yt=YT, s_fb=SVG_FB, s_ig=SVG_IG, s_yt=SVG_YT)
 
 def page_hero(current, eyebrow, h1, subtitle="", cta=True, trail=None, bg_img=None, prefix=""):
@@ -651,7 +652,7 @@ FAQ_ITEMS = [
  ("Which areas do you cover?","Our showroom is in Mbombela (Nelspruit) and we install across the Lowveld, Nelspruit, White River, Hazyview and surrounds. Our DIY flat-pack units are delivered nationwide."),
  ("Can you make cupboards to my exact measurements?","Absolutely. Custom cabinetry is our speciality. We measure your space and build units to fit precisely, with the finishes, colours and hardware you choose."),
  ("Do you offer quartz and melamine countertops?","Yes, we supply and fit Eazi Quartz countertops and a wide range of melamine tops and doors to match your cabinetry."),
- ("How do I get a quote?","Send us your measurements or your plans, or pop into the showroom. Call 084 683 7467, WhatsApp us, or fill in the quote form and we’ll come back to you within one business hour."),
+ ("How do I get a quote?","Send us your measurements or your plans, or pop into the showroom. Call 084 683 7467, WhatsApp 079 305 7321, or fill in the quote form and we’ll come back to you within one business hour."),
 ]
 
 def accordion(items, cls="faq-list"):
@@ -929,7 +930,7 @@ def service_faq(short):
      ("Do you deliver outside Nelspruit?",
       "Our installation teams cover Nelspruit, Mbombela and the wider Lowveld, and our pre-cut DIY units are delivered nationwide, flat-packed and protected."),
      ("How do I get a price?",
-      "Call 084 683 7467, WhatsApp us, or use the quote form below and we will come back to you with a clear, written quote within one business hour."),
+      "Call 084 683 7467, WhatsApp 079 305 7321, or use the quote form below and we will come back to you with a clear, written quote within one business hour."),
     ]
 
 TOWNS_LINE = ("We supply, deliver and install across Nelspruit, Mbombela, White River, "
