@@ -19,7 +19,6 @@ ADDR   = "Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd,
 ADDR_Q = "Cupboard+Centre,+Old+Pretoria+Rd,+Mbombela,+1200"
 FB     = "https://www.facebook.com/profile.php?id=61565764388558"
 IG     = "https://www.instagram.com/cupboardcentre_diy"
-YT     = "https://youtube.com/"
 GMAP   = "https://maps.google.com/maps?q=%s&z=15&output=embed" % ADDR_Q
 
 # ---------------------------------------------------------------- image helpers
@@ -138,10 +137,9 @@ def head(title, desc, canonical, og_img, schema=None, local_business=False, prel
       '{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness",'
       '"name":"Cupboard Centre","image":"%s","@id":"https://www.cupboardcentre.co.za/",'
       '"url":"https://www.cupboardcentre.co.za/","telephone":"+27846837467",'
-      '"email":"%s","priceRange":"$$",'
+      '"email":"%s",'
       '"address":{"@type":"PostalAddress","streetAddress":"Point S Building, Lower Level, Cnr Silva Street & Old Pretoria Rd","addressLocality":"Mbombela","addressRegion":"Mpumalanga","postalCode":"1200","addressCountry":"ZA"},'
       '"areaServed":[{"@type":"City","name":"Nelspruit"},{"@type":"City","name":"Mbombela"},{"@type":"City","name":"White River"}],'
-      '"openingHours":["Mo-Fr 08:00-17:00","Sa 08:00-13:00"],'
       '"sameAs":["%s","%s"]}' % (og_img, EMAIL, FB, IG)
     )
     # LocalBusiness belongs on the homepage and contact page only; every other page
@@ -245,7 +243,7 @@ def header(active="", cart=False):
            s_ph=SVG_PHONE, logo=logo(), subnav=subnav, m_subnav=m_subnav, cart_svg=cart_svg)
 
 # ---- lead form (used in hero, cta band, quote page) ----
-def lead_form(title="Request Your Free Quote", note="We call you back within one business hour.", btn="Get My Free Quote", project=True):
+def lead_form(title="Request Your Free Quote", note="We’ll call you back once we receive your form.", btn="Get My Free Quote", project=True):
     opts = ["Get a Free Quote","DIY Cupboards &amp; Flat-Packs","Kitchen Units","Bedroom Cupboards",
             "Bathroom Cabinetry","Melamine Doors","Quartz Countertops","Custom Cabinetry &amp; Shopfitting",
             "Installation","Other"]
@@ -307,7 +305,7 @@ def reviews_section(bg="bg-navy-slate"):
   </div>
   <div class="carousel-dots" data-dots>{dots}</div>
   <div class="review-links">
-    <a class="btn btn-outline" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rl-ico">{frev}</span>See Our Facebook Reviews</a>
+    <a class="btn btn-outline" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rl-ico">{frev}</span>Visit Us on Facebook</a>
     <a class="btn btn-outline" href="{ig}" target="_blank" rel="noopener noreferrer"><span class="rl-ico">{ig_ico}</span>Follow Us on Instagram</a>
   </div>
 </div></section>
@@ -382,7 +380,6 @@ def footer():
       <ul class="fsocial">
         <li><a href="{fb}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">{s_fb}</a></li>
         <li><a href="{ig}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">{s_ig}</a></li>
-        <li><a href="{yt}" target="_blank" rel="noopener noreferrer" aria-label="YouTube">{s_yt}</a></li>
         <li><a href="https://wa.me/{wa}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">{s_wa}</a></li>
       </ul>
     </div>
@@ -393,7 +390,7 @@ def footer():
 </body>
 </html>""".format(logo=logo(dark_bg=True), svc=svc, tel=TEL, phone=PHONE, wa=WA, email=EMAIL, addrq=ADDR_Q,
                   s_ph=SVG_PHONE, s_wa=SVG_WA, s_ml=SVG_MAIL, s_pin=SVG_PIN, wa_disp=WA_DISP,
-                  fb=FB, ig=IG, yt=YT, s_fb=SVG_FB, s_ig=SVG_IG, s_yt=SVG_YT)
+                  fb=FB, ig=IG, s_fb=SVG_FB, s_ig=SVG_IG)
 
 def page_hero(current, eyebrow, h1, subtitle="", cta=True, trail=None, bg_img=None, prefix=""):
     cr = '<a href="%sindex.html">Home</a>' % prefix
@@ -652,7 +649,7 @@ FAQ_ITEMS = [
  ("Which areas do you cover?","Our showroom is in Mbombela (Nelspruit) and we install across the Lowveld, Nelspruit, White River, Hazyview and surrounds. Our DIY flat-pack units are delivered nationwide."),
  ("Can you make cupboards to my exact measurements?","Absolutely. Custom cabinetry is our speciality. We measure your space and build units to fit precisely, with the finishes, colours and hardware you choose."),
  ("Do you offer quartz and melamine countertops?","Yes, we supply and fit Eazi Quartz countertops and a wide range of melamine tops and doors to match your cabinetry."),
- ("How do I get a quote?","Send us your measurements or your plans, or pop into the showroom. Call 084 683 7467, WhatsApp 079 305 7321, or fill in the quote form and we’ll come back to you within one business hour."),
+ ("How do I get a quote?","Send us your measurements or your plans, or pop into the showroom. Call 084 683 7467, WhatsApp 079 305 7321, or fill in the quote form and we’ll come back to you with a clear, written quote."),
 ]
 
 def accordion(items, cls="faq-list"):
@@ -686,12 +683,12 @@ def build_home():
     <span class="hero-eyebrow">{shield}Nelspruit &amp; Mbombela · 25+ Years of Cupboards</span>
     <h1>Nelspruit's Best Choice For <span class="sub">DIY &amp; Custom Cupboard Solutions</span></h1>
     <p>A one-stop shop for cupboards, from custom kitchens, bedroom &amp; bathroom cabinetry and quartz countertops to pre-cut DIY flat-packs delivered to your door. Supply, delivery and expert installation.</p>
-    <div class="review-badges"><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{grev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Google Reviews</span></span></a><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{frev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Facebook Reviews</span></span></a></div>
+    <div class="review-badges"><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{grev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Google Reviews</span></span></a></div>
     <div class="hero-sub-claims"><span>Custom &amp; DIY</span><span>Free Quote</span><span>Nationwide Delivery</span></div>
   </div>
   <div class="hero-form-col">{form}</div>
 </div></section>
-""".format(shield=SVG_SHIELD, fb=FB, grev=GREV, frev=FREV, form=lead_form())
+""".format(shield=SVG_SHIELD, fb=FB, grev=GREV, form=lead_form())
     # 1b. TRUSTED PARTNERS
     h += partners_band()
     # 2. REVIEWS
@@ -930,7 +927,7 @@ def service_faq(short):
      ("Do you deliver outside Nelspruit?",
       "Our installation teams cover Nelspruit, Mbombela and the wider Lowveld, and our pre-cut DIY units are delivered nationwide, flat-packed and protected."),
      ("How do I get a price?",
-      "Call 084 683 7467, WhatsApp 079 305 7321, or use the quote form below and we will come back to you with a clear, written quote within one business hour."),
+      "Call 084 683 7467, WhatsApp 079 305 7321, or use the quote form below and we will come back to you with a clear, written quote."),
     ]
 
 TOWNS_LINE = ("We supply, deliver and install across Nelspruit, Mbombela, White River, "
@@ -1434,7 +1431,7 @@ for p in BLOG:
 def build_quote():
     og,_=img(GENERAL,0)
     h=head("Get a Free Quote | Cupboard Centre, DIY &amp; Custom Cupboards",
-           "Get a free, no-obligation quote from Cupboard Centre on DIY or custom cupboards, kitchens, wardrobes, doors and countertops. We reply within one business hour.",
+           "Get a free, no-obligation quote from Cupboard Centre on DIY or custom cupboards, kitchens, wardrobes, doors and countertops. Free, with no obligation.",
            "https://www.cupboardcentre.co.za/get-a-quote.html", og,
            schema=[sch_breadcrumb([("Home","/"),("Get a Quote","/get-a-quote")])])
     h+=header()
@@ -1447,13 +1444,13 @@ def build_quote():
     h+="""<section class="section bg-navy"><div class="wrap"><div class="contact-grid">
     <div>
       <span class="eyebrow">Why Cupboard Centre</span><h2>Honest Advice, Clear Pricing</h2>
-      <p>Tell us about your project, a room, a rough size, or just an idea, and we’ll come back with a clear, written quote within one business hour. No obligation, no pressure.</p>
+      <p>Tell us about your project, a room, a rough size, or just an idea, and we’ll come back with a clear, written quote. No obligation, no pressure.</p>
       <ul style="list-style:none;margin-top:22px">%s</ul>
       <p class="btn-row" style="margin-top:8px"><a class="btn btn-outline" href="tel:%s">Call %s</a> <a class="btn btn-outline" href="https://wa.me/%s" target="_blank" rel="noopener">WhatsApp Us</a></p>
     </div>
     %s
   </div></div></section>
-"""%(bl,TEL,PHONE,WA,lead_form("Request Your Free Quote","We call you back within one business hour.","Get My Free Quote"))
+"""%(bl,TEL,PHONE,WA,lead_form("Request Your Free Quote","We’ll call you back once we receive your form.","Get My Free Quote"))
     h+=process_section("How It Works","From Quote to Complete","bg-navy-slate")
     h+=reviews_section("bg-navy")
     h+=cta_form(); h+=marquee(); h+=footer()
