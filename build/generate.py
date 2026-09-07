@@ -19,6 +19,7 @@ ADDR   = "Point S Building, Lower Level, Cnr Silva Street &amp; Old Pretoria Rd,
 ADDR_Q = "Cupboard+Centre,+Old+Pretoria+Rd,+Mbombela,+1200"
 FB     = "https://www.facebook.com/profile.php?id=61565764388558"
 IG     = "https://www.instagram.com/cupboardcentre_diy"
+TT     = "https://www.tiktok.com/@cupboardcentre_cc3"
 GMAP   = "https://maps.google.com/maps?q=%s&z=15&output=embed" % ADDR_Q
 
 # ---------------------------------------------------------------- image helpers
@@ -53,6 +54,8 @@ SVG_MAIL  = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><pa
 SVG_PIN   = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"></path></svg>'
 SVG_FB    = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.3l.4-2.8h-2.7V9.3c0-.8.2-1.3 1.4-1.3h1.4V5.6C15.4 5.5 14.7 5.4 13.9 5.4c-2 0-3.4 1.2-3.4 3.5v1.9H8v2.8h2.5V21z"></path></svg>'
 SVG_IG    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="3.8"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg>'
+SVG_CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 1.9"/></svg>'
+SVG_TT    = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .53.04.77.12v-3.2a5.76 5.76 0 0 0-.77-.05A5.72 5.72 0 0 0 4.14 15.3 5.72 5.72 0 0 0 9.86 21a5.72 5.72 0 0 0 5.72-5.72V9.01a7.35 7.35 0 0 0 4.28 1.37V7.3a4.28 4.28 0 0 1-3.26-1.48z"></path></svg>'
 SVG_YT    = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.8 15.3V8.7l6.2 3.3z"></path></svg>'
 SVG_WA    = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1s-.7.8-.8 1c-.2.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5s-.6-1.4-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.8 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1s-.2-.2-.4-.3z"></path></svg>'
 SVG_SHIELD= '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 6.5 4.7v6.8c0 4.6 3.4 8.6 5.5 9.8 2.1-1.2 5.5-5.2 5.5-9.8V4.7L12 2.5z" fill="none" stroke="#ff5d5d" stroke-width="2.6"></path><path d="M12 2.5 6.5 4.7v6.8c0 4.6 3.4 8.6 5.5 9.8V2.5z" fill="#ff5d5d"></path></svg>'
@@ -138,9 +141,10 @@ def head(title, desc, canonical, og_img, schema=None, local_business=False, prel
       '"name":"Cupboard Centre","image":"%s","@id":"https://www.cupboardcentre.co.za/",'
       '"url":"https://www.cupboardcentre.co.za/","telephone":"+27846837467",'
       '"email":"%s",'
+      '"openingHours":["Mo-Th 07:00-17:00","Fr 07:00-16:30","Sa 07:30-13:30"],'
       '"address":{"@type":"PostalAddress","streetAddress":"Point S Building, Lower Level, Cnr Silva Street & Old Pretoria Rd","addressLocality":"Mbombela","addressRegion":"Mpumalanga","postalCode":"1200","addressCountry":"ZA"},'
       '"areaServed":[{"@type":"City","name":"Nelspruit"},{"@type":"City","name":"Mbombela"},{"@type":"City","name":"White River"}],'
-      '"sameAs":["%s","%s"]}' % (og_img, EMAIL, FB, IG)
+      '"sameAs":["%s","%s","%s"]}' % (og_img, EMAIL, FB, IG, TT)
     )
     # LocalBusiness belongs on the homepage and contact page only; every other page
     # carries the schema that describes what THAT page is.
@@ -305,7 +309,7 @@ def reviews_section(bg="bg-navy-slate"):
   </div>
   <div class="carousel-dots" data-dots>{dots}</div>
   <div class="review-links">
-    <a class="btn btn-outline" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rl-ico">{frev}</span>Visit Us on Facebook</a>
+    <a class="btn btn-outline" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rl-ico">{frev}</span>See Our Facebook Reviews</a>
     <a class="btn btn-outline" href="{ig}" target="_blank" rel="noopener noreferrer"><span class="rl-ico">{ig_ico}</span>Follow Us on Instagram</a>
   </div>
 </div></section>
@@ -376,10 +380,12 @@ def footer():
         <li><a href="https://wa.me/{wa}" target="_blank" rel="noopener"><span class="fc-ico">{s_wa}</span><span>WhatsApp {wa_disp}</span></a></li>
         <li><a href="mailto:{email}"><span class="fc-ico">{s_ml}</span><span>{email}</span></a></li>
         <li><a href="https://maps.google.com/maps?q={addrq}" target="_blank" rel="noopener"><span class="fc-ico">{s_pin}</span><span>Point S Building, Cnr Silva St, Mbombela</span></a></li>
+        <li class="fhours"><span class="fc-ico">{s_clock}</span><span>Mon&ndash;Thu 07:00&ndash;17:00 · Fri 07:00&ndash;16:30<br>Sat 07:30&ndash;13:30 · Sun closed</span></li>
       </ul>
       <ul class="fsocial">
         <li><a href="{fb}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">{s_fb}</a></li>
         <li><a href="{ig}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">{s_ig}</a></li>
+        <li><a href="{tt}" target="_blank" rel="noopener noreferrer" aria-label="TikTok">{s_tt}</a></li>
         <li><a href="https://wa.me/{wa}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">{s_wa}</a></li>
       </ul>
     </div>
@@ -390,7 +396,8 @@ def footer():
 </body>
 </html>""".format(logo=logo(dark_bg=True), svc=svc, tel=TEL, phone=PHONE, wa=WA, email=EMAIL, addrq=ADDR_Q,
                   s_ph=SVG_PHONE, s_wa=SVG_WA, s_ml=SVG_MAIL, s_pin=SVG_PIN, wa_disp=WA_DISP,
-                  fb=FB, ig=IG, s_fb=SVG_FB, s_ig=SVG_IG)
+                  s_clock=SVG_CLOCK,
+                  fb=FB, ig=IG, tt=TT, s_fb=SVG_FB, s_ig=SVG_IG, s_tt=SVG_TT)
 
 def page_hero(current, eyebrow, h1, subtitle="", cta=True, trail=None, bg_img=None, prefix=""):
     cr = '<a href="%sindex.html">Home</a>' % prefix
@@ -683,12 +690,12 @@ def build_home():
     <span class="hero-eyebrow">{shield}Nelspruit &amp; Mbombela · 25+ Years of Cupboards</span>
     <h1>Nelspruit's Best Choice For <span class="sub">DIY &amp; Custom Cupboard Solutions</span></h1>
     <p>A one-stop shop for cupboards, from custom kitchens, bedroom &amp; bathroom cabinetry and quartz countertops to pre-cut DIY flat-packs delivered to your door. Supply, delivery and expert installation.</p>
-    <div class="review-badges"><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{grev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Google Reviews</span></span></a></div>
+    <div class="review-badges"><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{grev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Google Reviews</span></span></a><a class="review-badge" href="{fb}" target="_blank" rel="noopener noreferrer"><span class="rb-logo">{frev}</span><span class="rb-text"><span class="rb-score">5.0 <span class="rb-stars">★★★★★</span></span><span class="rb-label">Facebook Reviews</span></span></a></div>
     <div class="hero-sub-claims"><span>Custom &amp; DIY</span><span>Free Quote</span><span>Nationwide Delivery</span></div>
   </div>
   <div class="hero-form-col">{form}</div>
 </div></section>
-""".format(shield=SVG_SHIELD, fb=FB, grev=GREV, form=lead_form())
+""".format(shield=SVG_SHIELD, fb=FB, grev=GREV, frev=FREV, form=lead_form())
     # 1b. TRUSTED PARTNERS
     h += partners_band()
     # 2. REVIEWS
@@ -1213,7 +1220,7 @@ def build_contact():
       <h3>Email</h3>
       <div class="info-row"><a href="mailto:%s">%s</a></div>
       <h3>Business Hours</h3>
-      <div class="info-row">Mon-Fri: 08:00 - 17:00<br>Sat: 08:00 - 13:00<br>Sun &amp; Public Holidays: Closed</div>
+      <div class="info-row">Mon &ndash; Thu: 07:00 &ndash; 17:00<br>Fri: 07:00 &ndash; 16:30<br>Sat: 07:30 &ndash; 13:30<br>Sun: Closed</div>
       <p style="margin-top:16px"><a class="btn btn-blue btn-arrow" href="service-areas.html">View Our Service Areas</a></p>
     </div>
   </div></div></section>

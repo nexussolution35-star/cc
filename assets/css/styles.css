@@ -1172,3 +1172,8 @@ a:hover{color:var(--green)}
    Needs to outrank .footer ul li a:hover{color:#fff}, hence the extra class. */
 .footer .fsocial li a:hover{color:var(--navy)}
 .footer .fsocial li a:hover svg{color:var(--navy)}
+
+/* Footer opening-hours row: not a link, so mirror the .fcontact link layout */
+.footer .fcontact li.fhours{display:flex;align-items:flex-start;gap:11px;color:#fff;
+  font-weight:600;font-size:14px;line-height:1.55}
+.footer .fcontact li.fhours .fc-ico{flex:0 0 auto}
